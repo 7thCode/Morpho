@@ -1,0 +1,22 @@
+{
+  "name": "morpho-app",
+  "version": "0.1.0",
+  "private": true,
+  "main": "electron/main.js",
+  "scripts": {
+    "dev:vite": "vite",
+    "dev:electron": "wait-on http://localhost:5173 && electron .",
+    "dev": "concurrently -k \"npm run dev:vite\" \"npm run dev:electron\"",
+    "build:go": "go build -o bin/server ../cmd/server",
+    "build:ui": "vite build",
+    "build": "npm run build:go && npm run build:ui"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "concurrently": "^8.0.0",
+    "electron": "^29.0.0",
+    "svelte": "^4.0.0",
+    "vite": "^5.0.0",
+    "wait-on": "^7.0.0"
+  }
+}
