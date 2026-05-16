@@ -3,7 +3,7 @@
     ",": {
       "surface": ",",
       "pos": "記号",
-      "freq": 4
+      "freq": 5
     },
     "-": {
       "surface": "-",
@@ -13,32 +13,32 @@
     "/": {
       "surface": "/",
       "pos": "記号",
-      "freq": 12
+      "freq": 15
     },
     "/』,": {
       "surface": "/』,",
       "pos": "記号",
-      "freq": 4
+      "freq": 5
     },
     "/』）": {
       "surface": "/』）",
       "pos": "記号",
-      "freq": 4
+      "freq": 5
     },
     "000": {
       "surface": "000",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "1": {
       "surface": "1",
       "pos": "数詞",
-      "freq": 638
+      "freq": 640
     },
     "10": {
       "surface": "10",
       "pos": "数詞",
-      "freq": 75
+      "freq": 78
     },
     "104": {
       "surface": "104",
@@ -48,12 +48,12 @@
     "105": {
       "surface": "105",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "11": {
       "surface": "11",
       "pos": "数詞",
-      "freq": 67
+      "freq": 68
     },
     "110": {
       "surface": "110",
@@ -68,7 +68,7 @@
     "12": {
       "surface": "12",
       "pos": "数詞",
-      "freq": 25
+      "freq": 26
     },
     "1277": {
       "surface": "1277",
@@ -78,7 +78,7 @@
     "13": {
       "surface": "13",
       "pos": "数詞",
-      "freq": 96
+      "freq": 99
     },
     "1312": {
       "surface": "1312",
@@ -88,12 +88,12 @@
     "14": {
       "surface": "14",
       "pos": "数詞",
-      "freq": 8
+      "freq": 10
     },
     "141": {
       "surface": "141",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "144": {
       "surface": "144",
@@ -108,7 +108,7 @@
     "15": {
       "surface": "15",
       "pos": "数詞",
-      "freq": 8
+      "freq": 10
     },
     "150": {
       "surface": "150",
@@ -128,17 +128,17 @@
     "16": {
       "surface": "16",
       "pos": "数詞",
-      "freq": 71
+      "freq": 73
     },
     "17": {
       "surface": "17",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "18": {
       "surface": "18",
       "pos": "数詞",
-      "freq": 8
+      "freq": 10
     },
     "185": {
       "surface": "185",
@@ -163,7 +163,7 @@
     "19": {
       "surface": "19",
       "pos": "数詞",
-      "freq": 50
+      "freq": 52
     },
     "1960": {
       "surface": "1960",
@@ -173,22 +173,22 @@
     "2": {
       "surface": "2",
       "pos": "数詞",
-      "freq": 155
+      "freq": 157
     },
     "20": {
       "surface": "20",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "2010": {
       "surface": "2010",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "2021": {
       "surface": "2021",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "21": {
       "surface": "21",
@@ -213,22 +213,22 @@
     "24": {
       "surface": "24",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "25": {
       "surface": "25",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "26": {
       "surface": "26",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "27": {
       "surface": "27",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "270": {
       "surface": "270",
@@ -238,12 +238,12 @@
     "28": {
       "surface": "28",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "29": {
       "surface": "29",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "290": {
       "surface": "290",
@@ -253,22 +253,22 @@
     "3": {
       "surface": "3",
       "pos": "数詞",
-      "freq": 146
+      "freq": 151
     },
     "30": {
       "surface": "30",
       "pos": "数詞",
-      "freq": 67
+      "freq": 68
     },
     "31": {
       "surface": "31",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "32": {
       "surface": "32",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "3336": {
       "surface": "3336",
@@ -280,6 +280,11 @@
       "pos": "数詞",
       "freq": 21
     },
+    "37": {
+      "surface": "37",
+      "pos": "数詞",
+      "freq": 1
+    },
     "3710": {
       "surface": "3710",
       "pos": "数詞",
@@ -288,17 +293,17 @@
     "379": {
       "surface": "379",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "4": {
       "surface": "4",
       "pos": "数詞",
-      "freq": 50
+      "freq": 52
     },
     "41": {
       "surface": "41",
       "pos": "数詞",
-      "freq": 25
+      "freq": 26
     },
     "4350": {
       "surface": "4350",
@@ -313,7 +318,7 @@
     "47": {
       "surface": "47",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "49": {
       "surface": "49",
@@ -323,7 +328,7 @@
     "5": {
       "surface": "5",
       "pos": "数詞",
-      "freq": 92
+      "freq": 94
     },
     "597": {
       "surface": "597",
@@ -333,17 +338,17 @@
     "6": {
       "surface": "6",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "7": {
       "surface": "7",
       "pos": "数詞",
-      "freq": 50
+      "freq": 52
     },
     "71": {
       "surface": "71",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "739": {
       "surface": "739",
@@ -353,12 +358,12 @@
     "74": {
       "surface": "74",
       "pos": "数詞",
-      "freq": 4
+      "freq": 5
     },
     "8": {
       "surface": "8",
       "pos": "数詞",
-      "freq": 33
+      "freq": 37
     },
     "83": {
       "surface": "83",
@@ -368,7 +373,7 @@
     "9": {
       "surface": "9",
       "pos": "数詞",
-      "freq": 50
+      "freq": 52
     },
     "934": {
       "surface": "934",
@@ -393,1242 +398,1322 @@
     "SOV": {
       "surface": "SOV",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "[": {
       "surface": "[",
       "pos": "記号",
-      "freq": 92
+      "freq": 116
     },
     "]": {
       "surface": "]",
       "pos": "記号",
-      "freq": 40
+      "freq": 50
     },
     "][": {
       "surface": "][",
       "pos": "記号",
-      "freq": 44
+      "freq": 55
     },
     "]。": {
       "surface": "]。",
       "pos": "記号",
-      "freq": 52
+      "freq": 66
     },
     "]）": {
       "surface": "]）",
       "pos": "記号",
-      "freq": 4
+      "freq": 5
     },
     "awo": {
       "surface": "awo",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "kapi": {
       "surface": "kapi",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "r": {
       "surface": "r",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "§": {
       "surface": "§",
       "pos": "記号",
-      "freq": 16
+      "freq": 21
     },
     "→": {
       "surface": "→",
       "pos": "記号",
-      "freq": 8
+      "freq": 11
     },
     "→「": {
       "surface": "→「",
       "pos": "記号",
-      "freq": 4
+      "freq": 5
     },
     "、": {
       "surface": "、",
       "pos": "記号",
-      "freq": 436
+      "freq": 554
     },
     "、「": {
       "surface": "、「",
       "pos": "記号",
-      "freq": 16
+      "freq": 20
     },
     "。": {
       "surface": "。",
       "pos": "記号",
-      "freq": 120
+      "freq": 153
     },
     "。『": {
       "surface": "。『",
       "pos": "記号",
-      "freq": 4
+      "freq": 5
     },
     "々": {
       "surface": "々",
       "pos": "記号",
-      "freq": 155
+      "freq": 157
     },
     "「": {
       "surface": "「",
       "pos": "記号",
-      "freq": 80
+      "freq": 102
     },
     "」": {
       "surface": "」",
       "pos": "記号",
-      "freq": 112
+      "freq": 143
     },
     "」、": {
       "surface": "」、",
       "pos": "記号",
-      "freq": 8
+      "freq": 10
     },
     "」「": {
       "surface": "」「",
       "pos": "記号",
-      "freq": 4
+      "freq": 5
     },
     "」（": {
       "surface": "」（",
       "pos": "記号",
-      "freq": 4
+      "freq": 5
     },
     "『": {
       "surface": "『",
       "pos": "記号",
-      "freq": 12
+      "freq": 15
     },
     "』": {
       "surface": "』",
       "pos": "記号",
-      "freq": 4
+      "freq": 5
     },
     "』『": {
       "surface": "』『",
       "pos": "記号",
-      "freq": 16
+      "freq": 20
     },
     "あお": {
       "surface": "あお",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "あるいは": {
       "surface": "あるいは",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
     },
     "あを": {
       "surface": "あを",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "い": {
       "surface": "い",
       "pos": "形容詞",
-      "freq": 16
+      "freq": 20
     },
     "いずれも": {
       "surface": "いずれも",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
+    },
+    "いだせる": {
+      "surface": "いだせる",
+      "pos": "動詞",
+      "freq": 1
     },
     "いて": {
       "surface": "いて",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "いので": {
       "surface": "いので",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "いられ": {
       "surface": "いられ",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "いられる": {
       "surface": "いられる",
       "pos": "動詞",
-      "freq": 8
+      "freq": 10
     },
     "いられることがある": {
       "surface": "いられることがある",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "いる": {
       "surface": "いる",
       "pos": "動詞",
-      "freq": 8
+      "freq": 10
     },
     "いることが": {
       "surface": "いることが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "う": {
       "surface": "う",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "うなど": {
       "surface": "うなど",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "えられている": {
       "surface": "えられている",
       "pos": "動詞",
-      "freq": 8
+      "freq": 11
     },
     "えられることが": {
       "surface": "えられることが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "える": {
       "surface": "える",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "おかえりなさい": {
       "surface": "おかえりなさい",
       "pos": "形容詞",
-      "freq": 4
+      "freq": 5
     },
     "および": {
       "surface": "および",
       "pos": "副詞",
-      "freq": 16
+      "freq": 20
     },
     "か": {
       "surface": "か",
       "pos": "助詞",
-      "freq": 4
+      "freq": 5
     },
     "かい": {
       "surface": "かい",
       "pos": "形容詞",
-      "freq": 4
+      "freq": 5
     },
     "かったが": {
       "surface": "かったが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "かつての": {
       "surface": "かつての",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "かつては": {
       "surface": "かつては",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "かひ": {
       "surface": "かひ",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "から": {
       "surface": "から",
       "pos": "助詞",
-      "freq": 8
+      "freq": 10
     },
     "かりやすい": {
       "surface": "かりやすい",
       "pos": "形容詞",
-      "freq": 4
+      "freq": 5
     },
     "が": {
       "surface": "が",
       "pos": "助詞",
-      "freq": 152
+      "freq": 195
     },
     "があった": {
       "surface": "があった",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "があり": {
       "surface": "があり",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
     },
     "がある": {
       "surface": "がある",
       "pos": "動詞",
-      "freq": 12
+      "freq": 15
     },
     "がいる": {
       "surface": "がいる",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "がかつて": {
       "surface": "がかつて",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "がみられる": {
       "surface": "がみられる",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "きと": {
       "surface": "きと",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "きのどちらでも": {
       "surface": "きのどちらでも",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "く": {
       "surface": "く",
       "pos": "動詞",
-      "freq": 16
+      "freq": 20
     },
     "くなっているという": {
       "surface": "くなっているという",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "くの": {
       "surface": "くの",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
     },
     "くは": {
       "surface": "くは",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "け": {
       "surface": "け",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
     },
     "けた": {
       "surface": "けた",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "けたものではない": {
       "surface": "けたものではない",
       "pos": "形容詞",
-      "freq": 4
+      "freq": 5
     },
     "けたり": {
       "surface": "けたり",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
+    },
+    "けていると": {
+      "surface": "けていると",
+      "pos": "副詞",
+      "freq": 1
     },
     "けに": {
       "surface": "けに",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "けられる": {
       "surface": "けられる",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "げられる": {
       "surface": "げられる",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "この": {
       "surface": "この",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "このような": {
       "surface": "このような",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "これらのことから": {
       "surface": "これらのことから",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
+    },
+    "これを": {
+      "surface": "これを",
+      "pos": "副詞",
+      "freq": 1
     },
     "ごとに": {
       "surface": "ごとに",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "さ": {
       "surface": "さ",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "させる": {
       "surface": "させる",
       "pos": "助動詞",
-      "freq": 4
+      "freq": 5
     },
     "させるのでなく": {
       "surface": "させるのでなく",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "さらに": {
       "surface": "さらに",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "され": {
       "surface": "され",
       "pos": "副詞",
-      "freq": 8
+      "freq": 11
     },
     "された": {
       "surface": "された",
       "pos": "副詞",
-      "freq": 4
+      "freq": 6
+    },
+    "されていたという": {
+      "surface": "されていたという",
+      "pos": "動詞",
+      "freq": 1
     },
     "されていないことなどから": {
       "surface": "されていないことなどから",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "されている": {
       "surface": "されている",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "されているものもある": {
       "surface": "されているものもある",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "されており": {
       "surface": "されており",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
     },
     "されてきた": {
       "surface": "されてきた",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "されてきたが": {
       "surface": "されてきたが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "される": {
       "surface": "される",
       "pos": "動詞",
-      "freq": 32
+      "freq": 40
     },
     "されるなど": {
       "surface": "されるなど",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "されるものも": {
       "surface": "されるものも",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "ざった": {
       "surface": "ざった",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "し": {
       "surface": "し",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
     },
     "しい": {
       "surface": "しい",
       "pos": "形容詞",
-      "freq": 4
+      "freq": 5
     },
     "しかし": {
       "surface": "しかし",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "しかないなど": {
       "surface": "しかないなど",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "した": {
       "surface": "した",
       "pos": "副詞",
-      "freq": 16
+      "freq": 22
     },
     "して": {
       "surface": "して",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "していないが": {
       "surface": "していないが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "している": {
       "surface": "している",
       "pos": "動詞",
-      "freq": 12
+      "freq": 15
     },
     "しない": {
       "surface": "しない",
       "pos": "形容詞",
-      "freq": 4
+      "freq": 5
     },
     "しりとりで": {
       "surface": "しりとりで",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
+    },
+    "じ": {
+      "surface": "じ",
+      "pos": "副詞",
+      "freq": 2
     },
     "じくする": {
       "surface": "じくする",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "す": {
       "surface": "す",
       "pos": "動詞",
-      "freq": 8
+      "freq": 11
     },
     "すためには": {
       "surface": "すためには",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "する": {
       "surface": "する",
       "pos": "動詞",
-      "freq": 48
+      "freq": 60
     },
     "するが": {
       "surface": "するが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "することが": {
       "surface": "することが",
       "pos": "副詞",
-      "freq": 12
+      "freq": 15
     },
     "することを": {
       "surface": "することを",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "するとされるそれぞれの": {
       "surface": "するとされるそれぞれの",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "するとする": {
       "surface": "するとする",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "せず": {
       "surface": "せず",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "そして": {
       "surface": "そして",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "その": {
       "surface": "その",
       "pos": "副詞",
-      "freq": 16
+      "freq": 20
     },
     "それらの": {
       "surface": "それらの",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "それらは": {
       "surface": "それらは",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "ただし": {
       "surface": "ただし",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "たない": {
       "surface": "たない",
       "pos": "形容詞",
-      "freq": 8
+      "freq": 10
     },
     "たないこと": {
       "surface": "たないこと",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
     },
     "だ": {
       "surface": "だ",
       "pos": "助動詞",
-      "freq": 4
+      "freq": 5
     },
     "だが": {
       "surface": "だが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "だけでなく": {
       "surface": "だけでなく",
       "pos": "動詞",
-      "freq": 8
+      "freq": 10
     },
     "だった": {
       "surface": "だった",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "っ": {
       "surface": "っ",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "って": {
       "surface": "って",
       "pos": "助詞",
-      "freq": 4
+      "freq": 5
+    },
+    "っていたと": {
+      "surface": "っていたと",
+      "pos": "副詞",
+      "freq": 1
     },
     "っている": {
       "surface": "っている",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "っておらず": {
       "surface": "っておらず",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "つ": {
       "surface": "つ",
       "pos": "動詞",
-      "freq": 8
+      "freq": 10
     },
     "つけにくいのはこのため": {
       "surface": "つけにくいのはこのため",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "つため": {
       "surface": "つため",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "つとして": {
       "surface": "つとして",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "づいて": {
       "surface": "づいて",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "づけにされる": {
       "surface": "づけにされる",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "て": {
       "surface": "て",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
     },
     "てたりしてから": {
       "surface": "てたりしてから",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "てに": {
       "surface": "てに",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "で": {
       "surface": "で",
       "pos": "助詞",
-      "freq": 52
+      "freq": 66
     },
     "である": {
       "surface": "である",
       "pos": "動詞",
-      "freq": 24
+      "freq": 31
     },
     "であるが": {
       "surface": "であるが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "であることが": {
       "surface": "であることが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "であるとみなす": {
       "surface": "であるとみなす",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "でない": {
       "surface": "でない",
       "pos": "形容詞",
-      "freq": 4
+      "freq": 5
     },
     "では": {
       "surface": "では",
       "pos": "助詞",
-      "freq": 56
+      "freq": 71
     },
     "でも": {
       "surface": "でも",
       "pos": "副詞",
-      "freq": 16
+      "freq": 20
     },
     "と": {
       "surface": "と",
       "pos": "助詞",
-      "freq": 60
+      "freq": 79
     },
     "という": {
       "surface": "という",
       "pos": "動詞",
-      "freq": 8
+      "freq": 10
     },
     "といった": {
       "surface": "といった",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "とされ": {
       "surface": "とされ",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "とされている": {
       "surface": "とされている",
       "pos": "動詞",
-      "freq": 12
+      "freq": 15
     },
     "とされる": {
       "surface": "とされる",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "とし": {
       "surface": "とし",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
     },
     "として": {
       "surface": "として",
       "pos": "副詞",
-      "freq": 32
+      "freq": 41
     },
     "としており": {
       "surface": "としており",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "とする": {
       "surface": "とする",
       "pos": "動詞",
-      "freq": 8
+      "freq": 10
+    },
+    "とともに": {
+      "surface": "とともに",
+      "pos": "副詞",
+      "freq": 1
     },
     "となっている": {
       "surface": "となっている",
       "pos": "動詞",
-      "freq": 16
+      "freq": 20
     },
     "との": {
       "surface": "との",
       "pos": "副詞",
-      "freq": 12
+      "freq": 16
     },
     "とは": {
       "surface": "とは",
       "pos": "助詞",
-      "freq": 4
+      "freq": 5
     },
     "とまとめて": {
       "surface": "とまとめて",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "とりわけ": {
       "surface": "とりわけ",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "どうしの": {
       "surface": "どうしの",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "どれ": {
       "surface": "どれ",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "な": {
       "surface": "な",
       "pos": "助詞",
-      "freq": 24
+      "freq": 30
     },
     "ないし": {
       "surface": "ないし",
       "pos": "副詞",
-      "freq": 12
+      "freq": 15
     },
     "ないしは": {
       "surface": "ないしは",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "なお": {
       "surface": "なお",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "など": {
       "surface": "など",
       "pos": "副詞",
-      "freq": 20
+      "freq": 25
     },
     "などの": {
       "surface": "などの",
       "pos": "副詞",
-      "freq": 24
+      "freq": 30
     },
     "などは": {
       "surface": "などは",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
     },
     "などもしばしば": {
       "surface": "などもしばしば",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "なものに": {
       "surface": "なものに",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "なる": {
       "surface": "なる",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "に": {
       "surface": "に",
       "pos": "助詞",
-      "freq": 132
+      "freq": 168
     },
     "にあった": {
       "surface": "にあった",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "にあったが": {
       "surface": "にあったが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "において": {
       "surface": "において",
       "pos": "副詞",
-      "freq": 20
+      "freq": 25
     },
     "においては": {
       "surface": "においては",
       "pos": "副詞",
-      "freq": 12
+      "freq": 15
     },
     "にっぽんご": {
       "surface": "にっぽんご",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "について": {
       "surface": "について",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "についての": {
       "surface": "についての",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "については": {
       "surface": "については",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
     },
     "になっているのに": {
       "surface": "になっているのに",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "になり": {
       "surface": "になり",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "にのぼり": {
       "surface": "にのぼり",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "には": {
       "surface": "には",
       "pos": "助詞",
-      "freq": 16
+      "freq": 21
     },
     "にほんご": {
       "surface": "にほんご",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "によって": {
       "surface": "によって",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
+    },
+    "によりますと": {
+      "surface": "によりますと",
+      "pos": "副詞",
+      "freq": 1
     },
     "による": {
       "surface": "による",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "の": {
       "surface": "の",
       "pos": "助詞",
-      "freq": 442
+      "freq": 550
+    },
+    "のため": {
+      "surface": "のため",
+      "pos": "副詞",
+      "freq": 1
     },
     "のほか": {
       "surface": "のほか",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "のまま": {
       "surface": "のまま",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "のままである": {
       "surface": "のままである",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "のみが": {
       "surface": "のみが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "のみとした": {
       "surface": "のみとした",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "のみを": {
       "surface": "のみを",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "は": {
       "surface": "は",
       "pos": "助詞",
-      "freq": 136
+      "freq": 172
+    },
+    "はこの": {
+      "surface": "はこの",
+      "pos": "副詞",
+      "freq": 1
     },
     "はすべて": {
       "surface": "はすべて",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "はない": {
       "surface": "はない",
       "pos": "形容詞",
-      "freq": 4
+      "freq": 5
     },
     "はないが": {
       "surface": "はないが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "ば": {
       "surface": "ば",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "ばら": {
       "surface": "ばら",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "び": {
       "surface": "び",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
+    },
+    "への": {
+      "surface": "への",
+      "pos": "副詞",
+      "freq": 1
     },
     "また": {
       "surface": "また",
       "pos": "副詞",
-      "freq": 32
+      "freq": 41
     },
     "まっている": {
       "surface": "まっている",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
+    },
+    "までに": {
+      "surface": "までに",
+      "pos": "副詞",
+      "freq": 1
     },
     "までは": {
       "surface": "までは",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "まる": {
       "surface": "まる",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "み": {
       "surface": "み",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
     },
     "みおよび": {
       "surface": "みおよび",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "みで": {
       "surface": "みで",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "みに": {
       "surface": "みに",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "む": {
       "surface": "む",
       "pos": "動詞",
-      "freq": 12
+      "freq": 17
     },
     "め": {
       "surface": "め",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
     },
     "めている": {
       "surface": "めている",
       "pos": "動詞",
-      "freq": 8
+      "freq": 10
     },
     "める": {
       "surface": "める",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "も": {
       "surface": "も",
       "pos": "助詞",
-      "freq": 24
+      "freq": 30
     },
     "もあり": {
       "surface": "もあり",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "もある": {
       "surface": "もある",
       "pos": "動詞",
-      "freq": 8
+      "freq": 10
     },
     "もあるが": {
       "surface": "もあるが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "もかなりあるが": {
       "surface": "もかなりあるが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "もしくは": {
       "surface": "もしくは",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "もともと": {
       "surface": "もともと",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "や": {
       "surface": "や",
       "pos": "助詞",
-      "freq": 44
+      "freq": 57
+    },
+    "より": {
+      "surface": "より",
+      "pos": "助詞",
+      "freq": 1
     },
     "ら": {
       "surface": "ら",
       "pos": "副詞",
-      "freq": 8
+      "freq": 10
+    },
+    "らかにしています": {
+      "surface": "らかにしています",
+      "pos": "動詞",
+      "freq": 1
+    },
+    "らかにしました": {
+      "surface": "らかにしました",
+      "pos": "副詞",
+      "freq": 1
     },
     "らく": {
       "surface": "らく",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "らっぱ": {
       "surface": "らっぱ",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "られた": {
       "surface": "られた",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "られることなど": {
       "surface": "られることなど",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "られることなどが": {
       "surface": "られることなどが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "られることは": {
       "surface": "られることは",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "りんご": {
       "surface": "りんご",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "る": {
       "surface": "る",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "るにしたがって": {
       "surface": "るにしたがって",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "れい": {
       "surface": "れい",
       "pos": "形容詞",
-      "freq": 4
+      "freq": 5
     },
     "ろに": {
       "surface": "ろに",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "わずいまだないが": {
       "surface": "わずいまだないが",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "わせて": {
       "surface": "わせて",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "わる": {
       "surface": "わる",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "われている": {
       "surface": "われている",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "われることがほとんどである": {
       "surface": "われることがほとんどである",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "ゑ": {
       "surface": "ゑ",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "を": {
       "surface": "を",
       "pos": "助詞",
-      "freq": 172
+      "freq": 220
     },
     "をせずに": {
       "surface": "をせずに",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "ん": {
       "surface": "ん",
       "pos": "副詞",
-      "freq": 4
+      "freq": 5
     },
     "んでいる": {
       "surface": "んでいる",
       "pos": "動詞",
-      "freq": 4
+      "freq": 5
     },
     "アクセント": {
       "surface": "アクセント",
       "pos": "外来語",
-      "freq": 12
+      "freq": 15
     },
     "アジア": {
       "surface": "アジア",
       "pos": "外来語",
-      "freq": 8
+      "freq": 10
     },
     "アジア・": {
       "surface": "アジア・",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "アルタイ": {
       "surface": "アルタイ",
       "pos": "外来語",
-      "freq": 32
+      "freq": 40
+    },
+    "アレキサンダー・ボビン": {
+      "surface": "アレキサンダー・ボビン",
+      "pos": "外来語",
+      "freq": 1
     },
     "アンガウル": {
       "surface": "アンガウル",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "イ": {
       "surface": "イ",
@@ -1638,12 +1723,17 @@
     "インドネシア": {
       "surface": "インドネシア",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
+    },
+    "オランダ": {
+      "surface": "オランダ",
+      "pos": "外来語",
+      "freq": 1
     },
     "オーストラリア": {
       "surface": "オーストラリア",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "カラムシ": {
       "surface": "カラムシ",
@@ -1653,12 +1743,17 @@
     "ギリシャ": {
       "surface": "ギリシャ",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
+    },
+    "クルーズ": {
+      "surface": "クルーズ",
+      "pos": "外来語",
+      "freq": 1
     },
     "クレオール": {
       "surface": "クレオール",
       "pos": "外来語",
-      "freq": 8
+      "freq": 10
     },
     "ケ": {
       "surface": "ケ",
@@ -1668,7 +1763,12 @@
     "ゲート": {
       "surface": "ゲート",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
+    },
+    "スペイン": {
+      "surface": "スペイン",
+      "pos": "外来語",
+      "freq": 2
     },
     "セントレア": {
       "surface": "セントレア",
@@ -1678,132 +1778,142 @@
     "タイ": {
       "surface": "タイ",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "タイヤル": {
       "surface": "タイヤル",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "テレビ": {
       "surface": "テレビ",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "ドラマ": {
       "surface": "ドラマ",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "ハワイ": {
       "surface": "ハワイ",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
+    },
+    "ハンタウイルス": {
+      "surface": "ハンタウイルス",
+      "pos": "外来語",
+      "freq": 2
     },
     "パラオ": {
       "surface": "パラオ",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "ペルー": {
       "surface": "ペルー",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "マリアナ": {
       "surface": "マリアナ",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "モーラ": {
       "surface": "モーラ",
       "pos": "外来語",
-      "freq": 8
+      "freq": 10
     },
     "ラジオ": {
       "surface": "ラジオ",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "ラテン": {
       "surface": "ラテン",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
+    },
+    "ロイター": {
+      "surface": "ロイター",
+      "pos": "外来語",
+      "freq": 1
     },
     "ローマ": {
       "surface": "ローマ",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "・": {
       "surface": "・",
       "pos": "外来語",
-      "freq": 44
+      "freq": 55
     },
     "・パラオ・マーシャル": {
       "surface": "・パラオ・マーシャル",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "・パラグアイ": {
       "surface": "・パラグアイ",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "・ブラジル": {
       "surface": "・ブラジル",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "・ボリビア・ドミニカ": {
       "surface": "・ボリビア・ドミニカ",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "・ミクロネシア": {
       "surface": "・ミクロネシア",
       "pos": "外来語",
-      "freq": 4
+      "freq": 5
     },
     "一": {
       "surface": "一",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "一方": {
       "surface": "一方",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "一方言": {
       "surface": "一方言",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "一種": {
       "surface": "一種",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "一般": {
       "surface": "一般",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "一般的": {
       "surface": "一般的",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "一部住民": {
       "surface": "一部住民",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "一部分": {
       "surface": "一部分",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "丁目": {
       "surface": "丁目",
@@ -1813,12 +1923,12 @@
     "万人": {
       "surface": "万人",
       "pos": "名詞",
-      "freq": 32
+      "freq": 40
     },
     "万人以上": {
       "surface": "万人以上",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "三井町": {
       "surface": "三井町",
@@ -1843,12 +1953,12 @@
     "上": {
       "surface": "上",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "上位": {
       "surface": "上位",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "上大津町": {
       "surface": "上大津町",
@@ -1863,12 +1973,12 @@
     "上記": {
       "surface": "上記",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "下": {
       "surface": "下",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "下原": {
       "surface": "下原",
@@ -1883,7 +1993,7 @@
     "不明": {
       "surface": "不明",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "与論町": {
       "surface": "与論町",
@@ -1898,17 +2008,22 @@
     "世": {
       "surface": "世",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "世代": {
       "surface": "世代",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "世界": {
       "surface": "世界",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
+    },
+    "世紀": {
+      "surface": "世紀",
+      "pos": "名詞",
+      "freq": 1
     },
     "丘珠町": {
       "surface": "丘珠町",
@@ -1918,27 +2033,27 @@
     "両者": {
       "surface": "両者",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "中": {
       "surface": "中",
       "pos": "名詞",
-      "freq": 4
+      "freq": 6
     },
     "中南米": {
       "surface": "中南米",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "中央語": {
       "surface": "中央語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "中心": {
       "surface": "中心",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "中標津町": {
       "surface": "中標津町",
@@ -1948,27 +2063,37 @@
     "中流階級以上": {
       "surface": "中流階級以上",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "中華人民共和国": {
       "surface": "中華人民共和国",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "主": {
       "surface": "主",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "主語": {
       "surface": "主語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "乗": {
+      "surface": "乗",
+      "pos": "名詞",
+      "freq": 1
+    },
+    "乗客": {
+      "surface": "乗客",
+      "pos": "名詞",
+      "freq": 1
     },
     "事実上日本国内": {
       "surface": "事実上日本国内",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "五島市": {
       "surface": "五島市",
@@ -1978,82 +2103,92 @@
     "京都方言": {
       "surface": "京都方言",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "人": {
       "surface": "人",
       "pos": "名詞",
-      "freq": 12
+      "freq": 15
     },
     "人口": {
       "surface": "人口",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
+    },
+    "人女性": {
+      "surface": "人女性",
+      "pos": "名詞",
+      "freq": 1
     },
     "人数": {
       "surface": "人数",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "人物": {
       "surface": "人物",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "今日": {
       "surface": "今日",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "他": {
       "surface": "他",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "他多": {
       "surface": "他多",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "他言語": {
       "surface": "他言語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "付": {
       "surface": "付",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
+    },
+    "伊藤英人": {
+      "surface": "伊藤英人",
+      "pos": "名詞",
+      "freq": 1
     },
     "会話": {
       "surface": "会話",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "伴": {
       "surface": "伴",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "位以内": {
       "surface": "位以内",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "位置": {
       "surface": "位置",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "住": {
       "surface": "住",
       "pos": "名詞",
-      "freq": 4
+      "freq": 6
     },
     "住民": {
       "surface": "住民",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "佐渡市": {
       "surface": "佐渡市",
@@ -2078,37 +2213,47 @@
     "作成": {
       "surface": "作成",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "使": {
       "surface": "使",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "使用": {
       "surface": "使用",
       "pos": "名詞",
-      "freq": 12
+      "freq": 15
     },
     "使用人口": {
       "surface": "使用人口",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "保健当局": {
+      "surface": "保健当局",
+      "pos": "名詞",
+      "freq": 1
+    },
+    "保健相": {
+      "surface": "保健相",
+      "pos": "名詞",
+      "freq": 1
     },
     "修飾語": {
       "surface": "修飾語",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "億": {
       "surface": "億",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "元来": {
       "surface": "元来",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "元町": {
       "surface": "元町",
@@ -2118,22 +2263,22 @@
     "先住民": {
       "surface": "先住民",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "入": {
       "surface": "入",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "全": {
       "surface": "全",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "全体": {
       "surface": "全体",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "八重山郡": {
       "surface": "八重山郡",
@@ -2143,32 +2288,32 @@
     "公用文": {
       "surface": "公用文",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "公用語": {
       "surface": "公用語",
       "pos": "名詞",
-      "freq": 20
+      "freq": 25
     },
     "共和国": {
       "surface": "共和国",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "共通": {
       "surface": "共通",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "共通点": {
       "surface": "共通点",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "共通語": {
       "surface": "共通語",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "兵庫県": {
       "surface": "兵庫県",
@@ -2188,7 +2333,7 @@
     "出版": {
       "surface": "出版",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "出雲市": {
       "surface": "出雲市",
@@ -2198,32 +2343,32 @@
     "分": {
       "surface": "分",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "分岐": {
       "surface": "分岐",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "分布": {
       "surface": "分布",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "分野": {
       "surface": "分野",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "分類": {
       "surface": "分類",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "別言語": {
       "surface": "別言語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "利尻富士町": {
       "surface": "利尻富士町",
@@ -2238,47 +2383,47 @@
     "前": {
       "surface": "前",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "前後": {
       "surface": "前後",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "前提": {
       "surface": "前提",
       "pos": "名詞",
-      "freq": 12
+      "freq": 15
     },
     "割": {
       "surface": "割",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "加": {
       "surface": "加",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "助詞": {
       "surface": "助詞",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "労": {
       "surface": "労",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "勢力下": {
       "surface": "勢力下",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "北": {
       "surface": "北",
       "pos": "名詞",
-      "freq": 20
+      "freq": 21
     },
     "北中": {
       "surface": "北中",
@@ -2368,12 +2513,12 @@
     "区別": {
       "surface": "区別",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "医学": {
       "surface": "医学",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "千歳市": {
       "surface": "千歳市",
@@ -2395,10 +2540,15 @@
       "pos": "名詞",
       "freq": 5
     },
+    "半島日本語": {
+      "surface": "半島日本語",
+      "pos": "名詞",
+      "freq": 2
+    },
     "南洋諸島": {
       "surface": "南洋諸島",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "博多区": {
       "surface": "博多区",
@@ -2413,27 +2563,27 @@
     "占": {
       "surface": "占",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "原則": {
       "surface": "原則",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "原語": {
       "surface": "原語",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "参照": {
       "surface": "参照",
       "pos": "名詞",
-      "freq": 20
+      "freq": 26
     },
     "及": {
       "surface": "及",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "取香字上人塚": {
       "surface": "取香字上人塚",
@@ -2443,47 +2593,47 @@
     "受": {
       "surface": "受",
       "pos": "名詞",
-      "freq": 8
+      "freq": 11
     },
     "叙述": {
       "surface": "叙述",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "古": {
       "surface": "古",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "古代": {
       "surface": "古代",
       "pos": "名詞",
-      "freq": 4
+      "freq": 6
     },
     "古代日本語": {
       "surface": "古代日本語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "古来": {
       "surface": "古来",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "可能": {
       "surface": "可能",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "台湾": {
       "surface": "台湾",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "台湾総督府": {
       "surface": "台湾総督府",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "号": {
       "surface": "号",
@@ -2493,42 +2643,42 @@
     "各種法令": {
       "surface": "各種法令",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "合": {
       "surface": "合",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "同": {
       "surface": "同",
       "pos": "名詞",
-      "freq": 4
+      "freq": 7
     },
     "同一視": {
       "surface": "同一視",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "同一語根内": {
       "surface": "同一語根内",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "同法": {
       "surface": "同法",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "同系": {
       "surface": "同系",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "同系統": {
       "surface": "同系統",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "名取市": {
       "surface": "名取市",
@@ -2538,22 +2688,22 @@
     "名詞": {
       "surface": "名詞",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "向": {
       "surface": "向",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "否定": {
       "surface": "否定",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "含": {
       "surface": "含",
       "pos": "名詞",
-      "freq": 12
+      "freq": 16
     },
     "和泊町": {
       "surface": "和泊町",
@@ -2563,47 +2713,52 @@
     "和語": {
       "surface": "和語",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "唯一": {
       "surface": "唯一",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
+    },
+    "唱": {
+      "surface": "唱",
+      "pos": "名詞",
+      "freq": 1
     },
     "問": {
       "surface": "問",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "固有語": {
       "surface": "固有語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "国": {
       "surface": "国",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "国内": {
       "surface": "国内",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "国外": {
       "surface": "国外",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "国外移民": {
       "surface": "国外移民",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "国字": {
       "surface": "国字",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "国東市": {
       "surface": "国東市",
@@ -2613,7 +2768,7 @@
     "国語": {
       "surface": "国語",
       "pos": "名詞",
-      "freq": 20
+      "freq": 25
     },
     "国頭": {
       "surface": "国頭",
@@ -2623,27 +2778,32 @@
     "地位": {
       "surface": "地位",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
+    },
+    "地名": {
+      "surface": "地名",
+      "pos": "名詞",
+      "freq": 2
     },
     "地域": {
       "surface": "地域",
       "pos": "名詞",
-      "freq": 20
+      "freq": 25
     },
     "地域別": {
       "surface": "地域別",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "地域的": {
       "surface": "地域的",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "地方": {
       "surface": "地方",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "坂口": {
       "surface": "坂口",
@@ -2653,52 +2813,52 @@
     "型": {
       "surface": "型",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "基": {
       "surface": "基",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "基本": {
       "surface": "基本",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "基本的": {
       "surface": "基本的",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "基盤": {
       "surface": "基盤",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "基礎語彙": {
       "surface": "基礎語彙",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "場": {
       "surface": "場",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "場合": {
       "surface": "場合",
       "pos": "名詞",
-      "freq": 28
+      "freq": 35
     },
     "増大": {
       "surface": "増大",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "声": {
       "surface": "声",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "壱岐市": {
       "surface": "壱岐市",
@@ -2708,37 +2868,37 @@
     "変化": {
       "surface": "変化",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "外国人": {
       "surface": "外国人",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "外国向": {
       "surface": "外国向",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "外来語": {
       "surface": "外来語",
       "pos": "名詞",
-      "freq": 12
+      "freq": 15
     },
     "多": {
       "surface": "多",
       "pos": "名詞",
-      "freq": 20
+      "freq": 25
     },
     "多様": {
       "surface": "多様",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "多用": {
       "surface": "多用",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "多良間村": {
       "surface": "多良間村",
@@ -2763,12 +2923,12 @@
     "大和言葉": {
       "surface": "大和言葉",
       "pos": "名詞",
-      "freq": 16
+      "freq": 20
     },
     "大多数": {
       "surface": "大多数",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "大字犬井道": {
       "surface": "大字犬井道",
@@ -2823,12 +2983,12 @@
     "大韓民国": {
       "surface": "大韓民国",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "太平洋戦争": {
       "surface": "太平洋戦争",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "奥尻町": {
       "surface": "奥尻町",
@@ -2840,6 +3000,11 @@
       "pos": "名詞",
       "freq": 16
     },
+    "女性": {
+      "surface": "女性",
+      "pos": "名詞",
+      "freq": 2
+    },
     "女満別中央": {
       "surface": "女満別中央",
       "pos": "名詞",
@@ -2848,22 +3013,22 @@
     "始": {
       "surface": "始",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "子音": {
       "surface": "子音",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "子音連結": {
       "surface": "子音連結",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "字": {
       "surface": "字",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "字与那国": {
       "surface": "字与那国",
@@ -2883,7 +3048,7 @@
     "字幕": {
       "surface": "字幕",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "字白保": {
       "surface": "字白保",
@@ -2893,7 +3058,7 @@
     "字種": {
       "surface": "字種",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "字金長": {
       "surface": "字金長",
@@ -2908,42 +3073,42 @@
     "字音語": {
       "surface": "字音語",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "存在": {
       "surface": "存在",
       "pos": "名詞",
-      "freq": 20
+      "freq": 25
     },
     "孤立": {
       "surface": "孤立",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "学校教育": {
       "surface": "学校教育",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "学習": {
       "surface": "学習",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "学習者": {
       "surface": "学習者",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "学者": {
       "surface": "学者",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "学説": {
       "surface": "学説",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "安岐町": {
       "surface": "安岐町",
@@ -2953,12 +3118,12 @@
     "定": {
       "surface": "定",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "宜蘭": {
       "surface": "宜蘭",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "宮古郡": {
       "surface": "宮古郡",
@@ -3008,17 +3173,17 @@
     "対": {
       "surface": "対",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "対立": {
       "surface": "対立",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "対象": {
       "surface": "対象",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "小向": {
       "surface": "小向",
@@ -3028,17 +3193,17 @@
     "小説": {
       "surface": "小説",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "属": {
       "surface": "属",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "山": {
       "surface": "山",
       "pos": "名詞",
-      "freq": 25
+      "freq": 26
     },
     "山形県": {
       "surface": "山形県",
@@ -3133,7 +3298,7 @@
     "州": {
       "surface": "州",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "帯広市": {
       "surface": "帯広市",
@@ -3143,7 +3308,7 @@
     "帰国": {
       "surface": "帰国",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "常滑市": {
       "surface": "常滑市",
@@ -3153,22 +3318,22 @@
     "平仮名": {
       "surface": "平仮名",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "年当時": {
       "surface": "年当時",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "年調査": {
       "surface": "年調査",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "広": {
       "surface": "広",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "座間味村": {
       "surface": "座間味村",
@@ -3183,52 +3348,57 @@
     "強": {
       "surface": "強",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "当": {
       "surface": "当",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "形態": {
       "surface": "形態",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "形成": {
       "surface": "形成",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "待遇表現": {
       "surface": "待遇表現",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "後": {
       "surface": "後",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "後世": {
       "surface": "後世",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "微妙": {
       "surface": "微妙",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "性格": {
       "surface": "性格",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "意": {
       "surface": "意",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "意味": {
+      "surface": "意味",
+      "pos": "名詞",
+      "freq": 1
     },
     "愛知県": {
       "surface": "愛知県",
@@ -3240,6 +3410,11 @@
       "pos": "名詞",
       "freq": 10
     },
+    "感染": {
+      "surface": "感染",
+      "pos": "名詞",
+      "freq": 1
+    },
     "慶留間": {
       "surface": "慶留間",
       "pos": "名詞",
@@ -3248,7 +3423,7 @@
     "成田国際空港到着": {
       "surface": "成田国際空港到着",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "成田市": {
       "surface": "成田市",
@@ -3258,102 +3433,107 @@
     "手": {
       "surface": "手",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "手言葉": {
       "surface": "手言葉",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "抱": {
       "surface": "抱",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "拗音": {
       "surface": "拗音",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "持": {
       "surface": "持",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
+    },
+    "指": {
+      "surface": "指",
+      "pos": "名詞",
+      "freq": 1
     },
     "挙": {
       "surface": "挙",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "採用": {
       "surface": "採用",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "接触": {
       "surface": "接触",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "支持": {
       "surface": "支持",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "放送": {
       "surface": "放送",
       "pos": "名詞",
-      "freq": 16
+      "freq": 20
     },
     "教": {
       "surface": "教",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "教科": {
       "surface": "教科",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "敬語体系": {
       "surface": "敬語体系",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "数": {
       "surface": "数",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "文": {
       "surface": "文",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "文字": {
       "surface": "文字",
       "pos": "名詞",
-      "freq": 16
+      "freq": 20
     },
     "文法": {
       "surface": "文法",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "文法構造": {
       "surface": "文法構造",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "文法的": {
       "surface": "文法的",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "文言": {
       "surface": "文言",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "斐川町": {
       "surface": "斐川町",
@@ -3383,27 +3563,27 @@
     "新聞": {
       "surface": "新聞",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "方言": {
       "surface": "方言",
       "pos": "名詞",
-      "freq": 16
+      "freq": 20
     },
     "方言差": {
       "surface": "方言差",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "族": {
       "surface": "族",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "日常会話": {
       "surface": "日常会話",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "日応寺": {
       "surface": "日応寺",
@@ -3413,142 +3593,162 @@
     "日本": {
       "surface": "日本",
       "pos": "名詞",
-      "freq": 20
+      "freq": 25
     },
     "日本人": {
       "surface": "日本人",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "日本人同士": {
       "surface": "日本人同士",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "日本人移民": {
       "surface": "日本人移民",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "日本入国": {
       "surface": "日本入国",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "日本国内": {
       "surface": "日本国内",
       "pos": "名詞",
-      "freq": 20
+      "freq": 25
     },
     "日本国外": {
       "surface": "日本国外",
       "pos": "名詞",
-      "freq": 12
+      "freq": 15
     },
     "日本在住": {
       "surface": "日本在住",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "日本語": {
       "surface": "日本語",
       "pos": "名詞",
-      "freq": 144
+      "freq": 183
     },
     "日本語学習者": {
       "surface": "日本語学習者",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "日本語教育": {
       "surface": "日本語教育",
       "pos": "名詞",
-      "freq": 12
+      "freq": 15
     },
     "日本領": {
       "surface": "日本領",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "日琉": {
       "surface": "日琉",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "日琉祖語": {
       "surface": "日琉祖語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "日琉語族": {
       "surface": "日琉語族",
       "pos": "名詞",
-      "freq": 12
+      "freq": 15
     },
     "日系人": {
       "surface": "日系人",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "旧南洋庁": {
       "surface": "旧南洋庁",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "旧琉球王国領域": {
       "surface": "旧琉球王国領域",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "明": {
+      "surface": "明",
+      "pos": "名詞",
+      "freq": 2
     },
     "明治以来様": {
       "surface": "明治以来様",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "明治以降": {
       "surface": "明治以降",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "明治時代末": {
       "surface": "明治時代末",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "映画": {
       "surface": "映画",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "最": {
       "surface": "最",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "最大": {
       "surface": "最大",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "有力": {
       "surface": "有力",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "有声": {
       "surface": "有声",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "朝鮮半島": {
+      "surface": "朝鮮半島",
+      "pos": "名詞",
+      "freq": 2
+    },
+    "朝鮮半島中部以北": {
+      "surface": "朝鮮半島中部以北",
+      "pos": "名詞",
+      "freq": 1
     },
     "朝鮮語": {
       "surface": "朝鮮語",
       "pos": "名詞",
-      "freq": 16
+      "freq": 21
+    },
+    "朝鮮語同系説": {
+      "surface": "朝鮮語同系説",
+      "pos": "名詞",
+      "freq": 1
     },
     "本土方言": {
       "surface": "本土方言",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "札幌市": {
       "surface": "札幌市",
@@ -3558,17 +3758,17 @@
     "条": {
       "surface": "条",
       "pos": "名詞",
-      "freq": 12
+      "freq": 15
     },
     "東": {
       "surface": "東",
       "pos": "名詞",
-      "freq": 40
+      "freq": 41
     },
     "東京山": {
       "surface": "東京山",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "東京都": {
       "surface": "東京都",
@@ -3613,7 +3813,7 @@
     "東南": {
       "surface": "東南",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "東神楽町": {
       "surface": "東神楽町",
@@ -3628,37 +3828,42 @@
     "根拠": {
       "surface": "根拠",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "格": {
       "surface": "格",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "検査": {
+      "surface": "検査",
+      "pos": "名詞",
+      "freq": 1
     },
     "楽": {
       "surface": "楽",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "概要": {
       "surface": "概要",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "構成": {
       "surface": "構成",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "構成言語": {
       "surface": "構成言語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "構造": {
       "surface": "構造",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "標津郡": {
       "surface": "標津郡",
@@ -3668,62 +3873,67 @@
     "標準語": {
       "surface": "標準語",
       "pos": "名詞",
-      "freq": 12
+      "freq": 15
     },
     "横書": {
       "surface": "横書",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "機能": {
       "surface": "機能",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "機能語": {
       "surface": "機能語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "歓迎": {
       "surface": "歓迎",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "正確": {
       "surface": "正確",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "歴史的経緯": {
       "surface": "歴史的経緯",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "死亡": {
+      "surface": "死亡",
+      "pos": "名詞",
+      "freq": 1
     },
     "母語話者数": {
       "surface": "母語話者数",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "母音": {
       "surface": "母音",
       "pos": "名詞",
-      "freq": 16
+      "freq": 20
     },
     "母音調和": {
       "surface": "母音調和",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "比較": {
       "surface": "比較",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "江戸方言": {
       "surface": "江戸方言",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "沖洲": {
       "surface": "沖洲",
@@ -3788,32 +3998,32 @@
     "法令": {
       "surface": "法令",
       "pos": "名詞",
-      "freq": 16
+      "freq": 20
     },
     "法令上": {
       "surface": "法令上",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "法則性": {
       "surface": "法則性",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "法文": {
       "surface": "法文",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "注目": {
       "surface": "注目",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "注釈": {
       "surface": "注釈",
       "pos": "名詞",
-      "freq": 56
+      "freq": 70
     },
     "洲衛": {
       "surface": "洲衛",
@@ -3823,12 +4033,12 @@
     "活字文化振興法": {
       "surface": "活字文化振興法",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "流音": {
       "surface": "流音",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "浜": {
       "surface": "浜",
@@ -3848,62 +4058,67 @@
     "混": {
       "surface": "混",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "混種語": {
       "surface": "混種語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "湖山町": {
       "surface": "湖山町",
       "pos": "名詞",
       "freq": 16
     },
+    "満洲南部": {
+      "surface": "満洲南部",
+      "pos": "名詞",
+      "freq": 1
+    },
     "漢字": {
       "surface": "漢字",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "漢語": {
       "surface": "漢語",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "漫画": {
       "surface": "漫画",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "濁音": {
       "surface": "濁音",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "点": {
       "surface": "点",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "無": {
       "surface": "無",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "無声": {
       "surface": "無声",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "無声化母音": {
       "surface": "無声化母音",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "片仮名": {
       "surface": "片仮名",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "牧之原市": {
       "surface": "牧之原市",
@@ -3913,97 +4128,102 @@
     "特": {
       "surface": "特",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "特徴": {
       "surface": "特徴",
       "pos": "名詞",
-      "freq": 24
+      "freq": 30
     },
     "現代": {
       "surface": "現代",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "現代日本語": {
       "surface": "現代日本語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "現在": {
       "surface": "現在",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "現在州内": {
       "surface": "現在州内",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "理解": {
       "surface": "理解",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "琉球列島": {
       "surface": "琉球列島",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "琉球方言": {
       "surface": "琉球方言",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "琉球語": {
       "surface": "琉球語",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "琉球諸島": {
       "surface": "琉球諸島",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "琉球諸語": {
       "surface": "琉球諸語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "用": {
       "surface": "用",
       "pos": "名詞",
-      "freq": 28
+      "freq": 35
     },
     "由来": {
       "surface": "由来",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "画": {
       "surface": "画",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "留": {
       "surface": "留",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "異": {
       "surface": "異",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "症状": {
+      "surface": "症状",
+      "pos": "名詞",
+      "freq": 1
     },
     "発表": {
       "surface": "発表",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "発達": {
       "surface": "発達",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "益田市": {
       "surface": "益田市",
@@ -4013,22 +4233,22 @@
     "直接": {
       "surface": "直接",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "直音": {
       "surface": "直音",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "相違": {
       "surface": "相違",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "看板": {
       "surface": "看板",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "石垣市": {
       "surface": "石垣市",
@@ -4053,17 +4273,22 @@
     "確立": {
       "surface": "確立",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "確認": {
+      "surface": "確認",
+      "pos": "名詞",
+      "freq": 1
     },
     "示": {
       "surface": "示",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "礼": {
       "surface": "礼",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "神津島村": {
       "surface": "神津島村",
@@ -4123,32 +4348,32 @@
     "科学用語": {
       "surface": "科学用語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "称": {
       "surface": "称",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "移住者": {
       "surface": "移住者",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "移動": {
       "surface": "移動",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "種類": {
       "surface": "種類",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "立": {
       "surface": "立",
       "pos": "名詞",
-      "freq": 20
+      "freq": 25
     },
     "立長": {
       "surface": "立長",
@@ -4163,12 +4388,12 @@
     "節参照": {
       "surface": "節参照",
       "pos": "名詞",
-      "freq": 28
+      "freq": 35
     },
     "範囲": {
       "surface": "範囲",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "米岡": {
       "surface": "米岡",
@@ -4188,12 +4413,17 @@
     "系統": {
       "surface": "系統",
       "pos": "名詞",
-      "freq": 16
+      "freq": 20
+    },
+    "紀元": {
+      "surface": "紀元",
+      "pos": "名詞",
+      "freq": 1
     },
     "約": {
       "surface": "約",
       "pos": "名詞",
-      "freq": 36
+      "freq": 45
     },
     "紋別市": {
       "surface": "紋別市",
@@ -4203,37 +4433,37 @@
     "終": {
       "surface": "終",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "終結以前": {
       "surface": "終結以前",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "組": {
       "surface": "組",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "結果": {
       "surface": "結果",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "統治": {
       "surface": "統治",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "統計": {
       "surface": "統計",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "絵": {
       "surface": "絵",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "網走郡": {
       "surface": "網走郡",
@@ -4253,7 +4483,7 @@
     "縦書": {
       "surface": "縦書",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "美": {
       "surface": "美",
@@ -4268,7 +4498,7 @@
     "考": {
       "surface": "考",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "脇神": {
       "surface": "脇神",
@@ -4278,72 +4508,82 @@
     "膠着": {
       "surface": "膠着",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "膠着語": {
       "surface": "膠着語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "至": {
       "surface": "至",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "船": {
+      "surface": "船",
+      "pos": "名詞",
+      "freq": 1
     },
     "著": {
       "surface": "著",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "薔薇": {
       "surface": "薔薇",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "行": {
       "surface": "行",
       "pos": "名詞",
-      "freq": 16
+      "freq": 20
     },
     "表現": {
       "surface": "表現",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "表記": {
       "surface": "表記",
       "pos": "名詞",
-      "freq": 12
+      "freq": 15
     },
     "表記体系": {
       "surface": "表記体系",
       "pos": "名詞",
-      "freq": 16
+      "freq": 20
     },
     "表音文字": {
       "surface": "表音文字",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "被修飾語": {
       "surface": "被修飾語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "裁判所": {
       "surface": "裁判所",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "裁判所法": {
       "surface": "裁判所法",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "複数持": {
       "surface": "複数持",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "複数見": {
+      "surface": "複数見",
+      "pos": "名詞",
+      "freq": 1
     },
     "西": {
       "surface": "西",
@@ -4353,7 +4593,7 @@
     "西洋由来": {
       "surface": "西洋由来",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "西町": {
       "surface": "西町",
@@ -4363,137 +4603,142 @@
     "見": {
       "surface": "見",
       "pos": "名詞",
-      "freq": 16
+      "freq": 20
     },
     "規定": {
       "surface": "規定",
       "pos": "名詞",
-      "freq": 12
+      "freq": 15
     },
     "親族関係": {
       "surface": "親族関係",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "言葉": {
       "surface": "言葉",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "言語": {
       "surface": "言語",
       "pos": "名詞",
-      "freq": 32
+      "freq": 41
     },
     "言語連合": {
       "surface": "言語連合",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "言語類型論上": {
       "surface": "言語類型論上",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "訓読": {
       "surface": "訓読",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "記": {
       "surface": "記",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "記憶": {
       "surface": "記憶",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "記述": {
       "surface": "記述",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "記録": {
+      "surface": "記録",
+      "pos": "名詞",
+      "freq": 1
     },
     "訳": {
       "surface": "訳",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "証明": {
       "surface": "証明",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "話": {
       "surface": "話",
       "pos": "名詞",
-      "freq": 4
+      "freq": 6
     },
     "話者人口": {
       "surface": "話者人口",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "詳細": {
       "surface": "詳細",
       "pos": "名詞",
-      "freq": 12
+      "freq": 16
     },
     "認識": {
       "surface": "認識",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "語": {
       "surface": "語",
       "pos": "名詞",
-      "freq": 16
+      "freq": 20
     },
     "語尾": {
       "surface": "語尾",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "語彙": {
       "surface": "語彙",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "語彙的": {
       "surface": "語彙的",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "語族": {
       "surface": "語族",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "語族説": {
       "surface": "語族説",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "語種": {
       "surface": "語種",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "語順": {
       "surface": "語順",
       "pos": "名詞",
-      "freq": 16
+      "freq": 20
     },
     "語頭": {
       "surface": "語頭",
       "pos": "名詞",
-      "freq": 16
+      "freq": 20
     },
     "説": {
       "surface": "説",
       "pos": "名詞",
-      "freq": 8
+      "freq": 11
     },
     "調布市": {
       "surface": "調布市",
@@ -4503,32 +4748,37 @@
     "調査": {
       "surface": "調査",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "論拠": {
+      "surface": "論拠",
+      "pos": "名詞",
+      "freq": 1
     },
     "論文": {
       "surface": "論文",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "諸島": {
       "surface": "諸島",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "諸言語": {
       "surface": "諸言語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "諸語": {
       "surface": "諸語",
       "pos": "名詞",
-      "freq": 24
+      "freq": 30
     },
     "議論": {
       "surface": "議論",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "豊岡市": {
       "surface": "豊岡市",
@@ -4538,12 +4788,12 @@
     "象徴的": {
       "surface": "象徴的",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "貝": {
       "surface": "貝",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "赤江": {
       "surface": "赤江",
@@ -4553,7 +4803,7 @@
     "起源": {
       "surface": "起源",
       "pos": "名詞",
-      "freq": 4
+      "freq": 6
     },
     "輪島市": {
       "surface": "輪島市",
@@ -4563,37 +4813,47 @@
     "近": {
       "surface": "近",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "近世中期": {
       "surface": "近世中期",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "近世後期": {
       "surface": "近世後期",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "近代以降": {
       "surface": "近代以降",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "近縁": {
+      "surface": "近縁",
+      "pos": "名詞",
+      "freq": 1
     },
     "述語": {
       "surface": "述語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "通信": {
+      "surface": "通信",
+      "pos": "名詞",
+      "freq": 1
     },
     "連続": {
       "surface": "連続",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "連邦": {
       "surface": "連邦",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "那覇市": {
       "surface": "那覇市",
@@ -4608,7 +4868,7 @@
     "部族同士": {
       "surface": "部族同士",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "酒田市": {
       "surface": "酒田市",
@@ -4628,32 +4888,32 @@
     "閉音節": {
       "surface": "閉音節",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "開音節言語": {
       "surface": "開音節言語",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "間": {
       "surface": "間",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "関係": {
       "surface": "関係",
       "pos": "名詞",
-      "freq": 12
+      "freq": 16
     },
     "限": {
       "surface": "限",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "除": {
       "surface": "除",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "隠岐": {
       "surface": "隠岐",
@@ -4668,7 +4928,7 @@
     "青": {
       "surface": "青",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "青森市": {
       "surface": "青森市",
@@ -4688,52 +4948,62 @@
     "非常": {
       "surface": "非常",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "非日本語話者": {
       "surface": "非日本語話者",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
     },
     "面": {
       "surface": "面",
       "pos": "名詞",
-      "freq": 12
+      "freq": 15
     },
     "音": {
       "surface": "音",
       "pos": "名詞",
-      "freq": 12
+      "freq": 15
     },
     "音節": {
       "surface": "音節",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "音読": {
       "surface": "音読",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "音韻": {
       "surface": "音韻",
       "pos": "名詞",
-      "freq": 20
+      "freq": 26
     },
     "音韻対応": {
       "surface": "音韻対応",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "類似": {
+      "surface": "類似",
+      "pos": "名詞",
+      "freq": 1
     },
     "類似点": {
       "surface": "類似点",
       "pos": "名詞",
-      "freq": 8
+      "freq": 10
     },
     "類型": {
       "surface": "類型",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "飛行機": {
+      "surface": "飛行機",
+      "pos": "名詞",
+      "freq": 1
     },
     "香南町": {
       "surface": "香南町",
@@ -4745,10 +5015,20 @@
       "pos": "名詞",
       "freq": 16
     },
+    "高": {
+      "surface": "高",
+      "pos": "名詞",
+      "freq": 2
+    },
     "高低": {
       "surface": "高低",
       "pos": "名詞",
-      "freq": 4
+      "freq": 5
+    },
+    "高句麗地名": {
+      "surface": "高句麗地名",
+      "pos": "名詞",
+      "freq": 1
     },
     "高松市": {
       "surface": "高松市",
@@ -4793,1095 +5073,159 @@
     "（": {
       "surface": "（",
       "pos": "記号",
-      "freq": 132
+      "freq": 165
     },
     "（「": {
       "surface": "（「",
       "pos": "記号",
-      "freq": 32
+      "freq": 41
     },
     "（『": {
       "surface": "（『",
       "pos": "記号",
-      "freq": 8
+      "freq": 10
     },
     "）": {
       "surface": "）",
       "pos": "記号",
-      "freq": 84
+      "freq": 106
     },
     "）[": {
       "surface": "）[",
       "pos": "記号",
-      "freq": 4
+      "freq": 5
     },
     "）、": {
       "surface": "）、",
       "pos": "記号",
-      "freq": 8
+      "freq": 10
     },
     "）。": {
       "surface": "）。",
       "pos": "記号",
-      "freq": 40
+      "freq": 50
     },
     "）」": {
       "surface": "）」",
       "pos": "記号",
-      "freq": 8
+      "freq": 10
     },
     "）』": {
       "surface": "）』",
       "pos": "記号",
-      "freq": 12
+      "freq": 15
     },
     "）』『": {
       "surface": "）』『",
       "pos": "記号",
-      "freq": 12
+      "freq": 15
     },
     "＋": {
       "surface": "＋",
       "pos": "記号",
-      "freq": 4
+      "freq": 5
     }
   },
   "model": {
     "initial": {
-      "副詞": -1.4256867628305514,
-      "名詞": -0.39479264821739257,
-      "外来語": -3.371596911885865,
-      "記号": -2.9661318037777002
+      "副詞": -0.6931471805599453,
+      "外来語": -0.6931471805599453
     },
     "transition": {
       "副詞": {
-        "名詞": -0.5819215454497209,
-        "外来語": -4.624972813284271,
-        "記号": -0.8407831793660099
-      },
-      "助動詞": {
-        "記号": 0
+        "名詞": -0.5389965007326869,
+        "外来語": -2.4849066497880004,
+        "記号": -1.0986122886681098
       },
       "助詞": {
-        "名詞": -0.15239783099984386,
-        "外来語": -3.4087445872975386,
-        "数詞": -4.708027571427799,
-        "記号": -2.3101322986294286
+        "名詞": -0.40546510810816444,
+        "外来語": -1.791759469228055,
+        "記号": -1.791759469228055
       },
       "動詞": {
-        "名詞": -1.0573693301340605,
-        "数詞": -4.553876891600541,
-        "記号": -0.4430030274272296
+        "名詞": -0.6931471805599453,
+        "記号": -0.6931471805599453
       },
       "名詞": {
-        "副詞": -2.722915015687796,
-        "助動詞": -7.650168700845001,
-        "助詞": -2.0100362532652554,
-        "動詞": -3.1728318863667937,
-        "名詞": -0.8176759063634103,
-        "外来語": -3.5940453514430972,
-        "形容詞": -5.165262051057,
-        "数詞": -1.5690919950473314,
-        "記号": -2.589157199423678
+        "副詞": -0.7419373447293773,
+        "助詞": -0.8472978603872037,
+        "動詞": -2.3513752571634776
       },
       "外来語": {
-        "副詞": -3.1218141120250698,
-        "助詞": -2.2055233801509146,
-        "動詞": -4.50810847314496,
-        "名詞": -0.6421294062182209,
-        "数詞": -1.4170660197866443,
-        "記号": -2.716349003916905
-      },
-      "形容詞": {
-        "名詞": -1.6094379124341003,
-        "記号": -0.2231435513142097
-      },
-      "数詞": {
-        "助詞": -6.651571873589727,
-        "名詞": -0.4694869668730953,
-        "外来語": -6.651571873589727,
-        "記号": -0.9886113934537812
+        "副詞": -1.9459101490553135,
+        "助詞": -0.8472978603872037,
+        "名詞": -0.8472978603872037
       },
       "記号": {
-        "副詞": -2.523643137817234,
-        "助動詞": -6.394844148725125,
-        "助詞": -2.705964694611189,
-        "動詞": -4.60308467949707,
-        "名詞": -1.2768503363083699,
-        "外来語": -3.561630804668909,
-        "形容詞": -5.2962318600570155,
-        "数詞": -0.6398933874945245,
-        "記号": -6.394844148725125
+        "名詞": -0.916290731874155,
+        "外来語": -0.5108256237659907
       }
     },
     "emission": {
       "副詞": {
-        "あお": -5.318119993844216,
-        "あるいは": -4.624972813284271,
-        "あを": -5.318119993844216,
-        "いずれも": -5.318119993844216,
-        "いて": -5.318119993844216,
-        "いので": -5.318119993844216,
-        "いられ": -5.318119993844216,
-        "いることが": -5.318119993844216,
-        "うなど": -5.318119993844216,
-        "えられることが": -5.318119993844216,
-        "および": -3.9318256327243257,
-        "かったが": -5.318119993844216,
-        "かつての": -5.318119993844216,
-        "かつては": -5.318119993844216,
-        "かひ": -5.318119993844216,
-        "があった": -5.318119993844216,
-        "があり": -4.624972813284271,
-        "がかつて": -5.318119993844216,
-        "きと": -5.318119993844216,
-        "きのどちらでも": -5.318119993844216,
-        "くの": -4.624972813284271,
-        "くは": -5.318119993844216,
-        "け": -4.624972813284271,
-        "けた": -5.318119993844216,
-        "けたり": -5.318119993844216,
-        "けに": -5.318119993844216,
-        "この": -5.318119993844216,
-        "このような": -5.318119993844216,
-        "これらのことから": -5.318119993844216,
-        "ごとに": -5.318119993844216,
-        "さ": -5.318119993844216,
-        "さらに": -5.318119993844216,
-        "され": -4.624972813284271,
-        "された": -5.318119993844216,
-        "されていないことなどから": -5.318119993844216,
-        "されており": -4.624972813284271,
-        "されてきた": -5.318119993844216,
-        "されてきたが": -5.318119993844216,
-        "されるなど": -5.318119993844216,
-        "されるものも": -5.318119993844216,
-        "ざった": -5.318119993844216,
-        "し": -4.624972813284271,
-        "しかし": -5.318119993844216,
-        "しかないなど": -5.318119993844216,
-        "した": -3.9318256327243257,
-        "して": -5.318119993844216,
-        "していないが": -5.318119993844216,
-        "しりとりで": -5.318119993844216,
-        "すためには": -5.318119993844216,
-        "するが": -5.318119993844216,
-        "することが": -4.219507705176107,
-        "することを": -5.318119993844216,
-        "するとされるそれぞれの": -5.318119993844216,
-        "せず": -5.318119993844216,
-        "そして": -5.318119993844216,
-        "その": -3.9318256327243257,
-        "それらの": -5.318119993844216,
-        "それらは": -5.318119993844216,
-        "ただし": -5.318119993844216,
-        "たないこと": -4.624972813284271,
-        "だが": -5.318119993844216,
-        "だった": -5.318119993844216,
-        "っ": -5.318119993844216,
-        "っておらず": -5.318119993844216,
-        "つけにくいのはこのため": -5.318119993844216,
-        "つため": -5.318119993844216,
-        "つとして": -5.318119993844216,
-        "づいて": -5.318119993844216,
-        "て": -4.624972813284271,
-        "てたりしてから": -5.318119993844216,
-        "てに": -5.318119993844216,
-        "であるが": -5.318119993844216,
-        "であることが": -5.318119993844216,
-        "でも": -3.9318256327243257,
-        "といった": -5.318119993844216,
-        "とされ": -5.318119993844216,
-        "とし": -4.624972813284271,
-        "として": -3.2386784521643803,
-        "としており": -5.318119993844216,
-        "との": -4.219507705176107,
-        "とまとめて": -5.318119993844216,
-        "とりわけ": -5.318119993844216,
-        "どうしの": -5.318119993844216,
-        "どれ": -5.318119993844216,
-        "ないし": -4.219507705176107,
-        "ないしは": -5.318119993844216,
-        "なお": -5.318119993844216,
-        "など": -3.708682081410116,
-        "などの": -3.5263605246161616,
-        "などは": -4.624972813284271,
-        "などもしばしば": -5.318119993844216,
-        "なものに": -5.318119993844216,
-        "にあった": -5.318119993844216,
-        "にあったが": -5.318119993844216,
-        "において": -3.708682081410116,
-        "においては": -4.219507705176107,
-        "にっぽんご": -5.318119993844216,
-        "について": -5.318119993844216,
-        "についての": -5.318119993844216,
-        "については": -4.624972813284271,
-        "になっているのに": -5.318119993844216,
-        "になり": -5.318119993844216,
-        "にのぼり": -5.318119993844216,
-        "にほんご": -5.318119993844216,
-        "によって": -4.624972813284271,
-        "のほか": -5.318119993844216,
-        "のまま": -5.318119993844216,
-        "のみが": -5.318119993844216,
-        "のみとした": -5.318119993844216,
-        "のみを": -5.318119993844216,
-        "はすべて": -5.318119993844216,
-        "はないが": -5.318119993844216,
-        "ば": -5.318119993844216,
-        "ばら": -5.318119993844216,
-        "び": -5.318119993844216,
-        "また": -3.2386784521643803,
-        "までは": -5.318119993844216,
-        "み": -4.624972813284271,
-        "みおよび": -5.318119993844216,
-        "みで": -5.318119993844216,
-        "みに": -5.318119993844216,
-        "め": -4.624972813284271,
-        "もあり": -5.318119993844216,
-        "もあるが": -5.318119993844216,
-        "もかなりあるが": -5.318119993844216,
-        "もしくは": -5.318119993844216,
-        "もともと": -5.318119993844216,
-        "ら": -4.624972813284271,
-        "らっぱ": -5.318119993844216,
-        "られた": -5.318119993844216,
-        "られることなど": -5.318119993844216,
-        "られることなどが": -5.318119993844216,
-        "られることは": -5.318119993844216,
-        "りんご": -5.318119993844216,
-        "るにしたがって": -5.318119993844216,
-        "ろに": -5.318119993844216,
-        "わずいまだないが": -5.318119993844216,
-        "わせて": -5.318119993844216,
-        "ゑ": -5.318119993844216,
-        "をせずに": -5.318119993844216,
-        "ん": -5.318119993844216
-      },
-      "助動詞": {
-        "させる": -0.6931471805599453,
-        "だ": -0.6931471805599453
+        "けていると": -2.4849066497880004,
+        "され": -2.4849066497880004,
+        "した": -2.4849066497880004,
+        "じ": -1.791759469228055,
+        "っていたと": -2.4849066497880004,
+        "によりますと": -2.4849066497880004,
+        "のため": -2.4849066497880004,
+        "はこの": -2.4849066497880004,
+        "への": -2.4849066497880004,
+        "また": -2.4849066497880004,
+        "らかにしました": -2.4849066497880004
       },
       "助詞": {
-        "か": -5.806639860095909,
-        "から": -5.113492679535963,
-        "が": -2.169053700369523,
-        "って": -5.806639860095909,
-        "で": -3.241690502634372,
-        "では": -3.1675825304806504,
-        "と": -3.0985896589936988,
-        "とは": -5.806639860095909,
-        "な": -4.014880390867853,
-        "に": -2.3101322986294286,
-        "には": -4.420345498976018,
-        "の": -1.1016243391381013,
-        "は": -2.2802793354797473,
-        "も": -4.014880390867853,
-        "や": -3.4087445872975386,
-        "を": -2.0454397444023464
+        "が": -1.3862943611198906,
+        "と": -1.791759469228055,
+        "に": -1.791759469228055,
+        "の": -1.3862943611198906,
+        "は": -2.4849066497880004,
+        "を": -2.4849066497880004
       },
       "動詞": {
-        "いられる": -3.8607297110405954,
-        "いられることがある": -4.553876891600541,
-        "いる": -3.8607297110405954,
-        "う": -4.553876891600541,
-        "えられている": -3.8607297110405954,
-        "える": -4.553876891600541,
-        "がある": -3.455264602932431,
-        "がいる": -4.553876891600541,
-        "がみられる": -4.553876891600541,
-        "く": -3.1675825304806504,
-        "くなっているという": -4.553876891600541,
-        "けられる": -4.553876891600541,
-        "げられる": -4.553876891600541,
-        "させるのでなく": -4.553876891600541,
-        "されている": -4.553876891600541,
-        "されているものもある": -4.553876891600541,
-        "される": -2.474435349920705,
-        "している": -3.455264602932431,
-        "じくする": -4.553876891600541,
-        "す": -3.8607297110405954,
-        "する": -2.0689702418125404,
-        "するとする": -4.553876891600541,
-        "だけでなく": -3.8607297110405954,
-        "っている": -4.553876891600541,
-        "つ": -3.8607297110405954,
-        "づけにされる": -4.553876891600541,
-        "である": -2.762117422372486,
-        "であるとみなす": -4.553876891600541,
-        "という": -3.8607297110405954,
-        "とされている": -3.455264602932431,
-        "とされる": -4.553876891600541,
-        "とする": -3.8607297110405954,
-        "となっている": -3.1675825304806504,
-        "なる": -4.553876891600541,
-        "による": -4.553876891600541,
-        "のままである": -4.553876891600541,
-        "まっている": -4.553876891600541,
-        "まる": -4.553876891600541,
-        "む": -3.455264602932431,
-        "めている": -3.8607297110405954,
-        "める": -4.553876891600541,
-        "もある": -3.8607297110405954,
-        "らく": -4.553876891600541,
-        "る": -4.553876891600541,
-        "わる": -4.553876891600541,
-        "われている": -4.553876891600541,
-        "われることがほとんどである": -4.553876891600541,
-        "んでいる": -4.553876891600541
+        "む": -0.6931471805599453,
+        "らかにしています": -0.6931471805599453
       },
       "名詞": {
-        "一": -7.650168700845001,
-        "一方": -7.650168700845001,
-        "一方言": -7.650168700845001,
-        "一種": -6.957021520285055,
-        "一般": -7.650168700845001,
-        "一般的": -7.650168700845001,
-        "一部住民": -7.650168700845001,
-        "一部分": -7.650168700845001,
-        "丁目": -4.605646263121577,
-        "万人": -5.570727159165164,
-        "万人以上": -7.650168700845001,
-        "三井町": -5.165262051057,
-        "三沢字下沢": -6.26387433972511,
-        "三沢市": -6.26387433972511,
-        "上": -7.650168700845001,
-        "上位": -6.957021520285055,
-        "上大津町": -6.26387433972511,
-        "上川郡": -6.26387433972511,
-        "上記": -7.650168700845001,
-        "下": -7.650168700845001,
-        "下原": -5.570727159165164,
-        "不明": -7.650168700845001,
-        "与論町": -6.26387433972511,
-        "与那国町": -5.570727159165164,
-        "世": -6.957021520285055,
-        "世代": -7.650168700845001,
-        "世界": -6.957021520285055,
-        "丘珠町": -6.0407307884109,
-        "両者": -7.650168700845001,
-        "中": -7.650168700845001,
-        "中南米": -7.650168700845001,
-        "中央語": -7.650168700845001,
-        "中心": -6.957021520285055,
-        "中標津町": -6.26387433972511,
-        "中流階級以上": -7.650168700845001,
-        "中華人民共和国": -7.650168700845001,
-        "主": -6.957021520285055,
-        "主語": -7.650168700845001,
-        "事実上日本国内": -7.650168700845001,
-        "五島市": -6.26387433972511,
-        "京都方言": -7.650168700845001,
-        "人": -6.5515564121768906,
-        "人口": -6.957021520285055,
-        "人数": -7.650168700845001,
-        "人物": -7.650168700845001,
-        "今日": -7.650168700845001,
-        "他": -6.957021520285055,
-        "他多": -7.650168700845001,
-        "他言語": -7.650168700845001,
-        "付": -6.957021520285055,
-        "会話": -7.650168700845001,
-        "伴": -7.650168700845001,
-        "位以内": -7.650168700845001,
-        "位置": -6.957021520285055,
-        "住": -7.650168700845001,
-        "住民": -7.650168700845001,
-        "佐渡市": -5.570727159165164,
-        "佐賀市": -5.570727159165164,
-        "佐賀県": -5.570727159165164,
-        "作成": -7.650168700845001,
-        "使": -7.650168700845001,
-        "使用": -6.5515564121768906,
-        "使用人口": -7.650168700845001,
-        "修飾語": -6.957021520285055,
-        "億": -7.650168700845001,
-        "元来": -7.650168700845001,
-        "元町": -6.26387433972511,
-        "先住民": -7.650168700845001,
-        "入": -7.650168700845001,
-        "全": -7.650168700845001,
-        "全体": -7.650168700845001,
-        "八重山郡": -5.570727159165164,
-        "公用文": -6.957021520285055,
-        "公用語": -6.0407307884109,
-        "共和国": -7.650168700845001,
-        "共通": -6.957021520285055,
-        "共通点": -6.957021520285055,
-        "共通語": -6.957021520285055,
-        "兵庫県": -6.26387433972511,
-        "内田町": -5.570727159165164,
-        "出版": -6.957021520285055,
-        "出雲市": -6.26387433972511,
-        "分": -6.957021520285055,
-        "分岐": -7.650168700845001,
-        "分布": -6.957021520285055,
-        "分野": -7.650168700845001,
-        "分類": -6.957021520285055,
-        "別言語": -7.650168700845001,
-        "利尻富士町": -5.570727159165164,
-        "利尻郡": -5.570727159165164,
-        "前": -7.650168700845001,
-        "前後": -7.650168700845001,
-        "前提": -6.5515564121768906,
-        "割": -7.650168700845001,
-        "加": -7.650168700845001,
-        "助詞": -7.650168700845001,
-        "労": -7.650168700845001,
-        "勢力下": -7.650168700845001,
-        "北": -6.0407307884109,
-        "北中": -6.26387433972511,
-        "北区": -5.6352656803027354,
-        "北区日応寺": -6.146091304068726,
-        "北大東村": -6.7338779689708455,
-        "北大東村字南": -7.244703592736836,
-        "北海道": -3.268142066171119,
-        "北秋田市": -5.570727159165164,
-        "区別": -7.650168700845001,
-        "医学": -7.650168700845001,
-        "千歳市": -4.317964190669796,
-        "千葉県": -4.317964190669796,
-        "南洋諸島": -7.650168700845001,
-        "博多区": -6.7338779689708455,
-        "博多区大字青木": -7.244703592736836,
-        "占": -6.957021520285055,
-        "原則": -7.650168700845001,
-        "原語": -6.957021520285055,
-        "参照": -6.0407307884109,
-        "及": -6.957021520285055,
-        "取香字上人塚": -6.26387433972511,
-        "受": -6.957021520285055,
-        "叙述": -7.650168700845001,
-        "古": -6.957021520285055,
-        "古代": -7.650168700845001,
-        "古代日本語": -7.650168700845001,
-        "古来": -7.650168700845001,
-        "可能": -6.957021520285055,
-        "台湾": -6.957021520285055,
-        "台湾総督府": -7.650168700845001,
-        "号": -5.991940624241468,
-        "各種法令": -7.650168700845001,
-        "合": -7.650168700845001,
-        "同": -7.650168700845001,
-        "同一視": -7.650168700845001,
-        "同一語根内": -7.650168700845001,
-        "同法": -6.957021520285055,
-        "同系": -7.650168700845001,
-        "同系統": -7.650168700845001,
-        "名取市": -6.26387433972511,
-        "名詞": -7.650168700845001,
-        "向": -7.650168700845001,
-        "否定": -7.650168700845001,
-        "含": -6.5515564121768906,
-        "和泊町": -5.570727159165164,
-        "和語": -6.957021520285055,
-        "唯一": -6.957021520285055,
-        "問": -7.650168700845001,
-        "固有語": -7.650168700845001,
-        "国": -6.957021520285055,
-        "国内": -7.650168700845001,
-        "国外": -6.957021520285055,
-        "国外移民": -7.650168700845001,
-        "国字": -7.650168700845001,
-        "国東市": -5.570727159165164,
-        "国語": -6.0407307884109,
-        "国頭": -5.570727159165164,
-        "地位": -6.957021520285055,
-        "地域": -6.0407307884109,
-        "地域別": -7.650168700845001,
-        "地域的": -7.650168700845001,
-        "地方": -7.650168700845001,
-        "坂口": -6.26387433972511,
-        "型": -6.957021520285055,
-        "基": -7.650168700845001,
-        "基本": -7.650168700845001,
-        "基本的": -7.650168700845001,
-        "基盤": -7.650168700845001,
-        "基礎語彙": -7.650168700845001,
-        "場": -7.650168700845001,
-        "場合": -5.704258551789687,
-        "増大": -7.650168700845001,
-        "声": -7.650168700845001,
-        "壱岐市": -6.26387433972511,
-        "変化": -6.957021520285055,
-        "外国人": -7.650168700845001,
-        "外国向": -7.650168700845001,
-        "外来語": -6.5515564121768906,
-        "多": -6.0407307884109,
-        "多様": -7.650168700845001,
-        "多用": -7.650168700845001,
-        "多良間村": -6.7338779689708455,
-        "多良間村字仲筋": -7.244703592736836,
-        "大分県": -5.570727159165164,
-        "大和言葉": -6.26387433972511,
-        "大多数": -7.650168700845001,
-        "大字犬井道": -5.570727159165164,
-        "大字青木": -6.7338779689708455,
-        "大島町": -6.26387433972511,
-        "大島郡": -5.165262051057,
-        "大田区": -6.7338779689708455,
-        "大田区羽田空港": -7.244703592736836,
-        "大空町": -5.570727159165164,
-        "大谷字小谷": -5.165262051057,
-        "大阪府": -4.877579978605219,
-        "大韓民国": -7.650168700845001,
-        "太平洋戦争": -7.650168700845001,
-        "奥尻町": -6.26387433972511,
-        "奥尻郡": -6.26387433972511,
-        "女満別中央": -5.570727159165164,
-        "始": -7.650168700845001,
-        "子音": -7.650168700845001,
-        "子音連結": -7.650168700845001,
-        "字": -6.957021520285055,
-        "字与那国": -5.570727159165164,
-        "字仲筋": -6.7338779689708455,
-        "字南": -6.7338779689708455,
-        "字幕": -7.650168700845001,
-        "字白保": -6.26387433972511,
-        "字種": -7.650168700845001,
-        "字金長": -6.7338779689708455,
-        "字鏡水": -4.877579978605219,
-        "字音語": -6.957021520285055,
-        "存在": -6.0407307884109,
-        "孤立": -7.650168700845001,
-        "学校教育": -6.957021520285055,
-        "学習": -7.650168700845001,
-        "学習者": -6.957021520285055,
-        "学者": -7.650168700845001,
-        "学説": -7.650168700845001,
-        "安岐町": -5.570727159165164,
-        "定": -7.650168700845001,
-        "宜蘭": -7.650168700845001,
-        "宮古郡": -6.26387433972511,
-        "宮城県": -6.26387433972511,
-        "宮崎市": -6.26387433972511,
-        "宮崎県": -6.26387433972511,
-        "富山市": -6.26387433972511,
-        "富山県": -6.26387433972511,
-        "対": -7.650168700845001,
-        "対立": -7.650168700845001,
-        "対象": -7.650168700845001,
-        "小向": -6.26387433972511,
-        "小説": -7.650168700845001,
-        "属": -6.957021520285055,
-        "山": -5.81758723709669,
-        "山形県": -5.570727159165164,
-        "岡": -6.26387433972511,
-        "岡山市": -5.165262051057,
-        "岡山県": -5.165262051057,
-        "岩井": -6.26387433972511,
-        "岬町": -6.26387433972511,
-        "岱": -5.2987934436815225,
-        "島": -5.991940624241468,
-        "島尻郡": -4.877579978605219,
-        "島根県": -4.877579978605219,
-        "島町": -6.26387433972511,
-        "島町岬町": -7.427025149530791,
-        "川副町": -5.570727159165164,
-        "州": -7.650168700845001,
-        "帯広市": -6.26387433972511,
-        "帰国": -7.650168700845001,
-        "常滑市": -5.570727159165164,
-        "平仮名": -7.650168700845001,
-        "年当時": -7.650168700845001,
-        "年調査": -7.650168700845001,
-        "広": -6.957021520285055,
-        "座間味村": -6.0407307884109,
-        "強": -7.650168700845001,
-        "当": -6.957021520285055,
-        "形態": -7.650168700845001,
-        "形成": -6.957021520285055,
-        "待遇表現": -6.957021520285055,
-        "後": -7.650168700845001,
-        "後世": -7.650168700845001,
-        "微妙": -7.650168700845001,
-        "性格": -7.650168700845001,
-        "意": -7.650168700845001,
-        "愛知県": -5.570727159165164,
-        "愛知県常滑市": -6.7338779689708455,
-        "慶留間": -6.0407307884109,
-        "成田国際空港到着": -7.650168700845001,
-        "成田市": -4.317964190669796,
-        "手": -6.957021520285055,
-        "手言葉": -7.650168700845001,
-        "抱": -7.650168700845001,
-        "拗音": -7.650168700845001,
-        "持": -6.957021520285055,
-        "挙": -7.650168700845001,
-        "採用": -7.650168700845001,
-        "接触": -7.650168700845001,
-        "支持": -7.650168700845001,
-        "放送": -6.26387433972511,
-        "教": -7.650168700845001,
-        "教科": -7.650168700845001,
-        "敬語体系": -7.650168700845001,
-        "数": -7.650168700845001,
-        "文": -7.650168700845001,
-        "文字": -6.26387433972511,
-        "文法": -7.650168700845001,
-        "文法構造": -7.650168700845001,
-        "文法的": -6.957021520285055,
-        "文言": -7.650168700845001,
-        "斐川町": -6.26387433972511,
-        "新潟市": -5.570727159165164,
-        "新潟県": -4.877579978605219,
-        "新聞": -7.650168700845001,
-        "方言": -6.26387433972511,
-        "方言差": -7.650168700845001,
-        "族": -7.650168700845001,
-        "日常会話": -7.650168700845001,
-        "日応寺": -5.6352656803027354,
-        "日本": -6.0407307884109,
-        "日本人": -6.957021520285055,
-        "日本人同士": -7.650168700845001,
-        "日本人移民": -7.650168700845001,
-        "日本入国": -7.650168700845001,
-        "日本国内": -6.0407307884109,
-        "日本国外": -6.5515564121768906,
-        "日本在住": -7.650168700845001,
-        "日本語": -4.066649762388891,
-        "日本語学習者": -6.957021520285055,
-        "日本語教育": -6.5515564121768906,
-        "日本領": -6.957021520285055,
-        "日琉": -7.650168700845001,
-        "日琉祖語": -7.650168700845001,
-        "日琉語族": -6.5515564121768906,
-        "日系人": -7.650168700845001,
-        "旧南洋庁": -7.650168700845001,
-        "旧琉球王国領域": -7.650168700845001,
-        "明治以来様": -7.650168700845001,
-        "明治以降": -7.650168700845001,
-        "明治時代末": -7.650168700845001,
-        "映画": -6.957021520285055,
-        "最": -7.650168700845001,
-        "最大": -7.650168700845001,
-        "有力": -7.650168700845001,
-        "有声": -7.650168700845001,
-        "朝鮮語": -6.26387433972511,
-        "本土方言": -7.650168700845001,
-        "札幌市": -5.570727159165164,
-        "条": -6.5515564121768906,
-        "東": -5.347583607850955,
-        "東京山": -7.650168700845001,
-        "東京都": -4.877579978605219,
-        "東区": -5.347583607850955,
-        "東区丘珠町": -6.5515564121768906,
-        "東区松浜町": -6.5515564121768906,
-        "東南": -7.650168700845001,
-        "東神楽町": -6.26387433972511,
-        "松浜町": -6.0407307884109,
-        "根拠": -6.957021520285055,
-        "格": -7.650168700845001,
-        "楽": -7.650168700845001,
-        "概要": -7.650168700845001,
-        "構成": -7.650168700845001,
-        "構成言語": -7.650168700845001,
-        "構造": -7.650168700845001,
-        "標津郡": -6.26387433972511,
-        "標準語": -6.5515564121768906,
-        "横書": -7.650168700845001,
-        "機能": -7.650168700845001,
-        "機能語": -7.650168700845001,
-        "歓迎": -7.650168700845001,
-        "正確": -7.650168700845001,
-        "歴史的経緯": -7.650168700845001,
-        "母語話者数": -7.650168700845001,
-        "母音": -6.26387433972511,
-        "母音調和": -6.957021520285055,
-        "比較": -7.650168700845001,
-        "江戸方言": -7.650168700845001,
-        "沖洲": -6.26387433972511,
-        "沖縄県": -3.7789676899371094,
-        "泉佐野市": -4.877579978605219,
-        "泉州空港北": -4.877579978605219,
-        "泉町": -6.26387433972511,
-        "法令": -6.26387433972511,
-        "法令上": -7.650168700845001,
-        "法則性": -7.650168700845001,
-        "法文": -7.650168700845001,
-        "注目": -7.650168700845001,
-        "注釈": -5.011111371229742,
-        "洲衛": -5.165262051057,
-        "活字文化振興法": -7.650168700845001,
-        "流音": -6.957021520285055,
-        "浜": -6.7338779689708455,
-        "浜中村": -6.0407307884109,
-        "浜中村東": -6.5515564121768906,
-        "混": -7.650168700845001,
-        "混種語": -7.650168700845001,
-        "湖山町": -6.26387433972511,
-        "漢字": -6.957021520285055,
-        "漢語": -6.957021520285055,
-        "漫画": -7.650168700845001,
-        "濁音": -7.650168700845001,
-        "点": -6.957021520285055,
-        "無": -7.650168700845001,
-        "無声": -7.650168700845001,
-        "無声化母音": -7.650168700845001,
-        "片仮名": -7.650168700845001,
-        "牧之原市": -6.26387433972511,
-        "特": -7.650168700845001,
-        "特徴": -5.858409231616945,
-        "現代": -7.650168700845001,
-        "現代日本語": -7.650168700845001,
-        "現在": -6.957021520285055,
-        "現在州内": -7.650168700845001,
-        "理解": -7.650168700845001,
-        "琉球列島": -7.650168700845001,
-        "琉球方言": -7.650168700845001,
-        "琉球語": -6.957021520285055,
-        "琉球諸島": -7.650168700845001,
-        "琉球諸語": -7.650168700845001,
-        "用": -5.704258551789687,
-        "由来": -7.650168700845001,
-        "画": -7.650168700845001,
-        "留": -7.650168700845001,
-        "異": -7.650168700845001,
-        "発表": -7.650168700845001,
-        "発達": -7.650168700845001,
-        "益田市": -5.570727159165164,
-        "直接": -7.650168700845001,
-        "直音": -7.650168700845001,
-        "相違": -6.957021520285055,
-        "看板": -7.650168700845001,
-        "石垣市": -6.26387433972511,
-        "石川県": -5.165262051057,
-        "石川県輪島市三井町洲衛": -6.328412860862681,
-        "石田町": -6.26387433972511,
-        "確立": -7.650168700845001,
-        "示": -6.957021520285055,
-        "礼": -7.650168700845001,
-        "神津島村": -6.7338779689708455,
-        "神津島村字金長": -7.244703592736836,
-        "福岡市": -6.26387433972511,
-        "福岡県": -6.26387433972511,
-        "福岡県福岡市博多区大字青木": -7.427025149530791,
-        "秋": -6.26387433972511,
-        "秋津": -5.570727159165164,
-        "秋田市": -5.165262051057,
-        "秋田県": -4.654436427291009,
-        "秋田県北秋田市脇神": -6.7338779689708455,
-        "秋田県秋田市雄和椿川字山籠": -6.328412860862681,
-        "科学用語": -7.650168700845001,
-        "称": -7.650168700845001,
-        "移住者": -7.650168700845001,
-        "移動": -7.650168700845001,
-        "種類": -6.957021520285055,
-        "立": -6.0407307884109,
-        "立長": -6.26387433972511,
-        "筒城東触": -6.26387433972511,
-        "節参照": -5.704258551789687,
-        "範囲": -7.650168700845001,
-        "米岡": -6.26387433972511,
-        "粟国村": -6.7338779689708455,
-        "粟国村浜": -7.244703592736836,
-        "系統": -6.26387433972511,
-        "約": -5.452944123508781,
-        "紋別市": -6.26387433972511,
-        "終": -7.650168700845001,
-        "終結以前": -7.650168700845001,
-        "組": -6.957021520285055,
-        "結果": -7.650168700845001,
-        "統治": -7.650168700845001,
-        "統計": -6.957021520285055,
-        "絵": -7.650168700845001,
-        "網走郡": -5.570727159165164,
-        "線": -5.991940624241468,
-        "線中": -5.991940624241468,
-        "縦書": -7.650168700845001,
-        "美": -4.317964190669796,
-        "羽田空港": -6.7338779689708455,
-        "考": -6.957021520285055,
-        "脇神": -5.570727159165164,
-        "膠着": -7.650168700845001,
-        "膠着語": -7.650168700845001,
-        "至": -7.650168700845001,
-        "著": -7.650168700845001,
-        "薔薇": -7.650168700845001,
-        "行": -6.26387433972511,
-        "表現": -6.957021520285055,
-        "表記": -6.5515564121768906,
-        "表記体系": -6.26387433972511,
-        "表音文字": -7.650168700845001,
-        "被修飾語": -7.650168700845001,
-        "裁判所": -7.650168700845001,
-        "裁判所法": -7.650168700845001,
-        "複数持": -7.650168700845001,
-        "西": -5.570727159165164,
-        "西洋由来": -7.650168700845001,
-        "西町": -6.26387433972511,
-        "見": -6.26387433972511,
-        "規定": -6.5515564121768906,
-        "親族関係": -6.957021520285055,
-        "言葉": -6.957021520285055,
-        "言語": -5.570727159165164,
-        "言語連合": -7.650168700845001,
-        "言語類型論上": -7.650168700845001,
-        "訓読": -7.650168700845001,
-        "記": -7.650168700845001,
-        "記憶": -7.650168700845001,
-        "記述": -7.650168700845001,
-        "訳": -7.650168700845001,
-        "証明": -7.650168700845001,
-        "話": -7.650168700845001,
-        "話者人口": -7.650168700845001,
-        "詳細": -6.5515564121768906,
-        "認識": -7.650168700845001,
-        "語": -6.26387433972511,
-        "語尾": -7.650168700845001,
-        "語彙": -6.957021520285055,
-        "語彙的": -7.650168700845001,
-        "語族": -7.650168700845001,
-        "語族説": -7.650168700845001,
-        "語種": -7.650168700845001,
-        "語順": -6.26387433972511,
-        "語頭": -6.26387433972511,
-        "説": -6.957021520285055,
-        "調布市": -6.26387433972511,
-        "調査": -7.650168700845001,
-        "論文": -7.650168700845001,
-        "諸島": -6.957021520285055,
-        "諸言語": -7.650168700845001,
-        "諸語": -5.858409231616945,
-        "議論": -7.650168700845001,
-        "豊岡市": -6.26387433972511,
-        "象徴的": -7.650168700845001,
-        "貝": -7.650168700845001,
-        "赤江": -6.26387433972511,
-        "起源": -7.650168700845001,
-        "輪島市": -5.165262051057,
-        "近": -7.650168700845001,
-        "近世中期": -7.650168700845001,
-        "近世後期": -7.650168700845001,
-        "近代以降": -7.650168700845001,
-        "述語": -7.650168700845001,
-        "連続": -7.650168700845001,
-        "連邦": -7.650168700845001,
-        "那覇市": -4.877579978605219,
-        "部": -4.893328335573358,
-        "部族同士": -7.650168700845001,
-        "酒田市": -5.570727159165164,
-        "釧路市": -5.570727159165164,
-        "長崎県": -5.570727159165164,
-        "長崎県五島市上大津町": -7.427025149530791,
-        "長崎県壱岐市石田町筒城東触": -7.427025149530791,
-        "閉音節": -7.650168700845001,
-        "開音節言語": -7.650168700845001,
-        "間": -6.957021520285055,
-        "関係": -6.5515564121768906,
-        "限": -7.650168700845001,
-        "除": -7.650168700845001,
-        "隠岐": -6.26387433972511,
-        "隠岐郡": -6.26387433972511,
-        "雄和椿川字山籠": -5.165262051057,
-        "青": -7.650168700845001,
-        "青森市": -5.165262051057,
-        "青森県": -4.877579978605219,
-        "青森県三沢市三沢字下沢": -7.427025149530791,
-        "青森県青森市大谷字小谷": -6.328412860862681,
-        "静岡県": -6.26387433972511,
-        "静岡県牧之原市坂口": -7.427025149530791,
-        "非常": -7.650168700845001,
-        "非日本語話者": -7.650168700845001,
-        "面": -6.5515564121768906,
-        "音": -6.5515564121768906,
-        "音節": -6.957021520285055,
-        "音読": -6.957021520285055,
-        "音韻": -6.0407307884109,
-        "音韻対応": -7.650168700845001,
-        "類似点": -6.957021520285055,
-        "類型": -7.650168700845001,
-        "香南町": -6.26387433972511,
-        "香川県": -6.26387433972511,
-        "香川県高松市香南町岡": -7.427025149530791,
-        "高": -6.957021520285055,
-        "高低": -7.650168700845001,
-        "高松市": -6.26387433972511,
-        "鳥取市": -6.26387433972511,
-        "鳥取県": -6.26387433972511,
-        "鳥取県鳥取市湖山町西": -7.427025149530791,
-        "鴛泊本泊": -5.570727159165164,
-        "鶴丘": -5.570727159165164,
-        "鹿児島県": -5.165262051057,
-        "鹿児島県大島郡与論町立長": -7.427025149530791,
-        "鹿児島県大島郡和泊町国頭": -6.7338779689708455
+        "乗": -3.044522437723423,
+        "乗客": -3.044522437723423,
+        "人女性": -3.044522437723423,
+        "住": -3.044522437723423,
+        "保健当局": -3.044522437723423,
+        "保健相": -3.044522437723423,
+        "受": -3.044522437723423,
+        "同": -2.3513752571634776,
+        "女性": -2.3513752571634776,
+        "感染": -3.044522437723423,
+        "明": -2.3513752571634776,
+        "検査": -3.044522437723423,
+        "死亡": -3.044522437723423,
+        "症状": -3.044522437723423,
+        "確認": -3.044522437723423,
+        "船": -3.044522437723423,
+        "通信": -3.044522437723423,
+        "飛行機": -3.044522437723423
       },
       "外来語": {
-        "SOV": -4.50810847314496,
-        "awo": -4.50810847314496,
-        "kapi": -4.50810847314496,
-        "r": -4.50810847314496,
-        "アクセント": -3.4094961844768505,
-        "アジア": -3.8149612925850147,
-        "アジア・": -4.50810847314496,
-        "アルタイ": -2.4286669314651244,
-        "アンガウル": -4.50810847314496,
-        "イ": -2.1567332159814825,
-        "インドネシア": -4.50810847314496,
-        "オーストラリア": -4.50810847314496,
-        "カラムシ": -2.1567332159814825,
-        "ギリシャ": -4.50810847314496,
-        "クレオール": -3.8149612925850147,
-        "ケ": -2.849880396541428,
-        "ゲート": -4.50810847314496,
-        "セントレア": -2.1567332159814825,
-        "タイ": -4.50810847314496,
-        "タイヤル": -4.50810847314496,
-        "テレビ": -4.50810847314496,
-        "ドラマ": -4.50810847314496,
-        "ハワイ": -4.50810847314496,
-        "パラオ": -4.50810847314496,
-        "ペルー": -4.50810847314496,
-        "マリアナ": -4.50810847314496,
-        "モーラ": -3.8149612925850147,
-        "ラジオ": -4.50810847314496,
-        "ラテン": -4.50810847314496,
-        "ローマ": -4.50810847314496,
-        "・": -2.1102132003465894,
-        "・パラオ・マーシャル": -4.50810847314496,
-        "・パラグアイ": -4.50810847314496,
-        "・ブラジル": -4.50810847314496,
-        "・ボリビア・ドミニカ": -4.50810847314496,
-        "・ミクロネシア": -4.50810847314496
-      },
-      "形容詞": {
-        "い": -1.3217558399823195,
-        "おかえりなさい": -2.70805020110221,
-        "かい": -2.70805020110221,
-        "かりやすい": -2.70805020110221,
-        "けたものではない": -2.70805020110221,
-        "しい": -2.70805020110221,
-        "しない": -2.70805020110221,
-        "たない": -2.0149030205422647,
-        "でない": -2.70805020110221,
-        "はない": -2.70805020110221,
-        "れい": -2.70805020110221
-      },
-      "数詞": {
-        "000": -6.658331918647447,
-        "1": -1.5862879964225471,
-        "10": -3.727138166231027,
-        "104": -5.000103842043914,
-        "105": -6.658331918647447,
-        "11": -3.839933660376371,
-        "110": -5.000103842043914,
-        "1143": -4.3069566614839685,
-        "12": -4.825750454899136,
-        "1277": -3.9014915533758043,
-        "13": -3.480278088299501,
-        "1312": -5.000103842043914,
-        "14": -5.965184738087501,
-        "141": -6.658331918647447,
-        "144": -4.3069566614839685,
-        "148": -5.000103842043914,
-        "15": -5.965184738087501,
-        "150": -3.6138094809240235,
-        "153": -5.000103842043914,
-        "1598": -5.000103842043914,
-        "16": -3.7819464027260215,
-        "17": -6.658331918647447,
-        "18": -5.965184738087501,
-        "185": -5.000103842043914,
-        "187": -4.3069566614839685,
-        "1872": -4.3069566614839685,
-        "1889": -5.000103842043914,
-        "19": -4.132603274339191,
-        "1960": -5.000103842043914,
-        "2": -3.0012011628480906,
-        "20": -6.658331918647447,
-        "2010": -6.658331918647447,
-        "2021": -6.658331918647447,
-        "21": -4.3069566614839685,
-        "2183": -5.000103842043914,
-        "22": -3.054193692988601,
-        "2351": -5.000103842043914,
-        "24": -6.658331918647447,
-        "25": -6.658331918647447,
-        "26": -6.658331918647447,
-        "27": -6.658331918647447,
-        "270": -5.000103842043914,
-        "28": -6.658331918647447,
-        "29": -6.658331918647447,
-        "290": -5.000103842043914,
-        "3": -3.0610196580590006,
-        "30": -3.839933660376371,
-        "31": -6.658331918647447,
-        "32": -6.658331918647447,
-        "3336": -5.000103842043914,
-        "34": -5.000103842043914,
-        "3710": -4.3069566614839685,
-        "379": -6.658331918647447,
-        "4": -4.132603274339191,
-        "41": -4.825750454899136,
-        "4350": -4.3069566614839685,
-        "4550": -5.000103842043914,
-        "47": -6.658331918647447,
-        "49": -3.9014915533758043,
-        "5": -3.522837702718297,
-        "597": -4.3069566614839685,
-        "6": -6.658331918647447,
-        "7": -4.132603274339191,
-        "71": -6.658331918647447,
-        "739": -5.000103842043914,
-        "74": -6.658331918647447,
-        "8": -4.548118718300857,
-        "83": -5.000103842043914,
-        "9": -4.132603274339191,
-        "934": -4.3069566614839685,
-        "9476": -4.3069566614839685,
-        "98": -5.000103842043914,
-        "987": -3.054193692988601
+        "オランダ": -1.9459101490553135,
+        "クルーズ": -1.9459101490553135,
+        "スペイン": -1.252762968495368,
+        "ハンタウイルス": -1.252762968495368,
+        "ロイター": -1.9459101490553135
       },
       "記号": {
-        ",": -6.479661052813611,
-        "-": -0.9502319653021878,
-        "/": -5.381048764145501,
-        "/』,": -6.479661052813611,
-        "/』）": -6.479661052813611,
-        "[": -3.3441668368844613,
-        "]": -4.1770759598195655,
-        "][": -4.081765780015241,
-        "]。": -3.914711695352074,
-        "]）": -6.479661052813611,
-        "§": -5.093366691693721,
-        "→": -5.786513872253666,
-        "→「": -6.479661052813611,
-        "、": -1.7883131705844675,
-        "、「": -5.093366691693721,
-        "。": -3.0784636711514555,
-        "。『": -6.479661052813611,
-        "々": -2.822530297014255,
-        "「": -3.48392877925962,
-        "」": -3.147456542638407,
-        "」、": -5.786513872253666,
-        "」「": -6.479661052813611,
-        "」（": -6.479661052813611,
-        "『": -5.381048764145501,
-        "』": -6.479661052813611,
-        "』『": -5.093366691693721,
-        "（": -2.9831534913471307,
-        "（「": -4.400219511133775,
-        "（『": -5.786513872253666,
-        "）": -3.435138615090188,
-        "）[": -6.479661052813611,
-        "）、": -5.786513872253666,
-        "）。": -4.1770759598195655,
-        "）」": -5.786513872253666,
-        "）』": -5.381048764145501,
-        "）』『": -5.381048764145501,
-        "＋": -6.479661052813611
+        "、": -0.3364722366212129,
+        "。": -1.252762968495368
       }
     },
     "pos_tags": [
       "副詞",
-      "数詞",
+      "名詞",
+      "記号",
       "助詞",
       "動詞",
-      "形容詞",
-      "名詞",
-      "外来語",
-      "記号",
-      "助動詞"
+      "外来語"
     ]
   },
   "version": 1
