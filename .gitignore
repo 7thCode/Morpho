@@ -1,6 +1,7 @@
 # ── バイナリ / ビルド成果物 ──────────────────────────────
 app/bin/
-cmd/desktop/build/
+cmd/desktop/build/bin/
+cmd/desktop/build/darwin/*.app
 /desktop
 
 # ── Wails ───────────────────────────────────────────────

@@ -10,7 +10,10 @@ type Model struct {
 	Initial    map[string]float64            `json:"initial"`
 	Transition map[string]map[string]float64 `json:"transition"`
 	Emission   map[string]map[string]float64 `json:"emission"`
-	POSTags    []string                       `json:"pos_tags"`
+	POSTags    []string                      `json:"pos_tags"`
+
+	// vocabCount caches vocabSize; 0 means not yet computed.
+	vocabCount int
 }
 
 // New creates and returns an empty HMM Model.
@@ -60,21 +63,23 @@ func (m *Model) SmoothEmission(pos, word string) float64 {
 		}
 		// Unknown word: add-one (Laplace) smoothing
 		totalEmissions := float64(len(inner))
-		vocabSize := m.vocabSize()
-		return math.Log(1.0 / (totalEmissions + float64(vocabSize) + 1.0))
+		return math.Log(1.0 / (totalEmissions + float64(m.vocabSize()) + 1.0))
 	}
 	// POS not seen at all
-	vocabSize := m.vocabSize()
-	return math.Log(1.0 / (float64(vocabSize) + 1.0))
+	return math.Log(1.0 / (float64(m.vocabSize()) + 1.0))
 }
 
 // vocabSize returns the total number of distinct words across all POS emissions.
+// The result is cached: the model is read-only after Build()/Load.
 func (m *Model) vocabSize() int {
-	vocab := make(map[string]struct{})
-	for _, words := range m.Emission {
-		for w := range words {
-			vocab[w] = struct{}{}
+	if m.vocabCount == 0 {
+		vocab := make(map[string]struct{})
+		for _, words := range m.Emission {
+			for w := range words {
+				vocab[w] = struct{}{}
+			}
 		}
+		m.vocabCount = len(vocab)
 	}
-	return len(vocab)
+	return m.vocabCount
 }

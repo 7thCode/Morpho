@@ -47,6 +47,8 @@
   }
 </script>
 
+<div class="titlebar"></div>
+
 <main>
   <header>
     <h1>Morpho</h1>
@@ -122,7 +124,12 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  main { max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .titlebar {
+    height: 28px;
+    --wails-draggable: drag;
+  }
+
+  main { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 2rem; }
 
   header { margin-bottom: 1.5rem; }
   h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; }
