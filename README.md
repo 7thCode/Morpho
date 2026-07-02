@@ -135,6 +135,7 @@ wails build
 # → build/bin/Morpho.app (macOS) が生成される
 ```
 
+
 ### 辞書ファイルのパス
 
 | 実行方法 | 辞書パス |
