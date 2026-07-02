@@ -1,0 +1,26 @@
+# ── バイナリ / ビルド成果物 ──────────────────────────────
+app/bin/
+cmd/desktop/build/bin/
+cmd/desktop/build/darwin/*.app
+/desktop
+
+# ── Wails ───────────────────────────────────────────────
+cmd/desktop/frontend/dist/
+!cmd/desktop/frontend/dist/.gitkeep
+cmd/desktop/frontend/node_modules/
+cmd/desktop/frontend/package.json.md5
+
+# ── 依存関係 ─────────────────────────────────────────────
+app/node_modules/
+
+# ── API キー / シークレット ───────────────────────────────
+.env
+.env.*
+*.key
+*.pem
+*_secret*
+*_api_key*
+config.local.*
+
+# ── macOS ────────────────────────────────────────────────
+.DS_Store

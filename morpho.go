@@ -39,18 +39,15 @@ func New(dictPath string) (*Analyzer, error) {
 
 // Train trains the HMM model from the given corpus text and updates the dictionary.
 func (a *Analyzer) Train(corpus string) error {
-	hmm.TrainOnText(corpus, a.trainer)
-	model := a.trainer.Build()
-	a.dictionary.Model = model
+	tokens := tokenizer.Segment(corpus)
+
+	hmm.TrainOnTokens(tokens, a.trainer)
+	a.dictionary.Model = a.trainer.Build()
 
 	// Also update word entries in the dictionary
-	tokens := tokenizer.Segment(corpus)
-	for _, tok := range tokens {
-		if tok.Type != chartype.Space {
-			pos := hmm.InferPOS(tok)
-			if pos != "" {
-				a.dictionary.Update(tok.Surface, pos)
-			}
+	for _, tok := range nonSpaceTokens(tokens) {
+		if pos := hmm.InferPOS(tok); pos != "" {
+			a.dictionary.Update(tok.Surface, pos)
 		}
 	}
 	return nil
@@ -59,41 +56,31 @@ func (a *Analyzer) Train(corpus string) error {
 // Analyze performs morphological analysis on the input text.
 // If no trained model is available it falls back to heuristic POS inference.
 func (a *Analyzer) Analyze(text string) ([]Morpheme, error) {
-	tokens := tokenizer.Segment(text)
-
-	if a.dictionary.Model == nil || len(a.dictionary.Model.POSTags) == 0 {
-		// Fallback: heuristic-only analysis
-		var result []Morpheme
-		for _, tok := range tokens {
-			if tok.Type == chartype.Space {
-				continue
-			}
-			result = append(result, Morpheme{
-				Surface: tok.Surface,
-				POS:     hmm.InferPOS(tok),
-			})
-		}
-		return result, nil
-	}
-
-	// Filter out space tokens for Viterbi
-	var nonSpaceTokens []tokenizer.Token
-	for _, tok := range tokens {
-		if tok.Type != chartype.Space {
-			nonSpaceTokens = append(nonSpaceTokens, tok)
-		}
-	}
-	if len(nonSpaceTokens) == 0 {
+	tokens := nonSpaceTokens(tokenizer.Segment(text))
+	if len(tokens) == 0 {
 		return nil, nil
 	}
 
-	vitResults := viterbi.Decode(nonSpaceTokens, a.dictionary.Model)
-	var morphemes []Morpheme
-	for _, r := range vitResults {
-		morphemes = append(morphemes, Morpheme{
+	model := a.dictionary.Model
+	if model == nil || len(model.POSTags) == 0 {
+		// Fallback: heuristic-only analysis
+		morphemes := make([]Morpheme, len(tokens))
+		for i, tok := range tokens {
+			morphemes[i] = Morpheme{
+				Surface: tok.Surface,
+				POS:     hmm.InferPOS(tok),
+			}
+		}
+		return morphemes, nil
+	}
+
+	results := viterbi.Decode(tokens, model)
+	morphemes := make([]Morpheme, len(results))
+	for i, r := range results {
+		morphemes[i] = Morpheme{
 			Surface: r.Surface,
 			POS:     r.POS,
-		})
+		}
 	}
 	return morphemes, nil
 }
@@ -101,4 +88,15 @@ func (a *Analyzer) Analyze(text string) ([]Morpheme, error) {
 // Save persists the current dictionary (and model) to the given path.
 func (a *Analyzer) Save(path string) error {
 	return a.dictionary.Save(path)
+}
+
+// nonSpaceTokens filters out space tokens.
+func nonSpaceTokens(tokens []tokenizer.Token) []tokenizer.Token {
+	filtered := make([]tokenizer.Token, 0, len(tokens))
+	for _, tok := range tokens {
+		if tok.Type != chartype.Space {
+			filtered = append(filtered, tok)
+		}
+	}
+	return filtered
 }

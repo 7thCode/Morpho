@@ -112,3 +112,41 @@ npm run build           # Go バイナリ + Vite ビルド
 ```
 
 開発時の辞書はプロジェクトルートの `dict.json` に読み書きされる。
+
+## シングルバイナリアプリ（cmd/desktop/）
+
+[Wails v2](https://wails.io/) を使った GUI。Svelte フロントエンドを `go:embed` でバイナリに同梱するため、**配布物は実行ファイル 1 つだけ**。別プロセスや Electron ランタイムは不要。
+
+### 必要なもの
+
+- [Wails CLI](https://wails.io/docs/gettingstarted/installation): `go install github.com/wailsapp/wails/v2/cmd/wails@latest`
+- Node.js（フロントエンドのビルドに使用）
+
+### ビルド・起動
+
+```bash
+cd cmd/desktop
+
+# 開発モード（Go + Svelte のホットリロード）
+wails dev
+
+# プロダクションビルド（シングルバイナリ）
+wails build
+# → build/bin/Morpho.app (macOS) が生成される
+```
+
+
+### 辞書ファイルのパス
+
+| 実行方法 | 辞書パス |
+| -------- | ------- |
+| `wails dev` | プロジェクトルートの `dict.json` |
+| `wails build`（production） | `~/Library/Application Support/Morpho/dict.json`（macOS） |
+
+### Electron 版との違い
+
+| 項目 | Electron 版（app/） | Wails 版（cmd/desktop/） |
+| ---- | ------------------- | ------------------------ |
+| 配布形態 | Go バイナリ + Electron | シングルバイナリ |
+| プロセス構成 | Go サーバー + Electron | 1 プロセス |
+| フロントエンドとの通信 | HTTP（localhost:8765） | Wails バインディング（直接呼び出し） |

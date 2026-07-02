@@ -12,44 +12,36 @@ type Token struct {
 
 // Segment splits text on character-type boundaries and returns a slice of Tokens.
 func Segment(text string) []Token {
-	if text == "" {
-		return nil
-	}
-
-	var tokens []Token
 	runes := []rune(text)
 	if len(runes) == 0 {
 		return nil
 	}
 
-	startPos := 0
-	currentType := chartype.Of(runes[0])
-	start := 0
+	var tokens []Token
+	appendToken := func(start, end int, t chartype.CharType) {
+		surface := string(runes[start:end])
+		startPos := 0
+		if len(tokens) > 0 {
+			startPos = tokens[len(tokens)-1].EndPos
+		}
+		tokens = append(tokens, Token{
+			Surface:  surface,
+			Type:     t,
+			StartPos: startPos,
+			EndPos:   startPos + len(surface),
+		})
+	}
 
+	start := 0
+	currentType := chartype.Of(runes[0])
 	for i := 1; i < len(runes); i++ {
-		t := chartype.Of(runes[i])
-		if t != currentType {
-			surface := string(runes[start:i])
-			tokens = append(tokens, Token{
-				Surface:  surface,
-				Type:     currentType,
-				StartPos: startPos,
-				EndPos:   startPos + len(surface),
-			})
-			startPos += len(surface)
+		if t := chartype.Of(runes[i]); t != currentType {
+			appendToken(start, i, currentType)
 			start = i
 			currentType = t
 		}
 	}
-
-	// Append the last token
-	surface := string(runes[start:])
-	tokens = append(tokens, Token{
-		Surface:  surface,
-		Type:     currentType,
-		StartPos: startPos,
-		EndPos:   startPos + len(surface),
-	})
+	appendToken(start, len(runes), currentType)
 
 	return tokens
 }

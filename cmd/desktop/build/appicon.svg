@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" shape-rendering="geometricPrecision">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A1F5C"/>
+      <stop offset="100%" stop-color="#1A4F8C"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+      <stop offset="0%" stop-color="#2979FF" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0A1F5C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <rect width="1024" height="1024" fill="url(#glow)"/>
+
+  <!-- Upper Left Wing -->
+  <path d="M505 505
+           C488 448 444 330 338 262
+           C252 206 148 218 122 302
+           C96 386 164 464 286 494
+           C368 514 456 514 505 505Z"
+        fill="white" opacity="0.90"/>
+
+  <!-- Upper Right Wing -->
+  <path d="M519 505
+           C536 448 580 330 686 262
+           C772 206 876 218 902 302
+           C928 386 860 464 738 494
+           C656 514 568 514 519 505Z"
+        fill="white" opacity="0.90"/>
+
+  <!-- Lower Left Wing -->
+  <path d="M505 528
+           C458 552 352 596 244 664
+           C172 710 174 784 252 782
+           C348 780 454 716 494 658
+           C512 632 512 596 505 528Z"
+        fill="white" opacity="0.76"/>
+
+  <!-- Lower Right Wing -->
+  <path d="M519 528
+           C566 552 672 596 780 664
+           C852 710 850 784 772 782
+           C676 780 570 716 530 658
+           C512 632 512 596 519 528Z"
+        fill="white" opacity="0.76"/>
+
+  <!-- Wing veins — upper left -->
+  <path d="M505 505 C460 420 370 340 268 308"
+        stroke="#1A4F8C" stroke-width="7" fill="none" opacity="0.38"/>
+  <path d="M498 518 C440 454 344 406 240 406"
+        stroke="#1A4F8C" stroke-width="5" fill="none" opacity="0.28"/>
+
+  <!-- Wing veins — upper right (mirror) -->
+  <path d="M519 505 C564 420 654 340 756 308"
+        stroke="#1A4F8C" stroke-width="7" fill="none" opacity="0.38"/>
+  <path d="M526 518 C584 454 680 406 784 406"
+        stroke="#1A4F8C" stroke-width="5" fill="none" opacity="0.28"/>
+
+  <!-- Eye spots — upper left -->
+  <circle cx="308" cy="400" r="42" fill="#1A4F8C" opacity="0.28"/>
+  <circle cx="308" cy="400" r="22" fill="#0A1F5C" opacity="0.22"/>
+
+  <!-- Eye spots — upper right -->
+  <circle cx="716" cy="400" r="42" fill="#1A4F8C" opacity="0.28"/>
+  <circle cx="716" cy="400" r="22" fill="#0A1F5C" opacity="0.22"/>
+
+  <!-- Body -->
+  <ellipse cx="512" cy="552" rx="20" ry="112" fill="white" opacity="0.94"/>
+
+  <!-- Head -->
+  <circle cx="512" cy="432" r="26" fill="white"/>
+
+  <!-- Antennae -->
+  <line x1="502" y1="408" x2="448" y2="300"
+        stroke="white" stroke-width="10" stroke-linecap="round" opacity="0.82"/>
+  <line x1="522" y1="408" x2="576" y2="300"
+        stroke="white" stroke-width="10" stroke-linecap="round" opacity="0.82"/>
+  <circle cx="444" cy="294" r="15" fill="white" opacity="0.82"/>
+  <circle cx="580" cy="294" r="15" fill="white" opacity="0.82"/>
+</svg>
