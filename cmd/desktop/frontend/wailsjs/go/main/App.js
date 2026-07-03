@@ -6,6 +6,22 @@ export function Analyze(arg1) {
   return window['go']['main']['App']['Analyze'](arg1);
 }
 
+export function DeleteWord(arg1) {
+  return window['go']['main']['App']['DeleteWord'](arg1);
+}
+
+export function GetEntries() {
+  return window['go']['main']['App']['GetEntries']();
+}
+
+export function GetStats() {
+  return window['go']['main']['App']['GetStats']();
+}
+
+export function SaveWord(arg1, arg2, arg3) {
+  return window['go']['main']['App']['SaveWord'](arg1, arg2, arg3);
+}
+
 export function Train(arg1) {
   return window['go']['main']['App']['Train'](arg1);
 }

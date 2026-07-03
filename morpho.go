@@ -1,6 +1,8 @@
 package morpho
 
 import (
+	"errors"
+
 	"github.com/7thCode/morpho/internal/chartype"
 	"github.com/7thCode/morpho/internal/dictionary"
 	"github.com/7thCode/morpho/internal/hmm"
@@ -100,3 +102,89 @@ func nonSpaceTokens(tokens []tokenizer.Token) []tokenizer.Token {
 	}
 	return filtered
 }
+
+// WordCount returns the number of entries in the dictionary.
+func (a *Analyzer) WordCount() int {
+	if a.dictionary == nil {
+		return 0
+	}
+	return len(a.dictionary.Entries)
+}
+
+// IsTrained returns true if the analyzer has a trained HMM model.
+func (a *Analyzer) IsTrained() bool {
+	if a.dictionary == nil {
+		return false
+	}
+	return a.dictionary.Model != nil && len(a.dictionary.Model.POSTags) > 0
+}
+
+// POSTags returns the list of POS tags used in the HMM model.
+func (a *Analyzer) POSTags() []string {
+	if a.dictionary == nil || a.dictionary.Model == nil {
+		return nil
+	}
+	return a.dictionary.Model.POSTags
+}
+
+// DictEntry represents a single dictionary word entry.
+type DictEntry struct {
+	Surface   string `json:"surface"`
+	Reading   string `json:"reading,omitempty"`
+	POS       string `json:"pos"`
+	POSDetail string `json:"pos_detail,omitempty"`
+	Freq      int    `json:"freq"`
+}
+
+// Entries returns all dictionary entries.
+func (a *Analyzer) Entries() []DictEntry {
+	if a.dictionary == nil || a.dictionary.Entries == nil {
+		return nil
+	}
+	entries := make([]DictEntry, 0, len(a.dictionary.Entries))
+	for _, entry := range a.dictionary.Entries {
+		entries = append(entries, DictEntry{
+			Surface:   entry.Surface,
+			Reading:   entry.Reading,
+			POS:       entry.POS,
+			POSDetail: entry.POSDetail,
+			Freq:      entry.Freq,
+		})
+	}
+	return entries
+}
+
+// SaveWord adds or updates a word entry in the dictionary and persists it.
+func (a *Analyzer) SaveWord(surface, pos string, freq int) error {
+	if a.dictionary == nil {
+		return errors.New("dictionary not loaded")
+	}
+	if a.dictionary.Entries == nil {
+		a.dictionary.Entries = make(map[string]*dictionary.Entry)
+	}
+
+	a.dictionary.Entries[surface] = &dictionary.Entry{
+		Surface: surface,
+		POS:     pos,
+		Freq:    freq,
+	}
+
+	return a.dictionary.Save(a.dictPath)
+}
+
+// DeleteWord removes a word entry from the dictionary and persists the dictionary.
+func (a *Analyzer) DeleteWord(surface string) error {
+	if a.dictionary == nil {
+		return errors.New("dictionary not loaded")
+	}
+	if a.dictionary.Entries == nil {
+		return nil
+	}
+
+	delete(a.dictionary.Entries, surface)
+
+	return a.dictionary.Save(a.dictPath)
+}
+
+
+
