@@ -18,7 +18,7 @@ type server struct {
 func (s *server) cors(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
-		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, DELETE, PUT")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 		if r.Method == http.MethodOptions {
 			w.WriteHeader(http.StatusNoContent)
@@ -70,6 +70,64 @@ func (s *server) train(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(map[string]bool{"ok": true})
 }
 
+func (s *server) stats(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]any{
+		"word_count": s.analyzer.WordCount(),
+		"is_trained": s.analyzer.IsTrained(),
+		"pos_tags":   s.analyzer.POSTags(),
+	})
+}
+
+func (s *server) entries(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(s.analyzer.Entries())
+}
+
+func (s *server) word(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodPost || r.Method == http.MethodPut {
+		var req struct {
+			Surface string `json:"surface"`
+			POS     string `json:"pos"`
+			Freq    int    `json:"freq"`
+		}
+		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+		if err := s.analyzer.SaveWord(req.Surface, req.POS, req.Freq); err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]bool{"ok": true})
+		return
+	} else if r.Method == http.MethodDelete {
+		surface := r.URL.Query().Get("surface")
+		if surface == "" {
+			http.Error(w, "surface parameter is required", http.StatusBadRequest)
+			return
+		}
+		if err := s.analyzer.DeleteWord(surface); err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]bool{"ok": true})
+		return
+	}
+	http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
+}
+
+
 func main() {
 	port := flag.Int("port", 8765, "HTTP port")
 	dictPath := flag.String("dict", "dict.json", "path to dictionary JSON file")
@@ -86,6 +144,9 @@ func main() {
 	mux.HandleFunc("/health", s.cors(s.health))
 	mux.HandleFunc("/analyze", s.cors(s.analyze))
 	mux.HandleFunc("/train", s.cors(s.train))
+	mux.HandleFunc("/stats", s.cors(s.stats))
+	mux.HandleFunc("/entries", s.cors(s.entries))
+	mux.HandleFunc("/word", s.cors(s.word))
 
 	addr := fmt.Sprintf(":%d", *port)
 	log.Printf("morpho server listening on %s (dict: %s)", addr, *dictPath)
