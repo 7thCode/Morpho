@@ -31,6 +31,12 @@
   let originalSurface = ''
   let modalError = ''
 
+  // 削除確認モーダル用ステート
+  let showConfirmModal = false
+  let confirmMessage = ''
+  let confirmError = ''
+  let confirmCallback = null
+
   // リアルタイム解析デバウンス
   let debounceTimer
   function handleInput() {
@@ -159,6 +165,7 @@
     loadStats()
   }
 
+  // 単語ソートのトグル
   function toggleSort(field) {
     if (sortBy === field) {
       sortAsc = !sortAsc
@@ -221,16 +228,21 @@
     }
   }
 
-  // 単語の削除処理
-  async function deleteWord(surface) {
-    if (!confirm(`単語「${surface}」を辞書から削除しますか？`)) return
-    try {
-      await DeleteWord(surface)
-      await loadStats()
-      await loadEntries()
-    } catch (e) {
-      alert(`削除に失敗しました: ${e}`)
+  // 単語の削除処理（確認モーダルの呼び出し）
+  function deleteWord(surface) {
+    confirmMessage = `単語「${surface}」を辞書から本当に削除しますか？`
+    confirmError = ''
+    confirmCallback = async () => {
+      try {
+        await DeleteWord(surface)
+        await loadStats()
+        await loadEntries()
+        showConfirmModal = false
+      } catch (e) {
+        confirmError = typeof e === 'string' ? e : (e.message || '削除に失敗しました')
+      }
     }
+    showConfirmModal = true
   }
 
   // 解析結果の品詞割合統計の計算
@@ -546,6 +558,28 @@
       <div class="modal-footer">
         <button class="btn btn-secondary" on:click={closeModal}>キャンセル</button>
         <button class="btn btn-primary" on:click={saveWord}>保存</button>
+      </div>
+    </div>
+  </div>
+{/if}
+
+<!-- 削除確認モーダル -->
+{#if showConfirmModal}
+  <div class="modal-overlay" on:click|self={() => showConfirmModal = false}>
+    <div class="modal-card glass-card fade-in" style="max-width: 400px;">
+      <div class="modal-header">
+        <h2>削除の確認</h2>
+        <button class="close-btn" on:click={() => showConfirmModal = false}>&times;</button>
+      </div>
+      <div class="modal-body">
+        {#if confirmError}
+          <p class="message error fade-in" style="margin-top: 0; margin-bottom: 1rem;">{confirmError}</p>
+        {/if}
+        <p class="description" style="font-size: 1rem; color: #fff; line-height: 1.5;">{confirmMessage}</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" on:click={() => showConfirmModal = false}>キャンセル</button>
+        <button class="btn btn-primary" style="background: var(--pos-unknown); color: #fff; box-shadow: 0 4px 12px rgba(248, 113, 113, 0.2);" on:click={confirmCallback}>削除する</button>
       </div>
     </div>
   </div>
