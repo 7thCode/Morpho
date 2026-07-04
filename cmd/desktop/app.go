@@ -5,19 +5,23 @@ import (
 	"sync"
 
 	"github.com/7thCode/morpho"
+	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
 type App struct {
 	ctx      context.Context
 	mu       sync.Mutex
 	analyzer *morpho.Analyzer
+	dictPath string
 }
 
 func NewApp() *App { return &App{} }
 
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
-	a.analyzer, _ = morpho.New(resolveDictPath())
+	cfg := loadConfig()
+	a.dictPath = cfg.DictPath
+	a.analyzer, _ = morpho.New(a.dictPath)
 }
 
 func (a *App) shutdown(_ context.Context) {}
@@ -34,7 +38,7 @@ func (a *App) Train(corpus string) error {
 	if err := a.analyzer.Train(corpus); err != nil {
 		return err
 	}
-	return a.analyzer.Save(resolveDictPath())
+	return a.analyzer.Save(a.dictPath)
 }
 
 // Stats represents dictionary and HMM model status.
@@ -86,6 +90,46 @@ func (a *App) DeleteWord(surface string) error {
 		return nil
 	}
 	return a.analyzer.DeleteWord(surface)
+}
+
+// GetDictPath returns the current dictionary path.
+func (a *App) GetDictPath() string {
+	a.mu.Lock()
+	defer a.mu.Unlock()
+	return a.dictPath
+}
+
+// SetDictPath updates the dictionary path and reloads the dictionary.
+func (a *App) SetDictPath(path string) error {
+	a.mu.Lock()
+	defer a.mu.Unlock()
+
+	analyzer, err := morpho.New(path)
+	if err != nil {
+		return err
+	}
+
+	a.analyzer = analyzer
+	a.dictPath = path
+
+	return saveConfig(Config{DictPath: path})
+}
+
+// SelectDictFile opens an OS file dialog for the user to select/create a dict.json file.
+func (a *App) SelectDictFile() (string, error) {
+	path, err := runtime.OpenFileDialog(a.ctx, runtime.OpenDialogOptions{
+		Title: "辞書ファイルを選択または新規作成 (dict.json)",
+		Filters: []runtime.FileFilter{
+			{
+				DisplayName: "JSON Files (*.json)",
+				Pattern:     "*.json",
+			},
+		},
+	})
+	if err != nil {
+		return "", err
+	}
+	return path, nil
 }
 
 

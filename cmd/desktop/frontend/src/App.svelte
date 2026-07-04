@@ -1,6 +1,16 @@
 <script>
   import { onMount } from 'svelte'
-  import { Analyze, Train, GetStats, GetEntries, SaveWord, DeleteWord } from '../wailsjs/go/main/App.js'
+  import { 
+    Analyze, 
+    Train, 
+    GetStats, 
+    GetEntries, 
+    SaveWord, 
+    DeleteWord,
+    GetDictPath,
+    SetDictPath,
+    SelectDictFile
+  } from '../wailsjs/go/main/App.js'
 
   let tab = 'analyze'
   let inputText = ''
@@ -14,6 +24,7 @@
   let stats = { word_count: 0, is_trained: false, pos_tags: [] }
   let entries = []
   let filteredEntries = []
+  let dictPath = ''
 
   // 辞書タブ用
   let searchQuery = ''
@@ -50,6 +61,29 @@
       stats = await GetStats()
     } catch (e) {
       console.error('Failed to load stats:', e)
+    }
+  }
+
+  // 辞書パスの取得
+  async function loadDictPath() {
+    try {
+      dictPath = await GetDictPath()
+    } catch (e) {
+      console.error('Failed to load dict path:', e)
+    }
+  }
+
+  // 辞書パスの変更
+  async function selectDictPath() {
+    try {
+      const path = await SelectDictFile()
+      if (!path) return // キャンセルされた場合
+      await SetDictPath(path)
+      dictPath = path
+      await loadStats()
+      await loadEntries()
+    } catch (e) {
+      console.error('Failed to change dictionary path:', e)
     }
   }
 
@@ -282,6 +316,7 @@
 
   onMount(async () => {
     await loadStats()
+    await loadDictPath()
   })
 </script>
 
@@ -434,6 +469,18 @@
       {:else}
         <!-- 辞書ブラウザ -->
         <div class="dict-section">
+          <!-- 辞書パス設定パネル -->
+          <div class="dict-path-panel glass-card fade-in">
+            <div class="path-info">
+              <span class="label">現在の辞書ファイル</span>
+              <span class="value" title={dictPath}>{dictPath}</span>
+            </div>
+            <button class="btn btn-secondary select-path-btn" on:click={selectDictPath}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.25rem;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              変更
+            </button>
+          </div>
+
           <div class="dict-toolbar">
             <div class="search-box">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="search-icon"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
@@ -1337,5 +1384,49 @@
   .action-btn.delete:hover {
     border-color: var(--pos-unknown);
     color: var(--pos-unknown);
+  }
+
+  /* 辞書パス設定パネル */
+  .dict-path-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+  }
+
+  .dict-path-panel .path-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .dict-path-panel .label {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+
+  .dict-path-panel .value {
+    font-size: 0.85rem;
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .select-path-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
   }
 </style>
