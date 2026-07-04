@@ -7,10 +7,16 @@ export function Analyze(arg1:string):Promise<Array<morpho.Morpheme>>;
 
 export function DeleteWord(arg1:string):Promise<void>;
 
+export function GetDictPath():Promise<string>;
+
 export function GetEntries():Promise<Array<morpho.DictEntry>>;
 
 export function GetStats():Promise<main.Stats>;
 
 export function SaveWord(arg1:string,arg2:string,arg3:number):Promise<void>;
+
+export function SelectDictFile():Promise<string>;
+
+export function SetDictPath(arg1:string):Promise<void>;
 
 export function Train(arg1:string):Promise<void>;

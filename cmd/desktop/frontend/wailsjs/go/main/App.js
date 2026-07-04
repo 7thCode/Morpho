@@ -10,6 +10,10 @@ export function DeleteWord(arg1) {
   return window['go']['main']['App']['DeleteWord'](arg1);
 }
 
+export function GetDictPath() {
+  return window['go']['main']['App']['GetDictPath']();
+}
+
 export function GetEntries() {
   return window['go']['main']['App']['GetEntries']();
 }
@@ -20,6 +24,14 @@ export function GetStats() {
 
 export function SaveWord(arg1, arg2, arg3) {
   return window['go']['main']['App']['SaveWord'](arg1, arg2, arg3);
+}
+
+export function SelectDictFile() {
+  return window['go']['main']['App']['SelectDictFile']();
+}
+
+export function SetDictPath(arg1) {
+  return window['go']['main']['App']['SetDictPath'](arg1);
 }
 
 export function Train(arg1) {
