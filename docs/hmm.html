@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morpho HMM解説</title>
+    <meta
+      name="description"
+      content="Morphoが日本語の品詞を推定する仕組み — 隠れマルコフモデル(HMM)とViterbiアルゴリズムの解説。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page page-wide">
+      <a class="back-link" href="./">← Morpho トップに戻る</a>
+
+      <header class="manual-header">
+        <h1>HMMのしくみ</h1>
+        <p class="tagline">
+          Morphoが「どの単語がどの品詞か」を決めるために使っている、隠れマルコフモデル(HMM)とViterbiアルゴリズムの解説。
+        </p>
+      </header>
+
+      <div class="manual-layout">
+        <nav class="toc toc-sidebar">
+          <strong>目次</strong>
+          <ol>
+            <li><a href="#intro">HMMとは</a></li>
+            <li><a href="#three-tables">3つの確率テーブル</a></li>
+            <li><a href="#diagram">図解: 最適な品詞列を選ぶ</a></li>
+            <li><a href="#viterbi">Viterbiアルゴリズム</a></li>
+            <li><a href="#training">学習(Train)の正体</a></li>
+            <li><a href="#unknown">未知語の扱い</a></li>
+            <li><a href="#fallback">未学習時のフォールバック</a></li>
+          </ol>
+        </nav>
+
+        <div class="manual-content">
+          <section id="intro">
+            <h2>1. HMMとは</h2>
+            <p>
+              隠れマルコフモデル(Hidden Markov Model, HMM)は、「目に見える観測列」の裏に「目に見えない(隠れた)状態の列」があると仮定し、観測列から最も尤もらしい状態列を推定する統計モデルです。
+            </p>
+            <p>
+              Morphoでは、<strong>観測 = 分かち書きされた単語(表層形)</strong>、<strong>隠れ状態 = 品詞</strong>として扱います。「東京」という表層形は見えていても、それが「名詞」なのか他の品詞なのかは直接は分からない — その裏にある品詞列を推定するのがHMMの役割です。
+            </p>
+          </section>
+
+          <section id="three-tables">
+            <h2>2. 3つの確率テーブル</h2>
+            <p>Morphoの内部(<code>internal/hmm</code>)が保持するHMMモデルは、3種類の確率テーブルで構成されています。</p>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>名前</th>
+                    <th>意味</th>
+                    <th>具体例</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>初期確率<br /><span style="color: var(--text-secondary); font-size: 12px">Initial</span></td>
+                    <td>文の最初がその品詞である確率</td>
+                    <td>P(名詞 | 文頭)</td>
+                  </tr>
+                  <tr>
+                    <td>遷移確率<br /><span style="color: var(--text-secondary); font-size: 12px">Transition</span></td>
+                    <td>ある品詞の次に別の品詞が続く確率</td>
+                    <td>P(助詞 | 直前が名詞)</td>
+                  </tr>
+                  <tr>
+                    <td>出力確率<br /><span style="color: var(--text-secondary); font-size: 12px">Emission</span></td>
+                    <td>ある品詞がその単語を生成する確率</td>
+                    <td>P(「東京」 | 名詞)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              これらはすべて<strong>対数(log)空間</strong>で保持されます。確率同士の掛け算を対数空間では足し算に置き換えられるため、長い文でも数値が極端に小さくなって精度が失われる(アンダーフローする)のを防げます。「確率0(あり得ない)」は
+              <code>LogZero</code>(<code>-1e300</code>)という定数で表現されます。
+            </p>
+          </section>
+
+          <section id="diagram">
+            <h2>3. 図解: 最適な品詞列を選ぶ</h2>
+            <p>
+              「東京は日本の首都です。」を解析する場合を例にします。各単語の位置で複数の品詞候補が考えられますが、Viterbiアルゴリズムは<strong>文全体を通じて最も確率が高くなる一本の道筋</strong>を選び出します。
+            </p>
+
+            <svg viewBox="0 0 920 300" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; margin: 20px 0">
+              <defs>
+                <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#6366f1" />
+                  <stop offset="100%" stop-color="#8b5cf6" />
+                </linearGradient>
+                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="#8b5cf6" />
+                </marker>
+              </defs>
+
+              <!-- chosen path (bold gradient) -->
+              <g stroke="url(#pathGradient)" stroke-width="3" fill="none" marker-end="url(#arrow)">
+                <line x1="102" y1="170" x2="168" y2="170" />
+                <line x1="232" y1="170" x2="298" y2="170" />
+                <line x1="362" y1="170" x2="428" y2="170" />
+                <line x1="492" y1="170" x2="558" y2="170" />
+                <line x1="622" y1="170" x2="688" y2="170" />
+                <line x1="752" y1="170" x2="818" y2="170" />
+              </g>
+
+              <!-- dimmed alternative nodes (considered, not chosen) -->
+              <g opacity="0.45">
+                <rect x="38" y="73" width="64" height="34" rx="8" fill="var(--pos-unknown)" />
+                <text x="70" y="95" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">未知語</text>
+
+                <rect x="298" y="73" width="64" height="34" rx="8" fill="var(--pos-unknown)" />
+                <text x="330" y="95" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">未知語</text>
+
+                <rect x="558" y="73" width="64" height="34" rx="8" fill="var(--pos-unknown)" />
+                <text x="590" y="95" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">未知語</text>
+              </g>
+
+              <!-- chosen-path nodes -->
+              <g font-size="13" font-weight="700">
+                <rect x="38" y="153" width="64" height="34" rx="8" fill="var(--pos-noun)" />
+                <text x="70" y="175" text-anchor="middle" fill="#111827">名詞</text>
+
+                <rect x="168" y="153" width="64" height="34" rx="8" fill="var(--pos-particle)" />
+                <text x="200" y="175" text-anchor="middle" fill="#111827">助詞</text>
+
+                <rect x="298" y="153" width="64" height="34" rx="8" fill="var(--pos-noun)" />
+                <text x="330" y="175" text-anchor="middle" fill="#111827">名詞</text>
+
+                <rect x="428" y="153" width="64" height="34" rx="8" fill="var(--pos-particle)" />
+                <text x="460" y="175" text-anchor="middle" fill="#111827">助詞</text>
+
+                <rect x="558" y="153" width="64" height="34" rx="8" fill="var(--pos-noun)" />
+                <text x="590" y="175" text-anchor="middle" fill="#111827">名詞</text>
+
+                <rect x="688" y="153" width="64" height="34" rx="8" fill="var(--pos-aux)" />
+                <text x="720" y="175" text-anchor="middle" fill="#111827">助動詞</text>
+
+                <rect x="818" y="153" width="64" height="34" rx="8" fill="var(--pos-symbol)" />
+                <text x="850" y="175" text-anchor="middle" fill="#ffffff">記号</text>
+              </g>
+
+              <!-- token labels -->
+              <g font-size="15" fill="var(--text-primary)" font-weight="600">
+                <text x="70" y="230" text-anchor="middle">東京</text>
+                <text x="200" y="230" text-anchor="middle">は</text>
+                <text x="330" y="230" text-anchor="middle">日本</text>
+                <text x="460" y="230" text-anchor="middle">の</text>
+                <text x="590" y="230" text-anchor="middle">首都</text>
+                <text x="720" y="230" text-anchor="middle">です</text>
+                <text x="850" y="230" text-anchor="middle">。</text>
+              </g>
+              <g font-size="11" fill="var(--text-secondary)">
+                <text x="460" y="255" text-anchor="middle">分かち書きされた各トークン</text>
+              </g>
+            </svg>
+
+            <p style="font-size: 13px; color: var(--text-secondary)">
+              ※ 実際には10種類の品詞すべてが各位置で候補になりますが、図では簡略化のため一部のみ表示しています。薄く表示した「未知語」は他候補として評価されたものの、文全体としてのスコアが低く選ばれなかった例です。
+            </p>
+          </section>
+
+          <section id="viterbi">
+            <h2>4. Viterbiアルゴリズム</h2>
+            <p>
+              単語数を <code>T</code>、品詞数を <code>S</code> とすると、あり得る品詞列の組み合わせは単純には
+              <code>S^T</code> 通りあり、文が長くなると全探索は現実的ではありません。Viterbiアルゴリズムは<strong>動的計画法(DP)</strong>を使い、これを
+              <code>O(T × S²)</code> の計算量まで落とします。
+            </p>
+            <p>考え方はシンプルです。</p>
+            <ol>
+              <li>各位置・各品詞について、「そこまでの最良スコア」だけを覚えておく(それより悪いスコアの経路は二度と再計算しない)</li>
+              <li>次の位置に進むとき、直前の全品詞からの「遷移確率 + 出力確率」を試し、最もスコアが高くなる遷移だけを残す</li>
+              <li>文末まで進んだら、最終的に最もスコアが高い品詞から逆向きにたどって(バックトラック)、品詞列を復元する</li>
+            </ol>
+            <p>
+              Morphoの実装(<code>internal/viterbi</code>)では、直前のどの品詞から遷移したかを <code>bp</code>(backpointer)という配列に記録しておき、最後にこれを逆順にたどることで品詞列を再構築しています。
+            </p>
+            <div class="note">
+              学習データに存在しない遷移(未観測の品詞→品詞の組み合わせ)に遭遇した場合、Morphoは遷移確率を無視して出力確率だけでスコアを計算するフォールバックを行います。学習不足で経路がすべて塞がってしまう事態を避けるための安全策です。
+            </div>
+          </section>
+
+          <section id="training">
+            <h2>5. 学習(Train)の正体</h2>
+            <p>
+              正直に説明すると、Morphoの学習は<strong>人手でタグ付けされた正解データからの学習ではありません</strong>。<code>Train(corpus)</code>
+              を呼ぶと、内部では以下が起こります。
+            </p>
+            <ol>
+              <li>コーパスを文字種境界でトークン分割する</li>
+              <li>各トークンに、未学習時と同じ<strong>ヒューリスティック推定(<code>InferPOS</code>)</strong>で品詞ラベルを仮に付ける</li>
+              <li>その(単語, 品詞)の並びから、初期確率・遷移確率・出力確率の出現回数を数える</li>
+              <li>回数を正規化して対数確率に変換し、モデルを更新する</li>
+            </ol>
+            <p>
+              つまり学習とは、<strong>ヒューリスティックという「弱い先生」が自分自身に教え込む自己学習(ブートストラップ)</strong>です。これによって何が変わるのか?
+            </p>
+            <ul>
+              <li>
+                ヒューリスティックは「文字種」だけを見た<strong>単語単位</strong>の判定ですが、学習後は<strong>特定の単語がどの品詞で何回出現したか</strong>(出力確率)と<strong>品詞の並び方の自然さ</strong>(遷移確率)が数値として蓄積されます。
+              </li>
+              <li>
+                解析(<code>Analyze</code>)は学習後、単語ごとの孤立した判定ではなく<strong>文全体で一番自然な品詞の並び</strong>をViterbiで探すようになるため、文脈を考慮した曖昧性解消ができるようになります。
+              </li>
+              <li>
+                ただし、そもそもヒューリスティックが間違えやすいパターンは、学習後もその誤りを統計的に強化してしまう可能性があります。学習は「賢くする」というより「文脈を考慮できるようにする」と捉えるのが正確です。
+              </li>
+            </ul>
+          </section>
+
+          <section id="unknown">
+            <h2>6. 未知語の扱い</h2>
+            <p>
+              学習データに一度も出てこなかった単語(未知語)に出力確率0を割り当てると、その品詞は永久に選ばれなくなってしまいます。Morphoは<strong>加算1(Laplace)スムージング</strong>で、これを避けています。
+            </p>
+            <pre class="code-block"><code>P(未知語 | 品詞) = 1 / (その品詞が持つ語彙数 + モデル全体の語彙数 + 1)</code></pre>
+            <p>
+              未知語であっても品詞ごとに緩やかに異なる(ゼロではない)確率が与えられるため、Viterbiの探索が完全に行き詰まることはありません。
+            </p>
+          </section>
+
+          <section id="fallback">
+            <h2>7. 未学習時のフォールバック</h2>
+            <p>
+              一度も <code>Train</code> を呼んでいない、あるいはモデルに品詞タグが1つもない場合、<code>Analyze</code> はHMM/Viterbiを使わず、各トークンに直接ヒューリスティック(<code>InferPOS</code>)を適用します。文字種(漢字・ひらがな・カタカナ・数字・記号)と語尾パターン(動詞語尾・形容詞語尾・助詞/助動詞の固定セット)だけを根拠にした、文脈を見ない判定です。
+            </p>
+            <p>
+              「学習させるほど文脈を考慮した解析に近づく」という設計は、<a href="playground.html">プレイグラウンド</a>で実際に文章を学習させながら確認できます。
+            </p>
+          </section>
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          <a href="./">← Morpho トップに戻る</a> ・
+          <a href="playground.html">プレイグラウンドで試す</a> ・
+          <a href="https://pkg.go.dev/github.com/7thCode/morpho">pkg.go.dev</a> ・
+          <a href="https://github.com/7thCode/Morpho">ソースコード</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
