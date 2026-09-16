@@ -59,28 +59,30 @@
           <section id="overview">
             <h2>2. 画面構成</h2>
             <p>ウィンドウ上部に3つのタブがあります。</p>
-            <table>
-              <thead>
-                <tr>
-                  <th>タブ</th>
-                  <th>できること</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>解析</td>
-                  <td>日本語テキストを形態素解析し、品詞構成比と単語ごとの品詞を表示</td>
-                </tr>
-                <tr>
-                  <td>学習 (Train)</td>
-                  <td>コーパス(学習用テキスト)からHMMモデルを学習し、解析精度を向上</td>
-                </tr>
-                <tr>
-                  <td>辞書ブラウザ</td>
-                  <td>辞書に登録されている単語の検索・追加・編集・削除</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>タブ</th>
+                    <th>できること</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>解析</td>
+                    <td>日本語テキストを形態素解析し、品詞構成比と単語ごとの品詞を表示</td>
+                  </tr>
+                  <tr>
+                    <td>学習 (Train)</td>
+                    <td>コーパス(学習用テキスト)からHMMモデルを学習し、解析精度を向上</td>
+                  </tr>
+                  <tr>
+                    <td>辞書ブラウザ</td>
+                    <td>辞書に登録されている単語の検索・追加・編集・削除</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <p>
               右上には辞書単語数と、モデルが学習済み(HMM)かヒューリスティック(未学習)かのステータスが常に表示されます。
             </p>
@@ -106,6 +108,9 @@
               <li>「学習を実行・保存」を押すと、遷移確率・放出確率がHMMモデルに反映され、辞書ファイルに保存されます。</li>
             </ol>
             <p>学習が完了すると、右上のステータスが「学習済み (HMM)」に変わり、解析タブでの精度が向上します。</p>
+            <p style="font-size: 13px; color: var(--text-secondary)">
+              遷移確率・出力確率が具体的に何を意味するか、学習が内部で何をしているかは <a href="hmm.html">HMMのしくみ</a> で詳しく解説しています。
+            </p>
           </section>
 
           <section id="dict">
@@ -126,27 +131,29 @@
 
           <section id="file-menu">
             <h2>6. Fileメニュー(Open... / Write...)</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>メニュー</th>
-                  <th>ショートカット</th>
-                  <th>動作</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>File &gt; Open...</td>
-                  <td><kbd>⌘/Ctrl</kbd> + <kbd>O</kbd></td>
-                  <td>テキストファイルを選択して読み込み、解析タブに反映して自動解析します。</td>
-                </tr>
-                <tr>
-                  <td>File &gt; Write...</td>
-                  <td><kbd>⌘/Ctrl</kbd> + <kbd>S</kbd></td>
-                  <td>直前の解析結果を分かち書き(スペース区切り)テキストとして保存します。</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>メニュー</th>
+                    <th>ショートカット</th>
+                    <th>動作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>File &gt; Open...</td>
+                    <td><kbd>⌘/Ctrl</kbd> + <kbd>O</kbd></td>
+                    <td>テキストファイルを選択して読み込み、解析タブに反映して自動解析します。</td>
+                  </tr>
+                  <tr>
+                    <td>File &gt; Write...</td>
+                    <td><kbd>⌘/Ctrl</kbd> + <kbd>S</kbd></td>
+                    <td>直前の解析結果を分かち書き(スペース区切り)テキストとして保存します。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <p>
               「Write...」は解析タブで解析済みの結果が必要です。何も解析していない状態で実行すると「書き出す解析結果がありません」と表示されます。
             </p>

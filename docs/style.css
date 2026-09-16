@@ -455,14 +455,21 @@ section {
   margin: 18px 0;
 }
 
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  margin: 14px 0;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 14px 0;
   font-size: 14px;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  overflow: hidden;
+}
+
+.table-scroll table {
+  margin: 0;
 }
 
 th,
@@ -527,6 +534,13 @@ footer {
   grid-template-columns: 1fr;
   gap: 32px;
   margin-top: 16px;
+}
+
+/* Grid items default to min-width: auto, refusing to shrink below their
+   content's intrinsic width — this is what was causing horizontal page
+   overflow on narrow (mobile) viewports before this override. */
+.manual-layout > * {
+  min-width: 0;
 }
 
 @media (min-width: 900px) {
@@ -655,6 +669,7 @@ details.train-panel .playground-textarea {
 .results-table-wrap {
   max-height: 420px;
   overflow-y: auto;
+  overflow-x: auto;
   border: 1px solid var(--border-color);
   border-radius: 12px;
   background: rgba(10, 15, 29, 0.3);
