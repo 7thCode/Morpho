@@ -4,177 +4,154 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Morpho</title>
-    <style>
-      :root {
-        --bg: #ffffff;
-        --bg-alt: #f5f5f7;
-        --border: #d9d9df;
-        --text: #1b1b1f;
-        --text-muted: #6b6b76;
-        --accent: #2f6fed;
-        color-scheme: light dark;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #1b1b1f;
-          --bg-alt: #242429;
-          --border: #35353c;
-          --text: #f0f0f2;
-          --text-muted: #9a9aa5;
-          --accent: #5b8dfd;
-        }
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--text);
-        font-family:
-          -apple-system,
-          BlinkMacSystemFont,
-          'Segoe UI',
-          Roboto,
-          sans-serif;
-        line-height: 1.6;
-      }
-      main {
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 48px 20px 80px;
-      }
-      h1 {
-        font-size: 28px;
-        margin-bottom: 4px;
-      }
-      .subtitle {
-        color: var(--text-muted);
-        margin-top: 0;
-        margin-bottom: 32px;
-      }
-      .download-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 16px;
-        margin-bottom: 16px;
-      }
-      .download-card {
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 24px;
-        background: var(--bg-alt);
-        display: flex;
-        flex-direction: column;
-      }
-      .download-card strong {
-        display: block;
-        margin-bottom: 4px;
-      }
-      .download-card .platform-sub {
-        font-size: 13px;
-        color: var(--text-muted);
-        margin-bottom: 12px;
-      }
-      .download-button {
-        display: inline-block;
-        background: var(--accent);
-        color: #fff;
-        text-decoration: none;
-        padding: 12px 20px;
-        border-radius: 8px;
-        font-weight: 600;
-        text-align: center;
-        margin-top: auto;
-      }
-      .meta {
-        font-size: 13px;
-        color: var(--text-muted);
-        margin-top: 20px;
-      }
-      h2 {
-        font-size: 18px;
-        margin-top: 40px;
-      }
-      ul {
-        padding-left: 20px;
-      }
-      code {
-        background: var(--bg-alt);
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-size: 0.9em;
-      }
-      footer {
-        margin-top: 48px;
-        font-size: 13px;
-        color: var(--text-muted);
-      }
-      a {
-        color: var(--accent);
-      }
-    </style>
+    <meta name="description" content="隠れマルコフモデル(HMM)による日本語形態素解析デスクトップアプリ" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main>
-      <h1>Morpho</h1>
-      <p class="subtitle">隠れマルコフモデル(HMM)による日本語形態素解析デスクトップアプリ</p>
+    <div class="page">
+      <header class="hero">
+        <div class="logo-badge">M</div>
+        <h1 class="gradient-text">Morpho</h1>
+        <p class="tagline">隠れマルコフモデル(HMM)による日本語形態素解析デスクトップアプリ</p>
+      </header>
 
-      <div class="download-grid">
-        <div class="download-card">
-          <strong>macOS</strong>
-          <span class="platform-sub">Apple Silicon / Intel (universal)</span>
-          <a
-            class="download-button"
-            href="https://github.com/7thCode/Morpho/releases/latest/download/Morpho_darwin_universal.zip"
-          >
-            .zip をダウンロード
+      <main>
+        <div class="download-grid">
+          <div class="download-card">
+            <div class="platform-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2" />
+                <path d="M3 9h18" />
+                <circle cx="6.5" cy="6.5" r="0.6" fill="currentColor" stroke="none" />
+                <circle cx="9" cy="6.5" r="0.6" fill="currentColor" stroke="none" />
+              </svg>
+            </div>
+            <strong>macOS</strong>
+            <span class="platform-sub">Apple Silicon / Intel (universal)</span>
+            <a
+              class="download-button"
+              href="https://github.com/7thCode/Morpho/releases/latest/download/Morpho_darwin_universal.zip"
+            >
+              .zip をダウンロード
+            </a>
+          </div>
+          <div class="download-card">
+            <div class="platform-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2" />
+                <path d="M3 9h18" />
+                <circle cx="6.5" cy="6.5" r="0.6" fill="currentColor" stroke="none" />
+                <circle cx="9" cy="6.5" r="0.6" fill="currentColor" stroke="none" />
+              </svg>
+            </div>
+            <strong>Windows</strong>
+            <span class="platform-sub">64bit (x64)</span>
+            <a
+              class="download-button"
+              href="https://github.com/7thCode/Morpho/releases/latest/download/Morpho_windows_amd64.zip"
+            >
+              .zip をダウンロード
+            </a>
+          </div>
+          <div class="download-card">
+            <div class="platform-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2" />
+                <path d="M3 9h18" />
+                <circle cx="6.5" cy="6.5" r="0.6" fill="currentColor" stroke="none" />
+                <circle cx="9" cy="6.5" r="0.6" fill="currentColor" stroke="none" />
+              </svg>
+            </div>
+            <strong>Linux</strong>
+            <span class="platform-sub">64bit (x64)</span>
+            <a
+              class="download-button"
+              href="https://github.com/7thCode/Morpho/releases/latest/download/Morpho_linux_amd64.zip"
+            >
+              .zip をダウンロード
+            </a>
+          </div>
+        </div>
+        <p class="meta">
+          過去のリリース一覧は <a href="https://github.com/7thCode/Morpho/releases">Releases</a> から確認できます。
+        </p>
+
+        <h2>主な機能</h2>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </div>
+            <div>
+              <strong>文字種 + HMM解析</strong>
+              <p>文字種境界でのトークン分割とHMMによる品詞推定を組み合わせて解析</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
+            </div>
+            <div>
+              <strong>コーパス学習</strong>
+              <p>学習用テキストを読み込ませてモデル精度を継続的に向上</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
+                <path d="M6 6h10M6 10h10" />
+              </svg>
+            </div>
+            <div>
+              <strong>辞書ブラウザ</strong>
+              <p>単語の検索・追加・編集・削除をGUIで直接操作</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+              </svg>
+            </div>
+            <div>
+              <strong>File &gt; Open... / Write...</strong>
+              <p>テキストファイルの読み込みと、分かち書き結果のファイル書き出し</p>
+            </div>
+          </div>
+        </div>
+
+        <h2>もっと詳しく</h2>
+        <div class="chip-row">
+          <a class="chip" href="manual.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
+              <path d="M6 6h10M6 10h10" />
+            </svg>
+            使い方マニュアル
+          </a>
+          <a class="chip" href="https://github.com/7thCode/Morpho">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+            ソースコード
           </a>
         </div>
-        <div class="download-card">
-          <strong>Windows</strong>
-          <span class="platform-sub">64bit (x64)</span>
-          <a
-            class="download-button"
-            href="https://github.com/7thCode/Morpho/releases/latest/download/Morpho_windows_amd64.zip"
-          >
-            .zip をダウンロード
-          </a>
-        </div>
-        <div class="download-card">
-          <strong>Linux</strong>
-          <span class="platform-sub">64bit (x64)</span>
-          <a
-            class="download-button"
-            href="https://github.com/7thCode/Morpho/releases/latest/download/Morpho_linux_amd64.zip"
-          >
-            .zip をダウンロード
-          </a>
-        </div>
-      </div>
-      <p class="meta">
-        過去のリリース一覧は <a href="https://github.com/7thCode/Morpho/releases">Releases</a> から確認できます。
-      </p>
-
-      <h2>主な機能</h2>
-      <ul>
-        <li>文字種境界でのトークン分割 + HMMによる品詞推定</li>
-        <li>コーパスからの学習によるモデル精度向上</li>
-        <li>辞書ブラウザ（単語の追加・編集・削除）</li>
-        <li>File &gt; Open... / Write... によるテキストファイルの読み込み・分かち書き書き出し</li>
-      </ul>
-
-      <h2>使い方</h2>
-      <p>
-        インストール方法や各タブの操作、Fileメニューの使い方は<a href="manual.html">使い方マニュアル</a>を参照してください。
-      </p>
-
-      <h2>ソースコード</h2>
-      <p>
-        <a href="https://github.com/7thCode/Morpho">github.com/7thCode/Morpho</a>
-      </p>
+      </main>
 
       <footer>7thCode</footer>
-    </main>
+    </div>
   </body>
 </html>
