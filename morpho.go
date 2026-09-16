@@ -59,6 +59,20 @@ func New(dictPath string) (*Analyzer, error) {
 	}, nil
 }
 
+// NewInMemory creates an Analyzer with a fresh, empty dictionary that is
+// never read from disk. Use this for ephemeral use — tests, or environments
+// with no real filesystem such as WebAssembly in a browser — where New
+// would otherwise fail trying to open a dictionary file. Analyze, Train,
+// and Save(path) work normally; SaveWord and DeleteWord return an error
+// because they persist to the dictPath given to New, which NewInMemory
+// leaves unset.
+func NewInMemory() *Analyzer {
+	return &Analyzer{
+		dictionary: dictionary.New(),
+		trainer:    hmm.NewTrainer(),
+	}
+}
+
 // Train trains the HMM model from the given corpus text and updates the dictionary.
 func (a *Analyzer) Train(corpus string) error {
 	tokens := tokenizer.Segment(corpus)

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morpho プレイグラウンド</title>
+    <meta
+      name="description"
+      content="ブラウザ上でWebAssembly版Morphoエンジンを直接試せるプレイグラウンド。インストール不要。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <a class="back-link" href="./">← Morpho トップに戻る</a>
+
+      <header class="manual-header">
+        <h1>プレイグラウンド</h1>
+        <p class="tagline">
+          WebAssembly版Morphoエンジンがこのページの中でそのまま動いています。入力したテキストは外部に送信されず、すべてブラウザ内で解析されます。
+        </p>
+      </header>
+
+      <main style="margin-top: 24px">
+        <p id="loadingStatus" class="playground-status">Wasmモジュールを読み込み中…</p>
+
+        <textarea
+          id="inputText"
+          class="playground-textarea"
+          placeholder="解析する日本語テキストを入力してください…"
+          disabled
+        ></textarea>
+
+        <div class="playground-actions">
+          <button id="analyzeBtn" class="btn-primary" disabled>解析する</button>
+          <span id="analyzeStatus" class="playground-status"></span>
+        </div>
+
+        <details class="train-panel">
+          <summary>学習用コーパスを入力してモデルを改善する(任意)</summary>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-top: 10px">
+            文章を学習させると、遷移確率・放出確率がHMMモデルに反映され、以降の解析結果が変わります(このページ内だけの一時的な学習で、保存はされません)。
+          </p>
+          <textarea
+            id="corpusText"
+            class="playground-textarea"
+            placeholder="学習用のコーパス(文章)を入力してください…"
+          ></textarea>
+          <div class="playground-actions">
+            <button id="trainBtn" class="btn-primary" disabled>学習を実行</button>
+            <span id="trainStatus" class="playground-status"></span>
+          </div>
+        </details>
+
+        <div id="resultsSection" hidden style="margin-top: 24px">
+          <span id="resultCount" class="result-count"></span>
+          <div class="results-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 60px">#</th>
+                  <th>表層形</th>
+                  <th>品詞</th>
+                </tr>
+              </thead>
+              <tbody id="resultsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>
+          <a href="./">← Morpho トップに戻る</a> ・
+          <a href="https://pkg.go.dev/github.com/7thCode/morpho">pkg.go.dev</a> ・
+          <a href="https://github.com/7thCode/Morpho">ソースコード</a>
+        </p>
+      </footer>
+    </div>
+
+    <script src="wasm_exec.js"></script>
+    <script>
+      const POS_CLASS = {
+        名詞: 'noun',
+        動詞: 'verb',
+        形容詞: 'adj',
+        助詞: 'particle',
+        助動詞: 'aux',
+        副詞: 'adv',
+        記号: 'symbol',
+        数詞: 'num',
+        外来語: 'foreign',
+        未知語: 'unknown',
+      };
+
+      const loadingStatus = document.getElementById('loadingStatus');
+      const inputText = document.getElementById('inputText');
+      const analyzeBtn = document.getElementById('analyzeBtn');
+      const analyzeStatus = document.getElementById('analyzeStatus');
+      const corpusText = document.getElementById('corpusText');
+      const trainBtn = document.getElementById('trainBtn');
+      const trainStatus = document.getElementById('trainStatus');
+      const resultsSection = document.getElementById('resultsSection');
+      const resultCount = document.getElementById('resultCount');
+      const resultsBody = document.getElementById('resultsBody');
+
+      function renderResults(morphemes) {
+        resultsBody.innerHTML = '';
+        morphemes.forEach((m, i) => {
+          const tr = document.createElement('tr');
+          const cls = POS_CLASS[m.pos] || 'default';
+          tr.innerHTML = `
+            <td style="color: var(--text-secondary); font-size: 0.8rem">${i + 1}</td>
+            <td style="font-weight: 600">${escapeHtml(m.surface)}</td>
+            <td><span class="pos-badge ${cls}">${escapeHtml(m.pos)}</span></td>
+          `;
+          resultsBody.appendChild(tr);
+        });
+        resultCount.textContent = `${morphemes.length} 形態素`;
+        resultsSection.hidden = morphemes.length === 0;
+      }
+
+      function escapeHtml(s) {
+        const div = document.createElement('div');
+        div.textContent = s;
+        return div.innerHTML;
+      }
+
+      function runAnalyze() {
+        const text = inputText.value.trim();
+        if (!text) {
+          resultsSection.hidden = true;
+          analyzeStatus.textContent = '';
+          return;
+        }
+        const result = JSON.parse(window.morphoAnalyze(text));
+        if (!result.ok) {
+          analyzeStatus.textContent = `エラー: ${result.error}`;
+          analyzeStatus.className = 'playground-status error';
+          return;
+        }
+        analyzeStatus.textContent = '';
+        analyzeStatus.className = 'playground-status';
+        renderResults(result.morphemes || []);
+      }
+
+      let debounceTimer;
+      inputText.addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(runAnalyze, 300);
+      });
+      analyzeBtn.addEventListener('click', runAnalyze);
+
+      trainBtn.addEventListener('click', () => {
+        const corpus = corpusText.value.trim();
+        if (!corpus) return;
+        const result = JSON.parse(window.morphoTrain(corpus));
+        if (!result.ok) {
+          trainStatus.textContent = `エラー: ${result.error}`;
+          trainStatus.className = 'playground-status error';
+          return;
+        }
+        trainStatus.textContent = '学習が完了しました。解析結果に反映されます。';
+        trainStatus.className = 'playground-status';
+        if (inputText.value.trim()) runAnalyze();
+      });
+
+      const go = new Go();
+      fetch('morpho.wasm')
+        .then((resp) => resp.arrayBuffer())
+        .then((bytes) => WebAssembly.instantiate(bytes, go.importObject))
+        .then((result) => {
+          go.run(result.instance);
+          loadingStatus.textContent = '';
+          inputText.disabled = false;
+          analyzeBtn.disabled = false;
+          trainBtn.disabled = false;
+        })
+        .catch((err) => {
+          loadingStatus.textContent = `Wasmモジュールの読み込みに失敗しました: ${err}`;
+          loadingStatus.className = 'playground-status error';
+        });
+    </script>
+  </body>
+</html>

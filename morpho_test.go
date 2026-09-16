@@ -209,3 +209,36 @@ func TestAnalyzer(t *testing.T) {
 		t.Error("saved dictionary file is empty")
 	}
 }
+
+// TestNewInMemory verifies that an in-memory Analyzer works fully offline
+// (no dictPath, never touches disk) for Train/Analyze, matching what the
+// WASM playground relies on.
+func TestNewInMemory(t *testing.T) {
+	analyzer := morpho.NewInMemory()
+	if analyzer == nil {
+		t.Fatal("NewInMemory() returned nil")
+	}
+
+	corpus := "東京は日本の首都です。今日は良い天気ですね。"
+	if err := analyzer.Train(corpus); err != nil {
+		t.Fatal("Train() failed:", err)
+	}
+
+	results, err := analyzer.Analyze("今日の東京は良い天気です。")
+	if err != nil {
+		t.Fatal("Analyze() failed:", err)
+	}
+	if len(results) == 0 {
+		t.Fatal("Analyze() returned no results")
+	}
+
+	if !analyzer.IsTrained() {
+		t.Error("expected IsTrained() to be true after Train()")
+	}
+
+	// SaveWord persists to the dictPath given to New, which NewInMemory
+	// leaves unset, so it must report an error rather than silently no-op.
+	if err := analyzer.SaveWord("東京", "名詞", 1); err == nil {
+		t.Error("expected SaveWord() to return an error with no dictPath set")
+	}
+}
