@@ -1,8 +1,32 @@
 # Morpho
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/7thCode/morpho.svg)](https://pkg.go.dev/github.com/7thCode/morpho)
+[![Test](https://github.com/7thCode/Morpho/actions/workflows/test.yml/badge.svg)](https://github.com/7thCode/Morpho/actions/workflows/test.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Go製の日本語形態素解析ライブラリ。外部依存なし、標準ライブラリのみで動作する。
 
 文字種境界でのトークン分割と HMM（隠れマルコフモデル）による品詞推定を組み合わせ、コーパスから学習した統計モデルで解析精度を向上できる。
+
+## インストール
+
+```bash
+go get github.com/7thCode/morpho
+```
+
+```go
+import "github.com/7thCode/morpho"
+
+analyzer, err := morpho.New("dict.json") // 辞書ファイルが存在しない場合は空の辞書で開始
+analyzer.Train("東京は日本の首都です。今日は良い天気ですね。")
+
+morphemes, err := analyzer.Analyze("今日の東京は良い天気です。")
+for _, m := range morphemes {
+    fmt.Printf("%s\t%s\n", m.Surface, m.POS)
+}
+```
+
+詳しい使い方は [pkg.go.dev](https://pkg.go.dev/github.com/7thCode/morpho) のパッケージドキュメント、または後述の「ライブラリとしての使い方」を参照。
 
 ## アーキテクチャ
 
@@ -32,26 +56,9 @@ Go製の日本語形態素解析ライブラリ。外部依存なし、標準ラ
 | 記号 | 句読点など |
 | 未知語 | 判定不能 |
 
-## ライブラリとしての使い方
+## ライブラリとしての使い方（補足）
 
-```go
-import "github.com/7thCode/morpho"
-
-// 初期化（辞書ファイルが存在しない場合は空の辞書で開始）
-analyzer, err := morpho.New("dict.json")
-
-// コーパスで学習（学習後は自動で Save するまで in-memory）
-analyzer.Train("東京は日本の首都です。今日は良い天気ですね。")
-
-// 解析
-morphemes, err := analyzer.Analyze("今日の東京は良い天気です。")
-for _, m := range morphemes {
-    fmt.Printf("%s\t%s\n", m.Surface, m.POS)
-}
-
-// 辞書の保存
-analyzer.Save("dict.json")
-```
+基本的な使い方は冒頭の「インストール」を参照。ここでは `Train` の挙動を補足する。
 
 `Train` を複数回呼ぶと、コーパスのカウントは `Trainer` 内部に**累積**される。`Build()` は毎回全累積カウントを正規化してモデルを生成するため、呼び出すたびに「これまでの全コーパスを合算した」モデルへ更新される。
 
@@ -61,6 +68,8 @@ analyzer.Train("今日は良い天気ですね。")   // corpus A+B の累積で
 ```
 
 学習をリセットしたい場合は新しい `Analyzer` を作成する。
+
+> **Note:** リポジトリ直下の `dict.json` は単一のWikipedia記事コーパスで学習したデモ用データであり、本番品質の辞書ではない。利用時は自前のコーパスで `Train` することを推奨する。
 
 ## コマンド
 
@@ -90,8 +99,12 @@ Electron アプリ等から利用するためのローカル HTTP サーバー�
 | GET | `/health` | — | `{"ok": true}` |
 | POST | `/analyze` | `{"text": "..."}` | `{"morphemes": [{...}]}` |
 | POST | `/train` | `{"corpus": "..."}` | `{"ok": true}` |
+| GET | `/stats` | — | `{"word_count": ..., "is_trained": ..., "pos_tags": [...]}` |
+| GET | `/entries` | — | `[{"surface": ..., "pos": ..., "freq": ...}, ...]` |
+| POST/PUT | `/word` | `{"surface": ..., "pos": ..., "freq": ...}` | `{"ok": true}` |
+| DELETE | `/word?surface=...` | — | `{"ok": true}` |
 
-`/train` は学習後に辞書を自動保存する。
+`/train` は学習後に辞書を自動保存する。全ルートで `Access-Control-Allow-Origin: *` を返し、認証・レート制限は実装していない。ローカル開発用のツールであり、そのまま公開ネットワークに晒すことは想定していない。
 
 ## デスクトップアプリ（app/）
 
