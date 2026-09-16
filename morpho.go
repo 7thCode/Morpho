@@ -1,3 +1,23 @@
+// Package morpho implements a Japanese morphological analyzer with zero
+// external dependencies (Go standard library only).
+//
+// Analysis segments text at character-type boundaries (tokenizer.Segment)
+// and tags each token's part of speech with a hidden Markov model decoded
+// via Viterbi (viterbi.Decode). Before any training, Analyze falls back to
+// heuristic POS inference based on character type and word-ending patterns.
+//
+//	analyzer, err := morpho.New("dict.json")
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//	analyzer.Train("東京は日本の首都です。今日は良い天気ですね。")
+//	morphemes, err := analyzer.Analyze("今日の東京は良い天気です。")
+//	for _, m := range morphemes {
+//		fmt.Printf("%s\t%s\n", m.Surface, m.POS)
+//	}
+//
+// Trained models and dictionary entries persist as JSON via Save, and
+// reload automatically on the next New call against the same path.
 package morpho
 
 import (

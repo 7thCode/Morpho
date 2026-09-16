@@ -1,9 +1,12 @@
 name: Build
 
 on:
+  # app-v* (not bare v*): bare vX.Y.Z tags are reserved for the Go library's
+  # own module semver (required by `go get`/pkg.go.dev), separate from this
+  # desktop app's release cadence.
   push:
     tags:
-      - 'v*'
+      - 'app-v*'
   workflow_dispatch:
     inputs:
       upload_to_release:
