@@ -5,7 +5,10 @@ cmd/desktop/build/darwin/*.app
 /desktop
 
 # ── Wails ───────────────────────────────────────────────
-cmd/desktop/frontend/dist/
+# Trailing "/*" (not "/") so the .gitkeep negation below actually applies —
+# a directory-level ignore (trailing "/") stops git from descending into it
+# at all, silently defeating any "!" re-include pattern for files inside it.
+cmd/desktop/frontend/dist/*
 !cmd/desktop/frontend/dist/.gitkeep
 cmd/desktop/frontend/node_modules/
 cmd/desktop/frontend/package.json.md5
