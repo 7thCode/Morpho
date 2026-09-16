@@ -1,16 +1,19 @@
 <script>
   import { onMount } from 'svelte'
-  import { 
-    Analyze, 
-    Train, 
-    GetStats, 
-    GetEntries, 
-    SaveWord, 
+  import {
+    Analyze,
+    Train,
+    GetStats,
+    GetEntries,
+    SaveWord,
     DeleteWord,
     GetDictPath,
     SetDictPath,
-    SelectDictFile
+    SelectDictFile,
+    OpenTextFile,
+    SaveSegmentedText
   } from '../wailsjs/go/main/App.js'
+  import { EventsOn } from '../wailsjs/runtime'
 
   let tab = 'analyze'
   let inputText = ''
@@ -184,6 +187,33 @@
     corpus = SAMPLE_CORPUS
   }
 
+  // File > Open... : ファイルを読み込んで解析タブに反映
+  async function handleMenuOpen() {
+    try {
+      const text = await OpenTextFile()
+      if (!text) return // キャンセルされた場合
+      inputText = text
+      tab = 'analyze'
+      await analyze()
+    } catch (e) {
+      error = typeof e === 'string' ? e : e.message
+    }
+  }
+
+  // File > Write... : 現在の解析結果を分かち書きとしてファイルに書き出す
+  async function handleMenuWrite() {
+    if (morphemes.length === 0) {
+      error = '書き出す解析結果がありません。先にテキストを解析してください。'
+      return
+    }
+    const segmented = morphemes.map(m => m.surface).join(' ')
+    try {
+      await SaveSegmentedText(segmented)
+    } catch (e) {
+      error = typeof e === 'string' ? e : e.message
+    }
+  }
+
   function handleKeydown(e) {
     if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
       if (tab === 'analyze') analyze()
@@ -280,6 +310,13 @@
   }
 
   // 解析結果の品詞割合統計の計算
+  // 結果テーブルに一度に描画する行数の上限。制限がないと長い文書を解析した際に
+  // 数万行のDOMが生成され、WKWebViewの描画が壊れる（表示が消えたり残像が残ったり
+  // する）ことが確認されたため、表示件数を絞って安定性を優先する。
+  const MAX_DISPLAYED_MORPHEMES = 1000
+  let displayedMorphemes = []
+  $: displayedMorphemes = morphemes.slice(0, MAX_DISPLAYED_MORPHEMES)
+
   let posStats = []
   $: {
     if (morphemes.length > 0) {
@@ -317,6 +354,8 @@
   onMount(async () => {
     await loadStats()
     await loadDictPath()
+    EventsOn('menu:open', handleMenuOpen)
+    EventsOn('menu:write', handleMenuWrite)
   })
 </script>
 
@@ -420,7 +459,7 @@
                 </tr>
               </thead>
               <tbody>
-                {#each morphemes as m, i}
+                {#each displayedMorphemes as m, i}
                   <tr class="fade-in-row">
                     <td class="num">{i + 1}</td>
                     <td class="surface">{m.surface}</td>
@@ -431,6 +470,11 @@
                 {/each}
               </tbody>
             </table>
+            {#if morphemes.length > MAX_DISPLAYED_MORPHEMES}
+              <p class="truncation-note">
+                表示件数が多いため最初の{MAX_DISPLAYED_MORPHEMES.toLocaleString()}語のみ表示しています（全{morphemes.length.toLocaleString()}語）
+              </p>
+            {/if}
           </div>
         </div>
       {/if}
@@ -1229,6 +1273,13 @@
     font-size: 0.8rem;
     color: var(--text-secondary);
     text-align: right;
+  }
+
+  .truncation-note {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: center;
   }
 
   /* アニメーション用クラス */

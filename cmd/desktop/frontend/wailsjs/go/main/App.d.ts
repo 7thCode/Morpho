@@ -13,6 +13,10 @@ export function GetEntries():Promise<Array<morpho.DictEntry>>;
 
 export function GetStats():Promise<main.Stats>;
 
+export function OpenTextFile():Promise<string>;
+
+export function SaveSegmentedText(arg1:string):Promise<void>;
+
 export function SaveWord(arg1:string,arg2:string,arg3:number):Promise<void>;
 
 export function SelectDictFile():Promise<string>;

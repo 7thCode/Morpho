@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"os"
 	"sync"
 
 	"github.com/7thCode/morpho"
@@ -130,6 +131,42 @@ func (a *App) SelectDictFile() (string, error) {
 		return "", err
 	}
 	return path, nil
+}
+
+// OpenTextFile opens an OS file dialog and returns the contents of the
+// selected text file. It returns an empty string if the user cancels.
+func (a *App) OpenTextFile() (string, error) {
+	path, err := runtime.OpenFileDialog(a.ctx, runtime.OpenDialogOptions{
+		Title: "テキストファイルを開く",
+		Filters: []runtime.FileFilter{
+			{DisplayName: "テキストファイル (*.txt)", Pattern: "*.txt"},
+			{DisplayName: "すべてのファイル (*.*)", Pattern: "*.*"},
+		},
+	})
+	if err != nil || path == "" {
+		return "", err
+	}
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return "", err
+	}
+	return string(data), nil
+}
+
+// SaveSegmentedText writes already-segmented (分かち書き) text to a file
+// chosen via an OS save dialog. It is a no-op if the user cancels.
+func (a *App) SaveSegmentedText(text string) error {
+	path, err := runtime.SaveFileDialog(a.ctx, runtime.SaveDialogOptions{
+		Title:           "分かち書きを書き出す",
+		DefaultFilename: "segmented.txt",
+		Filters: []runtime.FileFilter{
+			{DisplayName: "テキストファイル (*.txt)", Pattern: "*.txt"},
+		},
+	})
+	if err != nil || path == "" {
+		return err
+	}
+	return os.WriteFile(path, []byte(text), 0o644)
 }
 
 

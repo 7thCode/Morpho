@@ -22,6 +22,14 @@ export function GetStats() {
   return window['go']['main']['App']['GetStats']();
 }
 
+export function OpenTextFile() {
+  return window['go']['main']['App']['OpenTextFile']();
+}
+
+export function SaveSegmentedText(arg1) {
+  return window['go']['main']['App']['SaveSegmentedText'](arg1);
+}
+
 export function SaveWord(arg1, arg2, arg3) {
   return window['go']['main']['App']['SaveWord'](arg1, arg2, arg3);
 }
