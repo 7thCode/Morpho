@@ -13,6 +13,20 @@
   --primary-gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
   --primary-color: #6366f1;
   --accent-glow: rgba(99, 102, 241, 0.18);
+
+  /* Same POS color mapping as the desktop app, for a consistent look */
+  --pos-noun: #60a5fa;
+  --pos-verb: #34d399;
+  --pos-adj: #fbbf24;
+  --pos-particle: #c084fc;
+  --pos-aux: #f472b6;
+  --pos-adv: #2dd4bf;
+  --pos-symbol: #9ca3af;
+  --pos-num: #fb7185;
+  --pos-foreign: #38bdf8;
+  --pos-unknown: #f87171;
+  --pos-default: #a7f3d0;
+
   color-scheme: dark;
 }
 
@@ -53,6 +67,22 @@ code {
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 0.9em;
+}
+
+pre.code-block {
+  background: rgba(10, 15, 29, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+pre.code-block code {
+  background: none;
+  padding: 0;
+  font-size: 0.95em;
+  color: #c7d2fe;
 }
 
 p {
@@ -520,6 +550,166 @@ footer {
 
 .manual-content section:last-child {
   margin-bottom: 0;
+}
+
+/* Playground */
+
+.playground-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px 16px;
+  background: rgba(10, 15, 29, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.7;
+  resize: vertical;
+}
+
+.playground-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.playground-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-gradient);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.5);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.playground-status {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.playground-status.error {
+  color: #f87171;
+}
+
+details.train-panel {
+  margin-top: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+details.train-panel summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+details.train-panel .playground-textarea {
+  margin-top: 14px;
+  min-height: 90px;
+}
+
+.result-count {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.results-table-wrap {
+  max-height: 420px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: rgba(10, 15, 29, 0.3);
+  margin-top: 16px;
+}
+
+.results-table-wrap table {
+  border: none;
+  border-radius: 0;
+  margin: 0;
+}
+
+.pos-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  color: #111827;
+}
+
+.pos-badge.noun {
+  background: var(--pos-noun);
+}
+.pos-badge.verb {
+  background: var(--pos-verb);
+}
+.pos-badge.adj {
+  background: var(--pos-adj);
+}
+.pos-badge.particle {
+  background: var(--pos-particle);
+}
+.pos-badge.aux {
+  background: var(--pos-aux);
+}
+.pos-badge.adv {
+  background: var(--pos-adv);
+}
+.pos-badge.symbol {
+  background: var(--pos-symbol);
+  color: #fff;
+}
+.pos-badge.num {
+  background: var(--pos-num);
+}
+.pos-badge.foreign {
+  background: var(--pos-foreign);
+}
+.pos-badge.unknown {
+  background: var(--pos-unknown);
+  color: #fff;
+}
+.pos-badge.default {
+  background: var(--pos-default);
 }
 
 /* Responsive */
