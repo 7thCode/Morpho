@@ -4,309 +4,178 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Morpho 使い方マニュアル</title>
-    <style>
-      :root {
-        --bg: #ffffff;
-        --bg-alt: #f5f5f7;
-        --border: #d9d9df;
-        --text: #1b1b1f;
-        --text-muted: #6b6b76;
-        --accent: #2f6fed;
-        color-scheme: light dark;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #1b1b1f;
-          --bg-alt: #242429;
-          --border: #35353c;
-          --text: #f0f0f2;
-          --text-muted: #9a9aa5;
-          --accent: #5b8dfd;
-        }
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--text);
-        font-family:
-          -apple-system,
-          BlinkMacSystemFont,
-          'Segoe UI',
-          Roboto,
-          sans-serif;
-        line-height: 1.7;
-      }
-      main {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 48px 20px 80px;
-      }
-      .back-link {
-        display: inline-block;
-        margin-bottom: 24px;
-        font-size: 14px;
-      }
-      h1 {
-        font-size: 26px;
-        margin-bottom: 4px;
-      }
-      .subtitle {
-        color: var(--text-muted);
-        margin-top: 0;
-        margin-bottom: 32px;
-      }
-      nav.toc {
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 20px 24px;
-        background: var(--bg-alt);
-        margin-bottom: 40px;
-      }
-      nav.toc strong {
-        display: block;
-        margin-bottom: 10px;
-      }
-      nav.toc ol {
-        margin: 0;
-        padding-left: 20px;
-      }
-      nav.toc li {
-        margin-bottom: 4px;
-      }
-      section {
-        margin-bottom: 44px;
-        scroll-margin-top: 20px;
-      }
-      h2 {
-        font-size: 20px;
-        border-bottom: 1px solid var(--border);
-        padding-bottom: 8px;
-      }
-      h3 {
-        font-size: 16px;
-        margin-top: 24px;
-      }
-      p,
-      li {
-        color: var(--text);
-      }
-      ul,
-      ol {
-        padding-left: 22px;
-      }
-      li {
-        margin-bottom: 6px;
-      }
-      code {
-        background: var(--bg-alt);
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-size: 0.9em;
-      }
-      kbd {
-        display: inline-block;
-        border: 1px solid var(--border);
-        border-bottom-width: 2px;
-        border-radius: 4px;
-        padding: 1px 6px;
-        font-size: 0.85em;
-        font-family: inherit;
-        background: var(--bg-alt);
-      }
-      .note {
-        border-left: 3px solid var(--accent);
-        background: var(--bg-alt);
-        padding: 12px 16px;
-        border-radius: 0 8px 8px 0;
-        font-size: 14px;
-        margin: 16px 0;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 12px 0;
-        font-size: 14px;
-      }
-      th,
-      td {
-        text-align: left;
-        padding: 8px 10px;
-        border-bottom: 1px solid var(--border);
-      }
-      th {
-        color: var(--text-muted);
-        font-weight: 600;
-      }
-      footer {
-        margin-top: 48px;
-        font-size: 13px;
-        color: var(--text-muted);
-      }
-      a {
-        color: var(--accent);
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main>
+    <div class="page page-wide">
       <a class="back-link" href="./">← Morpho トップに戻る</a>
-      <h1>Morpho 使い方マニュアル</h1>
-      <p class="subtitle">隠れマルコフモデル(HMM)による日本語形態素解析デスクトップアプリの操作ガイド</p>
 
-      <nav class="toc">
-        <strong>目次</strong>
-        <ol>
-          <li><a href="#install">インストールと起動</a></li>
-          <li><a href="#overview">画面構成</a></li>
-          <li><a href="#analyze">解析タブ</a></li>
-          <li><a href="#train">学習(Train)タブ</a></li>
-          <li><a href="#dict">辞書ブラウザ</a></li>
-          <li><a href="#file-menu">Fileメニュー(Open... / Write...)</a></li>
-          <li><a href="#faq">よくある質問</a></li>
-        </ol>
-      </nav>
+      <header class="manual-header">
+        <h1>Morpho 使い方マニュアル</h1>
+        <p class="tagline">隠れマルコフモデル(HMM)による日本語形態素解析デスクトップアプリの操作ガイド</p>
+      </header>
 
-      <section id="install">
-        <h2>1. インストールと起動</h2>
-        <ol>
-          <li>トップページからOS向けの <code>.zip</code> をダウンロードします。</li>
-          <li>zipを展開すると <code>Morpho.app</code>(macOS)/ <code>Morpho.exe</code>(Windows)/ <code>Morpho</code>(Linux)が出てきます。</li>
-          <li>そのまま実行(macOSはダブルクリック、Windows/Linuxは実行ファイルを起動)します。</li>
-        </ol>
+      <div class="manual-layout">
+        <nav class="toc toc-sidebar">
+          <strong>目次</strong>
+          <ol>
+            <li><a href="#install">インストールと起動</a></li>
+            <li><a href="#overview">画面構成</a></li>
+            <li><a href="#analyze">解析タブ</a></li>
+            <li><a href="#train">学習(Train)タブ</a></li>
+            <li><a href="#dict">辞書ブラウザ</a></li>
+            <li><a href="#file-menu">Fileメニュー</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+          </ol>
+        </nav>
 
-        <h3>macOS: 「開発元を確認できません」と表示される場合</h3>
-        <p>
-          配布物はApp Store配布用の公証(Notarization)を受けていないため、初回起動時にGatekeeperの警告が出ることがあります。
-          <code>Morpho.app</code> を<strong>右クリック(またはControl+クリック)して「開く」を選択</strong>すると、確認ダイアログ経由で起動できます。一度許可すれば以降は通常のダブルクリックで起動できます。
-        </p>
+        <div class="manual-content">
+          <section id="install">
+            <h2>1. インストールと起動</h2>
+            <ol>
+              <li>トップページからOS向けの <code>.zip</code> をダウンロードします。</li>
+              <li>zipを展開すると <code>Morpho.app</code>(macOS)/ <code>Morpho.exe</code>(Windows)/ <code>Morpho</code>(Linux)が出てきます。</li>
+              <li>そのまま実行(macOSはダブルクリック、Windows/Linuxは実行ファイルを起動)します。</li>
+            </ol>
 
-        <h3>Windows: SmartScreenの警告が出る場合</h3>
-        <p>
-          署名付きコード証明書を使っていないため、初回実行時にSmartScreenの警告が出ることがあります。「詳細情報」→「実行」で起動できます。
-        </p>
-      </section>
+            <h3>macOS: 「開発元を確認できません」と表示される場合</h3>
+            <p>
+              配布物はApp Store配布用の公証(Notarization)を受けていないため、初回起動時にGatekeeperの警告が出ることがあります。
+              <code>Morpho.app</code> を<strong>右クリック(またはControl+クリック)して「開く」を選択</strong>すると、確認ダイアログ経由で起動できます。一度許可すれば以降は通常のダブルクリックで起動できます。
+            </p>
 
-      <section id="overview">
-        <h2>2. 画面構成</h2>
-        <p>ウィンドウ上部に3つのタブがあります。</p>
-        <table>
-          <thead>
-            <tr>
-              <th>タブ</th>
-              <th>できること</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>解析</td>
-              <td>日本語テキストを形態素解析し、品詞構成比と単語ごとの品詞を表示</td>
-            </tr>
-            <tr>
-              <td>学習 (Train)</td>
-              <td>コーパス(学習用テキスト)からHMMモデルを学習し、解析精度を向上</td>
-            </tr>
-            <tr>
-              <td>辞書ブラウザ</td>
-              <td>辞書に登録されている単語の検索・追加・編集・削除</td>
-            </tr>
-          </tbody>
-        </table>
-        <p>
-          右上には辞書単語数と、モデルが学習済み(HMM)かヒューリスティック(未学習)かのステータスが常に表示されます。
-        </p>
-      </section>
+            <h3>Windows: SmartScreenの警告が出る場合</h3>
+            <p>
+              署名付きコード証明書を使っていないため、初回実行時にSmartScreenの警告が出ることがあります。「詳細情報」→「実行」で起動できます。
+            </p>
+          </section>
 
-      <section id="analyze">
-        <h2>3. 解析タブ</h2>
-        <ol>
-          <li>テキストエリアに解析したい日本語文章を入力します。入力するたびに自動で(デバウンス付きで)再解析されます。</li>
-          <li>「再解析」ボタンでも手動実行できます。<kbd>⌘/Ctrl</kbd> + <kbd>Enter</kbd> でも実行可能です。</li>
-          <li>結果は「品詞の構成比」(棒グラフ)と、単語ごとの表層形・品詞を一覧表示する表の2カラムで表示されます。</li>
-        </ol>
-        <div class="note">
-          結果テーブルは表示負荷を抑えるため<strong>最初の1,000語まで</strong>表示します。それ以上ある場合はテーブル下部に「表示件数が多いため最初の1,000語のみ表示しています」と表示されます(解析結果の件数自体・品詞構成比は全語数が対象です)。
+          <section id="overview">
+            <h2>2. 画面構成</h2>
+            <p>ウィンドウ上部に3つのタブがあります。</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>タブ</th>
+                  <th>できること</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>解析</td>
+                  <td>日本語テキストを形態素解析し、品詞構成比と単語ごとの品詞を表示</td>
+                </tr>
+                <tr>
+                  <td>学習 (Train)</td>
+                  <td>コーパス(学習用テキスト)からHMMモデルを学習し、解析精度を向上</td>
+                </tr>
+                <tr>
+                  <td>辞書ブラウザ</td>
+                  <td>辞書に登録されている単語の検索・追加・編集・削除</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              右上には辞書単語数と、モデルが学習済み(HMM)かヒューリスティック(未学習)かのステータスが常に表示されます。
+            </p>
+          </section>
+
+          <section id="analyze">
+            <h2>3. 解析タブ</h2>
+            <ol>
+              <li>テキストエリアに解析したい日本語文章を入力します。入力するたびに自動で(デバウンス付きで)再解析されます。</li>
+              <li>「再解析」ボタンでも手動実行できます。<kbd>⌘/Ctrl</kbd> + <kbd>Enter</kbd> でも実行可能です。</li>
+              <li>結果は「品詞の構成比」(棒グラフ)と、単語ごとの表層形・品詞を一覧表示する表の2カラムで表示されます。</li>
+            </ol>
+            <div class="note">
+              結果テーブルは表示負荷を抑えるため<strong>最初の1,000語まで</strong>表示します。それ以上ある場合はテーブル下部に「表示件数が多いため最初の1,000語のみ表示しています」と表示されます(解析結果の件数自体・品詞構成比は全語数が対象です)。
+            </div>
+          </section>
+
+          <section id="train">
+            <h2>4. 学習(Train)タブ</h2>
+            <ol>
+              <li>学習用のコーパス(通常の文章、またはスペース区切りで <code>単語/品詞</code> の形式)をテキストエリアに入力します。</li>
+              <li>「サンプル文章を読込」ボタンで、動作確認用のサンプルコーパスを読み込めます。</li>
+              <li>「学習を実行・保存」を押すと、遷移確率・放出確率がHMMモデルに反映され、辞書ファイルに保存されます。</li>
+            </ol>
+            <p>学習が完了すると、右上のステータスが「学習済み (HMM)」に変わり、解析タブでの精度が向上します。</p>
+          </section>
+
+          <section id="dict">
+            <h2>5. 辞書ブラウザ</h2>
+            <ul>
+              <li>上部の検索ボックスで単語または品詞から絞り込み、プルダウンで品詞フィルタもかけられます。</li>
+              <li>各列見出しをクリックするとその列でソートされます(昇順/降順の切り替えも可能)。</li>
+              <li>「単語を追加」ボタンから新しい単語(表層形・品詞・出現頻度)を辞書に登録できます。</li>
+              <li>一覧の各行にある編集/削除アイコンから、既存エントリーの修正・削除ができます。</li>
+            </ul>
+
+            <h3>辞書ファイルの変更</h3>
+            <p>
+              辞書ブラウザ上部の「現在の辞書ファイル」パネルにある「変更」ボタンから、別の <code>dict.json</code>
+              を選択または新規作成できます。プロジェクトやコーパスごとに辞書を使い分けたい場合に利用してください。
+            </p>
+          </section>
+
+          <section id="file-menu">
+            <h2>6. Fileメニュー(Open... / Write...)</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>メニュー</th>
+                  <th>ショートカット</th>
+                  <th>動作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>File &gt; Open...</td>
+                  <td><kbd>⌘/Ctrl</kbd> + <kbd>O</kbd></td>
+                  <td>テキストファイルを選択して読み込み、解析タブに反映して自動解析します。</td>
+                </tr>
+                <tr>
+                  <td>File &gt; Write...</td>
+                  <td><kbd>⌘/Ctrl</kbd> + <kbd>S</kbd></td>
+                  <td>直前の解析結果を分かち書き(スペース区切り)テキストとして保存します。</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              「Write...」は解析タブで解析済みの結果が必要です。何も解析していない状態で実行すると「書き出す解析結果がありません」と表示されます。
+            </p>
+          </section>
+
+          <section id="faq">
+            <h2>7. よくある質問</h2>
+
+            <h3>Q. 解析結果の品詞が思った通りにならない</h3>
+            <p>
+              未学習の状態では文字種・語尾パターンによるヒューリスティック推定にフォールバックします。学習タブでコーパスを学習させると、統計的なHMMモデルによる推定に切り替わり精度が上がります。
+            </p>
+
+            <h3>Q. 辞書データはどこに保存されている？</h3>
+            <p>
+              辞書ブラウザの「現在の辞書ファイル」に表示されているパスの <code>dict.json</code> に、単語エントリーと学習済みモデルがJSONで保存されます。
+            </p>
+
+            <h3>Q. 長い文章を解析すると重い</h3>
+            <p>
+              解析処理自体は文字数に比例した時間で完了しますが、結果テーブルの表示は前述の通り最初の1,000語までに制限されています。それ以上のボリュームを一括で確認したい場合は、File &gt; Write... で分かち書きをファイルに書き出してご利用ください。
+            </p>
+          </section>
         </div>
-      </section>
-
-      <section id="train">
-        <h2>4. 学習(Train)タブ</h2>
-        <ol>
-          <li>学習用のコーパス(通常の文章、またはスペース区切りで <code>単語/品詞</code> の形式)をテキストエリアに入力します。</li>
-          <li>「サンプル文章を読込」ボタンで、動作確認用のサンプルコーパスを読み込めます。</li>
-          <li>「学習を実行・保存」を押すと、遷移確率・放出確率がHMMモデルに反映され、辞書ファイルに保存されます。</li>
-        </ol>
-        <p>学習が完了すると、右上のステータスが「学習済み (HMM)」に変わり、解析タブでの精度が向上します。</p>
-      </section>
-
-      <section id="dict">
-        <h2>5. 辞書ブラウザ</h2>
-        <ul>
-          <li>上部の検索ボックスで単語または品詞から絞り込み、プルダウンで品詞フィルタもかけられます。</li>
-          <li>各列見出しをクリックするとその列でソートされます(昇順/降順の切り替えも可能)。</li>
-          <li>「単語を追加」ボタンから新しい単語(表層形・品詞・出現頻度)を辞書に登録できます。</li>
-          <li>一覧の各行にある編集/削除アイコンから、既存エントリーの修正・削除ができます。</li>
-        </ul>
-
-        <h3>辞書ファイルの変更</h3>
-        <p>
-          辞書ブラウザ上部の「現在の辞書ファイル」パネルにある「変更」ボタンから、別の <code>dict.json</code>
-          を選択または新規作成できます。プロジェクトやコーパスごとに辞書を使い分けたい場合に利用してください。
-        </p>
-      </section>
-
-      <section id="file-menu">
-        <h2>6. Fileメニュー(Open... / Write...)</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>メニュー</th>
-              <th>ショートカット</th>
-              <th>動作</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>File &gt; Open...</td>
-              <td><kbd>⌘/Ctrl</kbd> + <kbd>O</kbd></td>
-              <td>テキストファイルを選択して読み込み、解析タブに反映して自動解析します。</td>
-            </tr>
-            <tr>
-              <td>File &gt; Write...</td>
-              <td><kbd>⌘/Ctrl</kbd> + <kbd>S</kbd></td>
-              <td>直前の解析結果を分かち書き(スペース区切り)テキストとして保存します。</td>
-            </tr>
-          </tbody>
-        </table>
-        <p>
-          「Write...」は解析タブで解析済みの結果が必要です。何も解析していない状態で実行すると「書き出す解析結果がありません」と表示されます。
-        </p>
-      </section>
-
-      <section id="faq">
-        <h2>7. よくある質問</h2>
-
-        <h3>Q. 解析結果の品詞が思った通りにならない</h3>
-        <p>
-          未学習の状態では文字種・語尾パターンによるヒューリスティック推定にフォールバックします。学習タブでコーパスを学習させると、統計的なHMMモデルによる推定に切り替わり精度が上がります。
-        </p>
-
-        <h3>Q. 辞書データはどこに保存されている？</h3>
-        <p>
-          辞書ブラウザの「現在の辞書ファイル」に表示されているパスの <code>dict.json</code> に、単語エントリーと学習済みモデルがJSONで保存されます。
-        </p>
-
-        <h3>Q. 長い文章を解析すると重い</h3>
-        <p>
-          解析処理自体は文字数に比例した時間で完了しますが、結果テーブルの表示は前述の通り最初の1,000語までに制限されています。それ以上のボリュームを一括で確認したい場合は、File &gt; Write... で分かち書きをファイルに書き出してご利用ください。
-        </p>
-      </section>
+      </div>
 
       <footer>
         <p><a href="./">← Morpho トップに戻る</a> ・ <a href="https://github.com/7thCode/Morpho">ソースコード</a> ・ <a href="https://github.com/7thCode/Morpho/issues">不具合報告・要望</a></p>
       </footer>
-    </main>
+    </div>
   </body>
 </html>
