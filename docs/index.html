@@ -19,6 +19,14 @@
   <body>
     <div class="page">
       <header class="hero">
+        <img
+          class="hero-art"
+          src="hero.webp"
+          width="1536"
+          height="864"
+          alt=""
+          fetchpriority="high"
+        />
         <div class="logo-badge">M</div>
         <h1 class="gradient-text">Morpho</h1>
         <p class="tagline">HMMで日本語を解析する、外部送信なしのネイティブデスクトップアプリ</p>
@@ -101,7 +109,10 @@
             </div>
             <div>
               <strong>文字種 + HMM解析</strong>
-              <p>文字種境界でのトークン分割とHMMによる品詞推定を組み合わせて解析</p>
+              <p>
+                文字種境界でトークンに分割し、HMM(隠れマルコフモデル)がViterbiアルゴリズムで文全体として自然な品詞列を推定します。未学習時は文字種・語尾パターンによるヒューリスティックに自動フォールバック。
+              </p>
+              <a class="feature-link" href="hmm.html">しくみを図解で見る →</a>
             </div>
           </div>
           <div class="feature-item">
@@ -112,7 +123,10 @@
             </div>
             <div>
               <strong>コーパス学習</strong>
-              <p>学習用テキストを読み込ませてモデル精度を継続的に向上</p>
+              <p>
+                学習用テキストを読み込ませると遷移確率・出力確率が更新され、単語ごとの出現傾向と品詞の並び方を反映した解析に近づきます。複数回学習させるとコーパスは累積されます。
+              </p>
+              <a class="feature-link" href="hmm.html#training">学習の仕組みを見る →</a>
             </div>
           </div>
           <div class="feature-item">
@@ -124,7 +138,9 @@
             </div>
             <div>
               <strong>辞書ブラウザ</strong>
-              <p>単語の検索・追加・編集・削除をGUIで直接操作</p>
+              <p>
+                登録済み単語を検索・並べ替えしながら、表層形・品詞・出現頻度を直接編集できます。プロジェクトやコーパスごとに辞書ファイルを切り替えることも可能です。
+              </p>
             </div>
           </div>
           <div class="feature-item">
@@ -135,7 +151,10 @@
             </div>
             <div>
               <strong>File &gt; Open... / Write...</strong>
-              <p>テキストファイルの読み込みと、分かち書き結果のファイル書き出し</p>
+              <p>
+                テキストファイルを読み込んでそのまま解析し、結果を分かち書き(スペース区切り)としてファイルへ書き出せます。<kbd>⌘/Ctrl</kbd>+<kbd>O</kbd> /
+                <kbd>⌘/Ctrl</kbd>+<kbd>S</kbd> のショートカットにも対応。
+              </p>
             </div>
           </div>
         </div>

@@ -135,7 +135,20 @@ kbd {
 
 .hero {
   text-align: center;
-  padding: 56px 0 8px;
+  padding: 40px 0 8px;
+}
+
+.hero-art {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  margin-bottom: 32px;
 }
 
 .logo-badge {
@@ -344,9 +357,20 @@ h3 {
 }
 
 .feature-item p {
-  margin: 0;
+  margin: 0 0 6px;
   font-size: 13.5px;
   color: var(--text-secondary);
+}
+
+.feature-item p:last-child {
+  margin-bottom: 0;
+}
+
+.feature-link {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 /* Link chips (manual / source links) */
