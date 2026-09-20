@@ -141,3 +141,29 @@ func TestEmptyTrainerBuildsEmptyModel(t *testing.T) {
 		t.Errorf("POSTags = %v, want empty", m.POSTags)
 	}
 }
+
+func TestShapeOnlyTagsExistEvenWhenUnseen(t *testing.T) {
+	tr := NewTrainer()
+	tr.AddSequence([]string{"猫", "が", "鳴く"}, []string{POSNoun, POSParticle, POSVerb})
+	m := tr.Build()
+
+	if !m.HasPOS(POSNumber) || !m.HasPOS(POSSymbol) {
+		t.Fatalf("POSTags = %v, want 数詞 and 記号 present", m.POSTags)
+	}
+	if m.SmoothEmission(POSNumber, "2024") <= m.SmoothEmission(POSNoun, "2024") {
+		t.Error("unseen digits should favour the (untrained) 数詞 over 名詞")
+	}
+	if m.SmoothEmission(POSSymbol, "。") <= m.SmoothEmission(POSParticle, "。") {
+		t.Error("unseen symbol should favour the (untrained) 記号 over 助詞")
+	}
+	if m.SmoothEmission(POSNumber, "猫") >= m.SmoothEmission(POSNoun, "猫") {
+		t.Error("seen kanji word must still prefer its trained tag over 数詞")
+	}
+	for _, from := range m.POSTags {
+		for _, to := range m.POSTags {
+			if m.LogTransition(from, to) <= LogZero {
+				t.Errorf("transition %s->%s missing", from, to)
+			}
+		}
+	}
+}

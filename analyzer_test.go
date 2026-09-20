@@ -362,7 +362,7 @@ func TestOpenOrRecoverPropagatesOtherErrors(t *testing.T) {
 }
 
 func TestShippedDictionaryStillLoads(t *testing.T) {
-	// dict.json predates counts/user flags; it must keep working.
+	// The dict.json shipped in the repo must load and analyze.
 	a, err := morpho.New("dict.json")
 	if err != nil {
 		t.Fatal(err)
@@ -406,4 +406,19 @@ func TestConcurrentUse(t *testing.T) {
 		}(i)
 	}
 	wg.Wait()
+}
+
+func TestNumbersAndSymbolsTaggedWithoutBeingInCorpus(t *testing.T) {
+	// A corpus with no digits and no punctuation at all.
+	a := morpho.NewInMemory()
+	if err := a.Train("吾輩は猫である\n名前はまだ無い"); err != nil {
+		t.Fatal(err)
+	}
+	ms, _ := a.Analyze("吾輩は2024年に猫を見た。")
+	if got := posOf(t, ms, "2024"); got != "数詞" {
+		t.Errorf("2024 tagged %s, want 数詞", got)
+	}
+	if got := posOf(t, ms, "。"); got != "記号" {
+		t.Errorf("。 tagged %s, want 記号", got)
+	}
 }

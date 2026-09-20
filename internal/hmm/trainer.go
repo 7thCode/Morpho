@@ -12,6 +12,19 @@ import (
 // patterns dominate, but non-zero so no POS sequence is impossible.
 const smoothing = 0.1
 
+// shapeTags are POS tags that character type alone identifies. A model always
+// has these states, even if the training corpus never contained one (say, a
+// corpus without digits), so that an unseen number can still be tagged 数詞
+// instead of being forced into whichever trained tag is nearest.
+var shapeTags = map[string]chartype.CharType{
+	POSNumber: chartype.Digit,
+	POSSymbol: chartype.Symbol,
+}
+
+// shapePrior is the share of a shape-only tag's unseen-word class
+// distribution that goes to its own character class before any training data.
+const shapePrior = 0.9
+
 // Counts is the serializable form of a Trainer's accumulated counts.
 type Counts struct {
 	Initial    map[string]float64            `json:"initial,omitempty"`
@@ -102,8 +115,9 @@ func (t *Trainer) AddSequence(words, poses []string) {
 
 // Build turns the counts into a Model.
 //
-//   - Initial and Transition are Lidstone-smoothed over every observed POS,
-//     so unseen POS pairs are improbable rather than impossible.
+//   - Initial and Transition are Lidstone-smoothed over every observed POS
+//     (plus the shape-only tags 数詞 and 記号), so unseen POS pairs are
+//     improbable rather than impossible.
 //   - Emission uses Witten-Bell discounting: seen words get c/(N+T), and the
 //     remaining T/(N+T) is reserved for unseen words (UnknownMass), divided
 //     among character classes by ClassEmission.
@@ -129,10 +143,15 @@ func (t *Trainer) Build() *Model {
 	for pos := range posSet {
 		m.POSTags = append(m.POSTags, pos)
 	}
-	sort.Strings(m.POSTags)
 	if len(m.POSTags) == 0 {
 		return m
 	}
+	for pos := range shapeTags {
+		if !posSet[pos] {
+			m.POSTags = append(m.POSTags, pos)
+		}
+	}
+	sort.Strings(m.POSTags)
 	states := float64(len(m.POSTags))
 
 	initTotal := 0.0
@@ -176,6 +195,26 @@ func (t *Trainer) Build() *Model {
 		classes := make(map[string]float64)
 		for c := chartype.Hiragana; c <= chartype.Space; c++ {
 			classes[c.String()] = math.Log((classTypes[c.String()] + smoothing) / (types + smoothing*float64(chartype.Space+1)))
+		}
+		m.ClassEmission[pos] = classes
+	}
+
+	// Shape-only tags with no training data: every word is "unseen", and its
+	// character class is what the tag is defined by.
+	for pos, class := range shapeTags {
+		if _, ok := t.emissionCounts[pos]; ok {
+			continue
+		}
+		m.Emission[pos] = map[string]float64{}
+		m.UnknownMass[pos] = math.Log(0.5)
+		classes := make(map[string]float64)
+		numClasses := float64(chartype.Space + 1)
+		for c := chartype.Hiragana; c <= chartype.Space; c++ {
+			p := (1 - shapePrior) / (numClasses - 1)
+			if c == class {
+				p = shapePrior
+			}
+			classes[c.String()] = math.Log(p)
 		}
 		m.ClassEmission[pos] = classes
 	}
