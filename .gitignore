@@ -1,4 +1,6 @@
 # ── バイナリ / ビルド成果物 ──────────────────────────────
+/dist/
+app/dist/
 app/bin/
 cmd/desktop/build/bin/
 cmd/desktop/build/darwin/*.app

@@ -127,7 +127,6 @@ func (s *server) word(w http.ResponseWriter, r *http.Request) {
 	http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
 }
 
-
 func main() {
 	port := flag.Int("port", 8765, "HTTP port")
 	dictPath := flag.String("dict", "dict.json", "path to dictionary JSON file")

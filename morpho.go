@@ -219,6 +219,3 @@ func (a *Analyzer) DeleteWord(surface string) error {
 
 	return a.dictionary.Save(a.dictPath)
 }
-
-
-

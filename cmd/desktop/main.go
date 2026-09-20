@@ -2,6 +2,7 @@ package main
 
 import (
 	"embed"
+	"log"
 
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/menu"
@@ -39,7 +40,7 @@ func buildMenu(app *App) *menu.Menu {
 
 func main() {
 	app := NewApp()
-	wails.Run(&options.App{
+	err := wails.Run(&options.App{
 		Title:            "Morpho",
 		Width:            960,
 		Height:           680,
@@ -51,4 +52,7 @@ func main() {
 		Bind:             []interface{}{app},
 		Mac:              &mac.Options{TitleBar: mac.TitleBarHiddenInset()},
 	})
+	if err != nil {
+		log.Fatal(err)
+	}
 }
