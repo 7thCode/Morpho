@@ -287,6 +287,11 @@
   }
 
   // 解析結果の品詞割合統計の計算
+  // 結果テーブルに一度に描画する行数の上限（長い文書で数万行のDOMが生成されるのを防ぐ）。
+  const MAX_DISPLAYED_MORPHEMES = 1000
+  let displayedMorphemes = []
+  $: displayedMorphemes = morphemes.slice(0, MAX_DISPLAYED_MORPHEMES)
+
   let posStats = []
   $: {
     if (morphemes.length > 0) {
@@ -426,7 +431,7 @@
                 </tr>
               </thead>
               <tbody>
-                {#each morphemes as m, i}
+                {#each displayedMorphemes as m, i}
                   <tr class="fade-in-row">
                     <td class="num">{i + 1}</td>
                     <td class="surface">{m.surface}</td>
@@ -437,6 +442,11 @@
                 {/each}
               </tbody>
             </table>
+            {#if morphemes.length > MAX_DISPLAYED_MORPHEMES}
+              <p class="truncation-note">
+                表示件数が多いため最初の{MAX_DISPLAYED_MORPHEMES.toLocaleString()}語のみ表示しています（全{morphemes.length.toLocaleString()}語）
+              </p>
+            {/if}
           </div>
         </div>
       {/if}
@@ -1088,6 +1098,13 @@
     background: rgba(239, 68, 68, 0.1);
     border: 1px solid rgba(239, 68, 68, 0.2);
     color: #fca5a5;
+  }
+
+  .truncation-note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
   }
 
   .message.success {
