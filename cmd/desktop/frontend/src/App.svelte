@@ -4,6 +4,7 @@
     Analyze,
     Train,
     GetStats,
+    GetStartupNotice,
     GetEntries,
     SaveWord,
     DeleteWord,
@@ -22,6 +23,7 @@
   let loading = false
   let error = ''
   let trainMessage = ''
+  let startupNotice = ''
 
   // 統計情報
   let stats = { word_count: 0, is_trained: false, pos_tags: [] }
@@ -32,6 +34,7 @@
   // 辞書タブ用
   let searchQuery = ''
   let selectedPOS = ''
+  let userOnly = false
   let sortBy = 'freq'
   let sortAsc = false
 
@@ -111,6 +114,11 @@
       result = result.filter(e => e.surface.toLowerCase().includes(q) || e.pos.toLowerCase().includes(q))
     }
 
+    // ユーザー登録語のみ
+    if (userOnly) {
+      result = result.filter(e => e.user)
+    }
+
     // 品詞フィルタ
     if (selectedPOS) {
       result = result.filter(e => e.pos === selectedPOS)
@@ -136,7 +144,7 @@
 
   // 検索条件やソート順が変わったら更新
   $: {
-    if (entries.length > 0 || searchQuery || selectedPOS || sortBy || sortAsc) {
+    if (entries.length > 0 || searchQuery || selectedPOS || userOnly || sortBy || sortAsc) {
       filterAndSortEntries()
     }
   }
@@ -352,6 +360,11 @@
   }
 
   onMount(async () => {
+    try {
+      startupNotice = await GetStartupNotice()
+    } catch (e) {
+      console.error('Failed to load startup notice:', e)
+    }
     await loadStats()
     await loadDictPath()
     EventsOn('menu:open', handleMenuOpen)
@@ -384,6 +397,13 @@
       </div>
     </div>
   </header>
+
+  {#if startupNotice}
+    <div class="message warning notice-banner fade-in" role="alert">
+      <span>{startupNotice}</span>
+      <button class="notice-close" title="閉じる" aria-label="閉じる" on:click={() => (startupNotice = '')}>×</button>
+    </div>
+  {/if}
 
   <div class="tabs">
     <button class:active={tab === 'analyze'} on:click={() => switchTab('analyze')}>
@@ -485,13 +505,13 @@
           <div class="train-header">
             <h3>HMMモデルの学習</h3>
             <p class="description">
-              スペース区切りの文や、教師ありテキストデータを入力して「学習・保存」を実行すると、遷移確率・放出確率がモデルに記録され、解析の精度が向上します。
+              通常の文章、または「単語/品詞」をスペースで並べた行を入力して「学習・保存」を実行すると、遷移確率・放出確率がモデルに記録されます。通常の文章の品詞は文字種ルールで仮に付けるため、精度を上げるには品詞を付けた行を使ってください。学習は前回までの結果に積み上がります。
             </p>
           </div>
           <textarea
             bind:value={corpus}
             on:keydown={handleKeydown}
-            placeholder="学習用のコーパス（テキスト）を入力してください… (例: 私は/名詞 昨日/名詞 図書館/名詞 で/助詞 ...) または通常の文章を入力すると簡易的な自動学習が行われます。"
+            placeholder="学習用のコーパス（テキスト）を入力してください… (例: 私は/名詞 昨日/名詞 図書館/名詞 で/助詞 ...) または通常の文章を入力すると、文字種ルールで品詞を仮に付けて学習します。"
             rows="8"
           ></textarea>
           <div class="actions">
@@ -551,6 +571,11 @@
               </select>
             </div>
 
+            <label class="user-only-toggle" title="「単語を追加」や編集で登録した語だけを表示します。登録語は解析時にひとまとまりで扱われ、品詞が固定されます">
+              <input type="checkbox" bind:checked={userOnly} />
+              ユーザー登録のみ
+            </label>
+
             <!-- 単語追加ボタン -->
             <button class="btn btn-primary" style="margin-left: auto;" on:click={openAddModal}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.25rem;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -582,7 +607,10 @@
                 {:else}
                   {#each filteredEntries as entry}
                     <tr class="fade-in-row">
-                      <td class="surface-dict">{entry.surface}</td>
+                      <td class="surface-dict">
+                        {entry.surface}
+                        {#if entry.user}<span class="user-badge" title="ユーザー登録語(解析時に品詞が固定されます)">登録</span>{/if}
+                      </td>
                       <td><span class="pos-badge {getPOSClass(entry.pos)}">{entry.pos}</span></td>
                       <td class="text-right freq-val">{entry.freq.toLocaleString()}</td>
                       <td style="text-align: center;">
@@ -1138,6 +1166,51 @@
     background: rgba(239, 68, 68, 0.1);
     border: 1px solid rgba(239, 68, 68, 0.2);
     color: #fca5a5;
+  }
+
+  .message.warning {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    color: #fcd34d;
+  }
+
+  .notice-banner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin: 0 0 1rem;
+  }
+
+  .notice-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 0.25rem;
+  }
+
+  .user-badge {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.05rem 0.4rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    background: rgba(99, 102, 241, 0.18);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    color: #a5b4fc;
+  }
+
+  .user-only-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    white-space: nowrap;
   }
 
   .message.success {

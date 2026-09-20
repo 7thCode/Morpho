@@ -1,7 +1,17 @@
 <script>
   import { onMount } from 'svelte'
 
-  const API = 'http://localhost:8765'
+  const API = 'http://127.0.0.1:8765'
+
+  // サーバーは {"error": "..."} を返す。JSON でなければ本文をそのまま使う。
+  async function errorText(res) {
+    const body = await res.text()
+    try {
+      return JSON.parse(body).error || body
+    } catch {
+      return body
+    }
+  }
 
   let tab = 'analyze'
   let inputText = ''
@@ -122,9 +132,9 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: inputText }),
       })
-      if (!res.ok) throw new Error(await res.text())
+      if (!res.ok) throw new Error(await errorText(res))
       const result = await res.json()
-      morphemes = result ?? []
+      morphemes = result?.morphemes ?? []
     } catch (e) {
       error = typeof e === 'string' ? e : e.message
     } finally {
@@ -143,7 +153,7 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ corpus }),
       })
-      if (!res.ok) throw new Error(await res.text())
+      if (!res.ok) throw new Error(await errorText(res))
       trainMessage = '学習が完了し、モデルと辞書を保存しました！'
       await loadStats()
       await loadEntries()
@@ -236,7 +246,7 @@
         const delRes = await fetch(`${API}/word?surface=${encodeURIComponent(originalSurface)}`, {
           method: 'DELETE'
         })
-        if (!delRes.ok) throw new Error(await delRes.text())
+        if (!delRes.ok) throw new Error(await errorText(delRes))
       }
       const res = await fetch(`${API}/word`, {
         method: isEditingExisting && originalSurface === editSurface.trim() ? 'PUT' : 'POST',
@@ -247,7 +257,7 @@
           freq: parseInt(editFreq, 10),
         }),
       })
-      if (!res.ok) throw new Error(await res.text())
+      if (!res.ok) throw new Error(await errorText(res))
       showEditModal = false
       await loadStats()
       await loadEntries()
@@ -265,7 +275,7 @@
         const res = await fetch(`${API}/word?surface=${encodeURIComponent(surface)}`, {
           method: 'DELETE'
         })
-        if (!res.ok) throw new Error(await res.text())
+        if (!res.ok) throw new Error(await errorText(res))
         await loadStats()
         await loadEntries()
         showConfirmModal = false
@@ -277,6 +287,11 @@
   }
 
   // 解析結果の品詞割合統計の計算
+  // 結果テーブルに一度に描画する行数の上限（長い文書で数万行のDOMが生成されるのを防ぐ）。
+  const MAX_DISPLAYED_MORPHEMES = 1000
+  let displayedMorphemes = []
+  $: displayedMorphemes = morphemes.slice(0, MAX_DISPLAYED_MORPHEMES)
+
   let posStats = []
   $: {
     if (morphemes.length > 0) {
@@ -416,7 +431,7 @@
                 </tr>
               </thead>
               <tbody>
-                {#each morphemes as m, i}
+                {#each displayedMorphemes as m, i}
                   <tr class="fade-in-row">
                     <td class="num">{i + 1}</td>
                     <td class="surface">{m.surface}</td>
@@ -427,6 +442,11 @@
                 {/each}
               </tbody>
             </table>
+            {#if morphemes.length > MAX_DISPLAYED_MORPHEMES}
+              <p class="truncation-note">
+                表示件数が多いため最初の{MAX_DISPLAYED_MORPHEMES.toLocaleString()}語のみ表示しています（全{morphemes.length.toLocaleString()}語）
+              </p>
+            {/if}
           </div>
         </div>
       {/if}
@@ -437,13 +457,13 @@
           <div class="train-header">
             <h3>HMMモデルの学習</h3>
             <p class="description">
-              スペース区切りの文や、教師ありテキストデータを入力して「学習・保存」を実行すると、遷移確率・放出確率がモデルに記録され、解析の精度が向上します。
+              通常の文章、または「単語/品詞」をスペースで並べた行を入力して「学習・保存」を実行すると、遷移確率・放出確率がモデルに記録されます。通常の文章の品詞は文字種ルールで仮に付けるため、精度を上げるには品詞を付けた行を使ってください。学習は前回までの結果に積み上がります。
             </p>
           </div>
           <textarea
             bind:value={corpus}
             on:keydown={handleKeydown}
-            placeholder="学習用のコーパス（テキスト）を入力してください… (例: 私は/名詞 昨日/名詞 図書館/名詞 で/助詞 ...) または通常の文章を入力すると簡易的な自動学習が行われます。"
+            placeholder="学習用のコーパス（テキスト）を入力してください… (例: 私は/名詞 昨日/名詞 図書館/名詞 で/助詞 ...) または通常の文章を入力すると、文字種ルールで品詞を仮に付けて学習します。"
             rows="8"
           ></textarea>
           <div class="actions">
@@ -1078,6 +1098,13 @@
     background: rgba(239, 68, 68, 0.1);
     border: 1px solid rgba(239, 68, 68, 0.2);
     color: #fca5a5;
+  }
+
+  .truncation-note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
   }
 
   .message.success {

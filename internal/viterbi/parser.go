@@ -14,6 +14,11 @@ type Result struct {
 
 // Decode runs the Viterbi algorithm over the given tokens using the HMM model.
 // It returns a slice of Results with the most likely POS tag for each token.
+//
+// A token with a valid Tag (e.g. from a user-registered word) is pinned to
+// that POS: the path is forced through it when the model has that state, and
+// the reported POS is the tag either way. Decode treats tokens as a single
+// sequence; split text into sentences first (hmm.SplitSentences).
 func Decode(tokens []tokenizer.Token, model *hmm.Model) []Result {
 	if len(tokens) == 0 || model == nil || len(model.POSTags) == 0 {
 		return nil
@@ -32,24 +37,41 @@ func Decode(tokens []tokenizer.Token, model *hmm.Model) []Result {
 		bp[t] = make([]int, S)
 		for s := 0; s < S; s++ {
 			dp[t][s] = hmm.LogZero
-			bp[t][s] = -1
+			bp[t][s] = 0
 		}
 	}
 
-	// Initialize: t=0
-	for s, pos := range model.POSTags {
-		logInit := model.LogInitial(pos)
-		logEmit := model.SmoothEmission(pos, tokens[0].Surface)
-		if logInit > hmm.LogZero {
-			dp[0][s] = logInit + logEmit
-		} else {
-			dp[0][s] = hmm.LogZero
+	// forced[t] is the state token t is pinned to. Only a tag
+	// naming a state of this model pins the token; other tags are applied
+	// when results are built.
+	forced := make([]string, T)
+	for t, tok := range tokens {
+		if hmm.IsValidPOS(tok.Tag) && model.HasPOS(tok.Tag) {
+			forced[t] = tok.Tag
 		}
+	}
+	allowed := func(t int, pos string) bool { return forced[t] == "" || forced[t] == pos }
+
+	// Initialize: t=0. Models without a smoothed initial distribution may
+	// lack an entry for a state; score it by emission alone rather than
+	// pruning it, as the recursion does for missing transitions.
+	for s, pos := range model.POSTags {
+		if !allowed(0, pos) {
+			continue
+		}
+		logInit := model.LogInitial(pos)
+		if logInit <= hmm.LogZero {
+			logInit = 0
+		}
+		dp[0][s] = logInit + model.SmoothEmission(pos, tokens[0].Surface)
 	}
 
 	// Recursion
 	for t := 1; t < T; t++ {
 		for s, pos := range model.POSTags {
+			if !allowed(t, pos) {
+				continue
+			}
 			logEmit := model.SmoothEmission(pos, tokens[t].Surface)
 			bestScore := hmm.LogZero
 			bestPrev := 0
@@ -108,9 +130,13 @@ func Decode(tokens []tokenizer.Token, model *hmm.Model) []Result {
 	results := make([]Result, T)
 	for t, tok := range tokens {
 		stateIdx := path[t]
+		pos := model.POSTags[stateIdx]
+		if hmm.IsValidPOS(tok.Tag) {
+			pos = tok.Tag
+		}
 		results[t] = Result{
 			Surface: tok.Surface,
-			POS:     model.POSTags[stateIdx],
+			POS:     pos,
 			Score:   dp[t][stateIdx],
 		}
 	}

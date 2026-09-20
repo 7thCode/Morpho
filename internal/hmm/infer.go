@@ -67,7 +67,7 @@ func inferHiraganaPOS(surface string) string {
 	if verbEndings[last] {
 		return POSVerb
 	}
-	if last == 'い' || last == 'く' {
+	if last == 'い' {
 		return POSAdj
 	}
 	return POSAdverb

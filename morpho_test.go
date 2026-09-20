@@ -236,9 +236,12 @@ func TestNewInMemory(t *testing.T) {
 		t.Error("expected IsTrained() to be true after Train()")
 	}
 
-	// SaveWord persists to the dictPath given to New, which NewInMemory
-	// leaves unset, so it must report an error rather than silently no-op.
-	if err := analyzer.SaveWord("東京", "名詞", 1); err == nil {
-		t.Error("expected SaveWord() to return an error with no dictPath set")
+	// SaveWord / DeleteWord work on the in-memory dictionary; nothing is
+	// written to disk.
+	if err := analyzer.SaveWord("東京", "名詞", 1); err != nil {
+		t.Errorf("SaveWord() on in-memory analyzer: %v", err)
+	}
+	if err := analyzer.DeleteWord("東京"); err != nil {
+		t.Errorf("DeleteWord() on in-memory analyzer: %v", err)
 	}
 }

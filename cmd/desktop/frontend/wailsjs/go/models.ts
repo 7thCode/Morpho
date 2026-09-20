@@ -27,6 +27,7 @@ export namespace morpho {
 	    pos: string;
 	    pos_detail?: string;
 	    freq: number;
+	    user?: boolean;
 	
 	    static createFrom(source: any = {}) {
 	        return new DictEntry(source);
@@ -39,6 +40,7 @@ export namespace morpho {
 	        this.pos = source["pos"];
 	        this.pos_detail = source["pos_detail"];
 	        this.freq = source["freq"];
+	        this.user = source["user"];
 	    }
 	}
 	export class Morpheme {

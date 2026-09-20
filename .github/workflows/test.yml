@@ -21,6 +21,15 @@ jobs:
         with:
           go-version-file: go.mod
 
+      - name: Check formatting
+        run: |
+          unformatted=$(gofmt -l .)
+          if [ -n "$unformatted" ]; then
+            echo "These files are not gofmt-formatted:"
+            echo "$unformatted"
+            exit 1
+          fi
+
       - name: Build
         run: go build ./...
 
@@ -28,4 +37,11 @@ jobs:
         run: go vet ./...
 
       - name: Test
-        run: go test ./...
+        run: go test -race ./...
+
+      # The browser playground builds cmd/wasm for js/wasm in pages.yml, which
+      # only runs on main; catch breakage in pull requests instead.
+      - name: Build and vet WebAssembly target
+        run: |
+          GOOS=js GOARCH=wasm go build -o /dev/null ./cmd/wasm
+          GOOS=js GOARCH=wasm go vet ./cmd/wasm
