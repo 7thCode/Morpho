@@ -1,7 +1,17 @@
 <script>
   import { onMount } from 'svelte'
 
-  const API = 'http://localhost:8765'
+  const API = 'http://127.0.0.1:8765'
+
+  // サーバーは {"error": "..."} を返す。JSON でなければ本文をそのまま使う。
+  async function errorText(res) {
+    const body = await res.text()
+    try {
+      return JSON.parse(body).error || body
+    } catch {
+      return body
+    }
+  }
 
   let tab = 'analyze'
   let inputText = ''
@@ -122,9 +132,9 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: inputText }),
       })
-      if (!res.ok) throw new Error(await res.text())
+      if (!res.ok) throw new Error(await errorText(res))
       const result = await res.json()
-      morphemes = result ?? []
+      morphemes = result?.morphemes ?? []
     } catch (e) {
       error = typeof e === 'string' ? e : e.message
     } finally {
@@ -143,7 +153,7 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ corpus }),
       })
-      if (!res.ok) throw new Error(await res.text())
+      if (!res.ok) throw new Error(await errorText(res))
       trainMessage = '学習が完了し、モデルと辞書を保存しました！'
       await loadStats()
       await loadEntries()
@@ -236,7 +246,7 @@
         const delRes = await fetch(`${API}/word?surface=${encodeURIComponent(originalSurface)}`, {
           method: 'DELETE'
         })
-        if (!delRes.ok) throw new Error(await delRes.text())
+        if (!delRes.ok) throw new Error(await errorText(delRes))
       }
       const res = await fetch(`${API}/word`, {
         method: isEditingExisting && originalSurface === editSurface.trim() ? 'PUT' : 'POST',
@@ -247,7 +257,7 @@
           freq: parseInt(editFreq, 10),
         }),
       })
-      if (!res.ok) throw new Error(await res.text())
+      if (!res.ok) throw new Error(await errorText(res))
       showEditModal = false
       await loadStats()
       await loadEntries()
@@ -265,7 +275,7 @@
         const res = await fetch(`${API}/word?surface=${encodeURIComponent(surface)}`, {
           method: 'DELETE'
         })
-        if (!res.ok) throw new Error(await res.text())
+        if (!res.ok) throw new Error(await errorText(res))
         await loadStats()
         await loadEntries()
         showConfirmModal = false

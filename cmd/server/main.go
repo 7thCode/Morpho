@@ -1,153 +1,58 @@
 package main
 
 import (
-	"encoding/json"
 	"flag"
-	"fmt"
 	"log"
+	"net"
 	"net/http"
+	"strconv"
+	"strings"
+	"time"
 
 	"github.com/7thCode/morpho"
 )
 
-type server struct {
-	analyzer *morpho.Analyzer
-	dictPath string
-}
-
-func (s *server) cors(next http.HandlerFunc) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Access-Control-Allow-Origin", "*")
-		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, DELETE, PUT")
-		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-		if r.Method == http.MethodOptions {
-			w.WriteHeader(http.StatusNoContent)
-			return
-		}
-		next(w, r)
-	}
-}
-
-func (s *server) health(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(map[string]bool{"ok": true})
-}
-
-func (s *server) analyze(w http.ResponseWriter, r *http.Request) {
-	var req struct {
-		Text string `json:"text"`
-	}
-	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
-	}
-	morphemes, err := s.analyzer.Analyze(req.Text)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(map[string]any{"morphemes": morphemes})
-}
-
-func (s *server) train(w http.ResponseWriter, r *http.Request) {
-	var req struct {
-		Corpus string `json:"corpus"`
-	}
-	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
-	}
-	if err := s.analyzer.Train(req.Corpus); err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-	if err := s.analyzer.Save(s.dictPath); err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(map[string]bool{"ok": true})
-}
-
-func (s *server) stats(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodGet {
-		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
-		return
-	}
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(map[string]any{
-		"word_count": s.analyzer.WordCount(),
-		"is_trained": s.analyzer.IsTrained(),
-		"pos_tags":   s.analyzer.POSTags(),
-	})
-}
-
-func (s *server) entries(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodGet {
-		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
-		return
-	}
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(s.analyzer.Entries())
-}
-
-func (s *server) word(w http.ResponseWriter, r *http.Request) {
-	if r.Method == http.MethodPost || r.Method == http.MethodPut {
-		var req struct {
-			Surface string `json:"surface"`
-			POS     string `json:"pos"`
-			Freq    int    `json:"freq"`
-		}
-		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-			http.Error(w, err.Error(), http.StatusBadRequest)
-			return
-		}
-		if err := s.analyzer.SaveWord(req.Surface, req.POS, req.Freq); err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(map[string]bool{"ok": true})
-		return
-	} else if r.Method == http.MethodDelete {
-		surface := r.URL.Query().Get("surface")
-		if surface == "" {
-			http.Error(w, "surface parameter is required", http.StatusBadRequest)
-			return
-		}
-		if err := s.analyzer.DeleteWord(surface); err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(map[string]bool{"ok": true})
-		return
-	}
-	http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
-}
+// defaultOrigins are the browser origins allowed to call the API: the Vite
+// dev server, and "null", which is what a page loaded from file:// (the
+// packaged Electron app) sends.
+const defaultOrigins = "http://localhost:5173,http://127.0.0.1:5173,null"
 
 func main() {
+	host := flag.String("host", "127.0.0.1", "address to listen on (use 0.0.0.0 to expose the API to the network)")
 	port := flag.Int("port", 8765, "HTTP port")
 	dictPath := flag.String("dict", "dict.json", "path to dictionary JSON file")
+	origins := flag.String("cors-origins", defaultOrigins, "comma-separated browser origins allowed to call the API")
 	flag.Parse()
 
-	analyzer, err := morpho.New(*dictPath)
+	analyzer, backup, err := morpho.OpenOrRecover(*dictPath)
 	if err != nil {
 		log.Fatal(err)
 	}
+	if backup != "" {
+		log.Printf("dictionary %s was corrupt; moved to %s and started empty", *dictPath, backup)
+	}
 
-	s := &server{analyzer: analyzer, dictPath: *dictPath}
+	s := newServer(analyzer, *dictPath, splitList(*origins))
 
-	mux := http.NewServeMux()
-	mux.HandleFunc("/health", s.cors(s.health))
-	mux.HandleFunc("/analyze", s.cors(s.analyze))
-	mux.HandleFunc("/train", s.cors(s.train))
-	mux.HandleFunc("/stats", s.cors(s.stats))
-	mux.HandleFunc("/entries", s.cors(s.entries))
-	mux.HandleFunc("/word", s.cors(s.word))
-
-	addr := fmt.Sprintf(":%d", *port)
+	addr := net.JoinHostPort(*host, strconv.Itoa(*port))
+	srv := &http.Server{
+		Addr:              addr,
+		Handler:           s.handler(),
+		ReadHeaderTimeout: 10 * time.Second,
+		ReadTimeout:       30 * time.Second,
+		WriteTimeout:      2 * time.Minute, // training large corpora takes a while
+		IdleTimeout:       2 * time.Minute,
+	}
 	log.Printf("morpho server listening on %s (dict: %s)", addr, *dictPath)
-	log.Fatal(http.ListenAndServe(addr, mux))
+	log.Fatal(srv.ListenAndServe())
+}
+
+func splitList(s string) []string {
+	var out []string
+	for _, part := range strings.Split(s, ",") {
+		if part = strings.TrimSpace(part); part != "" {
+			out = append(out, part)
+		}
+	}
+	return out
 }

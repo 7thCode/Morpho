@@ -45,6 +45,11 @@ import (
 // or OpenOrRecover to set the bad file aside and start fresh.
 var ErrCorruptDictionary = dictionary.ErrCorrupt
 
+// ErrInvalidInput is wrapped by errors caused by arguments the caller can fix
+// (an unknown POS, a word containing whitespace, an empty corpus), as opposed
+// to I/O failures. Use errors.Is to tell them apart.
+var ErrInvalidInput = errors.New("invalid input")
+
 // Morpheme represents a single morpheme with its surface form, reading, and POS information.
 type Morpheme struct {
 	Surface   string `json:"surface"`
@@ -143,7 +148,7 @@ func (a *Analyzer) Train(corpus string) error {
 
 	sentences := hmm.ParseCorpus(corpus, a.lexicon)
 	if len(sentences) == 0 {
-		return errors.New("morpho: corpus contains no trainable text")
+		return fmt.Errorf("morpho: %w: corpus contains no trainable text", ErrInvalidInput)
 	}
 	for _, s := range sentences {
 		a.trainer.AddSequence(s.Words, s.POS)
@@ -264,13 +269,13 @@ func (a *Analyzer) Entries() []DictEntry {
 // surface must be non-empty and free of whitespace.
 func (a *Analyzer) SaveWord(surface, pos string, freq int) error {
 	if surface == "" || strings.TrimSpace(surface) != surface || strings.ContainsAny(surface, " \t\r\n\u3000") {
-		return fmt.Errorf("morpho: invalid word %q: must be non-empty and contain no whitespace", surface)
+		return fmt.Errorf("morpho: %w: word %q must be non-empty and contain no whitespace", ErrInvalidInput, surface)
 	}
 	if !hmm.IsValidPOS(pos) {
-		return fmt.Errorf("morpho: unknown part of speech %q (valid: %s)", pos, strings.Join(hmm.AllPOS, ", "))
+		return fmt.Errorf("morpho: %w: unknown part of speech %q (valid: %s)", ErrInvalidInput, pos, strings.Join(hmm.AllPOS, ", "))
 	}
 	if freq < 0 {
-		return fmt.Errorf("morpho: negative frequency %d", freq)
+		return fmt.Errorf("morpho: %w: negative frequency %d", ErrInvalidInput, freq)
 	}
 
 	a.mu.Lock()

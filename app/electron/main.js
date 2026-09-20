@@ -30,7 +30,7 @@ function waitForServer(retries = 40) {
   return new Promise((resolve, reject) => {
     const attempt = n => {
       http
-        .get(`http://localhost:${GO_PORT}/health`, () => resolve())
+        .get(`http://127.0.0.1:${GO_PORT}/health`, () => resolve())
         .on('error', () => {
           if (n <= 0) return reject(new Error('Go server did not start in time'))
           setTimeout(() => attempt(n - 1), 250)
