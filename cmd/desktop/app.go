@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"os"
 	"sync"
 
@@ -10,36 +11,74 @@ import (
 )
 
 type App struct {
-	ctx      context.Context
-	mu       sync.Mutex
-	analyzer *morpho.Analyzer
-	dictPath string
+	ctx context.Context
+
+	// mu guards the fields below. The Analyzer is itself safe for concurrent
+	// use, so methods only hold mu long enough to read them.
+	mu            sync.Mutex
+	analyzer      *morpho.Analyzer
+	dictPath      string // "" when the dictionary could not be opened: nothing is persisted
+	startupNotice string
 }
 
-func NewApp() *App { return &App{} }
+// NewApp returns an App whose analyzer is an empty in-memory one, so bound
+// methods called before (or without) startup never see a nil analyzer.
+func NewApp() *App { return &App{analyzer: morpho.NewInMemory()} }
 
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 	cfg := loadConfig()
-	a.dictPath = cfg.DictPath
-	a.analyzer, _ = morpho.New(a.dictPath)
+
+	analyzer, backup, err := morpho.OpenOrRecover(cfg.DictPath)
+
+	a.mu.Lock()
+	defer a.mu.Unlock()
+	switch {
+	case err != nil:
+		// Keep working, but do not write to a file we could not read: it may
+		// still hold data that a save would destroy.
+		a.analyzer = morpho.NewInMemory()
+		a.dictPath = ""
+		a.startupNotice = fmt.Sprintf("辞書ファイル(%s)を開けませんでした: %v。一時的な空の辞書で動作しており、変更は保存されません。", cfg.DictPath, err)
+	case backup != "":
+		a.analyzer, a.dictPath = analyzer, cfg.DictPath
+		a.startupNotice = fmt.Sprintf("辞書ファイルが破損していたため %s に退避し、空の辞書で開始しました。", backup)
+	default:
+		a.analyzer, a.dictPath = analyzer, cfg.DictPath
+	}
 }
 
 func (a *App) shutdown(_ context.Context) {}
 
-func (a *App) Analyze(text string) ([]morpho.Morpheme, error) {
+// current returns the analyzer and dictionary path as of now.
+func (a *App) current() (*morpho.Analyzer, string) {
 	a.mu.Lock()
 	defer a.mu.Unlock()
-	return a.analyzer.Analyze(text)
+	return a.analyzer, a.dictPath
+}
+
+// GetStartupNotice returns a message for the user if the dictionary could not
+// be opened normally at startup, or "" if there is nothing to report.
+func (a *App) GetStartupNotice() string {
+	a.mu.Lock()
+	defer a.mu.Unlock()
+	return a.startupNotice
+}
+
+func (a *App) Analyze(text string) ([]morpho.Morpheme, error) {
+	analyzer, _ := a.current()
+	return analyzer.Analyze(text)
 }
 
 func (a *App) Train(corpus string) error {
-	a.mu.Lock()
-	defer a.mu.Unlock()
-	if err := a.analyzer.Train(corpus); err != nil {
+	analyzer, path := a.current()
+	if err := analyzer.Train(corpus); err != nil {
 		return err
 	}
-	return a.analyzer.Save(a.dictPath)
+	if path == "" {
+		return nil
+	}
+	return analyzer.Save(path)
 }
 
 // Stats represents dictionary and HMM model status.
@@ -51,46 +90,31 @@ type Stats struct {
 
 // GetStats returns dictionary and HMM model status to the frontend.
 func (a *App) GetStats() (Stats, error) {
-	a.mu.Lock()
-	defer a.mu.Unlock()
-	if a.analyzer == nil {
-		return Stats{}, nil
-	}
+	analyzer, _ := a.current()
 	return Stats{
-		WordCount: a.analyzer.WordCount(),
-		IsTrained: a.analyzer.IsTrained(),
-		POSTags:   a.analyzer.POSTags(),
+		WordCount: analyzer.WordCount(),
+		IsTrained: analyzer.IsTrained(),
+		POSTags:   analyzer.POSTags(),
 	}, nil
 }
 
 // GetEntries returns all word entries stored in the dictionary to the frontend.
 func (a *App) GetEntries() ([]morpho.DictEntry, error) {
-	a.mu.Lock()
-	defer a.mu.Unlock()
-	if a.analyzer == nil {
-		return nil, nil
-	}
-	return a.analyzer.Entries(), nil
+	analyzer, _ := a.current()
+	return analyzer.Entries(), nil
 }
 
-// SaveWord adds or updates a word in the dictionary.
+// SaveWord adds or updates a user-dictionary word. The analyzer persists it
+// to the dictionary file it was opened from.
 func (a *App) SaveWord(surface, pos string, freq int) error {
-	a.mu.Lock()
-	defer a.mu.Unlock()
-	if a.analyzer == nil {
-		return nil
-	}
-	return a.analyzer.SaveWord(surface, pos, freq)
+	analyzer, _ := a.current()
+	return analyzer.SaveWord(surface, pos, freq)
 }
 
 // DeleteWord removes a word from the dictionary.
 func (a *App) DeleteWord(surface string) error {
-	a.mu.Lock()
-	defer a.mu.Unlock()
-	if a.analyzer == nil {
-		return nil
-	}
-	return a.analyzer.DeleteWord(surface)
+	analyzer, _ := a.current()
+	return analyzer.DeleteWord(surface)
 }
 
 // GetDictPath returns the current dictionary path.
@@ -100,20 +124,24 @@ func (a *App) GetDictPath() string {
 	return a.dictPath
 }
 
-// SetDictPath updates the dictionary path and reloads the dictionary.
+// SetDictPath switches to the dictionary at path and remembers the choice.
+// Unlike startup, a file the user explicitly picked is never moved aside: if
+// it cannot be parsed the error is returned and the current dictionary stays.
 func (a *App) SetDictPath(path string) error {
-	a.mu.Lock()
-	defer a.mu.Unlock()
-
 	analyzer, err := morpho.New(path)
 	if err != nil {
 		return err
 	}
+	if err := saveConfig(Config{DictPath: path}); err != nil {
+		return err
+	}
 
+	a.mu.Lock()
+	defer a.mu.Unlock()
 	a.analyzer = analyzer
 	a.dictPath = path
-
-	return saveConfig(Config{DictPath: path})
+	a.startupNotice = ""
+	return nil
 }
 
 // SelectDictFile opens an OS file dialog for the user to select/create a dict.json file.

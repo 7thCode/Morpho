@@ -18,6 +18,10 @@ export function GetEntries() {
   return window['go']['main']['App']['GetEntries']();
 }
 
+export function GetStartupNotice() {
+  return window['go']['main']['App']['GetStartupNotice']();
+}
+
 export function GetStats() {
   return window['go']['main']['App']['GetStats']();
 }

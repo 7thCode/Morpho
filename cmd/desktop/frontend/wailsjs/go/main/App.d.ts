@@ -11,6 +11,8 @@ export function GetDictPath():Promise<string>;
 
 export function GetEntries():Promise<Array<morpho.DictEntry>>;
 
+export function GetStartupNotice():Promise<string>;
+
 export function GetStats():Promise<main.Stats>;
 
 export function OpenTextFile():Promise<string>;
