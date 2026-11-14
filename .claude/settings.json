@@ -1,13 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(go test *)",
-      "Bash(go vet *)",
-      "Bash(go build *)",
+      "Bash(go test ./...)",
+      "Bash(go test -race ./...)",
+      "Bash(go vet ./...)",
+      "Bash(go build ./...)",
       "Bash(go version)",
-      "Bash(gofmt -l *)",
-      "Bash(make test)",
-      "Bash(curl -sI *)"
+      "Bash(gofmt -l .)",
+      "Bash(make test)"
     ]
   },
   "hooks": {
