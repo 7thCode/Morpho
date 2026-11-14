@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(go test ./...)",
+      "Bash(go test -race ./...)",
+      "Bash(go vet ./...)",
+      "Bash(go build ./...)",
+      "Bash(go version)",
+      "Bash(gofmt -l .)",
+      "Bash(make test)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/gofmt-edited.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/restore-gitkeep.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
