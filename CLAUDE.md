@@ -64,3 +64,11 @@ corpus
 **HMM model details:** probabilities are stored in log-space (`math.Log`). `LogZero = -1e300` represents −∞. Initial/transition tables are Lidstone-smoothed (α=0.1) and dense; emissions use Witten-Bell discounting with a per-POS character-class distribution for unseen words (`UnknownMass`, `ClassEmission`). `数詞`/`記号` are always model states. Models saved by older versions (no `class_emission`) fall back to add-one smoothing in `SmoothEmission`, and Viterbi falls back to emission-only scoring when no valid transition exists. Call `Model.Prepare()` after building/loading a model (`Build` and `dictionary.Load` do).
 
 **POS tags** are Japanese strings defined as constants in `internal/hmm`: `名詞`, `動詞`, `形容詞`, `助詞`, `助動詞`, `副詞`, `記号`, `数詞`, `外来語`, `未知語`.
+
+## Operations
+
+- **Desktop build:** `make build` (= `cd cmd/desktop && wails build`) outputs `cmd/desktop/build/bin/Morpho.app`. `wails build` deletes `cmd/desktop/frontend/dist/.gitkeep`; the PostToolUse hook `.claude/hooks/restore-gitkeep.sh` restores it, or run `git checkout cmd/desktop/frontend/dist/.gitkeep` by hand.
+- **Dictionary location:** a `wails build` binary uses `~/Library/Application Support/Morpho/dict.json`; `wails dev` uses the repo-root `dict.json`.
+- **Release tags:** bare `vX.Y.Z` tags publish the Go library; `app-v*` tags trigger the desktop multiplatform build and GitHub Release. They are independent.
+- **Workflow:** work on a feature branch and merge via PR (never commit to `main`). CI runs a gofmt check, `go test -race ./...`, and the WASM build.
+- **Claude Code hooks** (`.claude/settings.json`): edited `.go` files are formatted with `gofmt -w` automatically (`.claude/hooks/gofmt-edited.sh`). Both hook scripts need `jq`.
